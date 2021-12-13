@@ -11,6 +11,12 @@ const useStyles = createUseStyles({
     color: colors.white,
     alignItems: "center",
     justifyContent: "space-between",
+    padding: {
+      right: 40,
+      left: 40,
+    },
+    position: "sticky",
+    top: 0
   },
   logo: {
     display: "flex",
@@ -93,7 +99,13 @@ function Navbar() {
 
       <section className={classes.menu}>
         <Scrollspy
-          items={["section-about", "section-features", "section-roadmap", "section-faq"]}
+          items={[
+            "section-about",
+            "section-features",
+            "section-roadmap",
+            "section-faq",
+            "section-testimonial",
+          ]}
           currentClassName="is-current"
         >
           {navbarMenu?.map((temp) => (

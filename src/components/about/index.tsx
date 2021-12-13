@@ -13,6 +13,10 @@ const useStyles = createUseStyles({
     alignItems: "center",
     justifyContent: "space-between",
     marginTop: 211,
+    padding: {
+      right: 40,
+      left: 40,
+    },
   },
   info: {
     display: "flex",

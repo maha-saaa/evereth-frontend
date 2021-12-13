@@ -9,6 +9,10 @@ import Navbar from "../../components/navbar";
 import About from "../../components/about";
 import Roadmap from "../../components/roadmap";
 import Faq from "../../components/faq";
+import Testimonial from "../../components/testimonial";
+import Swap from "../../components/swap";
+import Contact from "../../components/contact";
+import Rights from "../../components/rights";
 
 const useStyles = createUseStyles({
   container: {
@@ -20,9 +24,15 @@ const useStyles = createUseStyles({
     minHeight: window.innerHeight,
     padding: {
       top: 16,
-      right: "4rem",
-      left: "4rem",
     },
+    boxSizing: "border-box",
+  },
+  line: {
+    flex: 1,
+    color: colors.gray,
+    width: "100vw",
+    marginTop: 70,
+    opacity: 0.3,
   },
 });
 
@@ -40,6 +50,11 @@ function Landing() {
       <Calc />
       <Roadmap />
       <Faq />
+      <Testimonial />
+      <Swap />
+      <hr className={classes.line} />
+      <Contact />
+      <Rights />
     </div>
   );
 }

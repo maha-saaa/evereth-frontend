@@ -16,6 +16,10 @@ const useStyles = createUseStyles({
     alignItems: "center",
     justifyContent: "space-between",
     marginTop: 116,
+    padding: {
+      right: 40,
+      left: 40,
+    },
   },
   info: {
     display: "flex",
@@ -85,6 +89,7 @@ const useStyles = createUseStyles({
         bottom: 22,
       },
       "& span": {
+        opacity: 0.3,
         margin: {
           left: 11,
           right: 11,
@@ -94,7 +99,8 @@ const useStyles = createUseStyles({
   },
   line: {
     flex: 1,
-    color: "gray",
+    color: colors.gray,
+    opacity: 0.3,
   },
   image: {
     display: "flex",

@@ -10,6 +10,10 @@ const useStyles = createUseStyles({
     flexDirection: "column",
     alignItems: "center",
     marginTop: 211,
+    padding: {
+      right: 40,
+      left: 40,
+    },
   },
   title: {
     display: "flex",

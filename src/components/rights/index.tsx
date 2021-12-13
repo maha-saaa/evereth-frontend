@@ -1,0 +1,55 @@
+import React, { useState } from "react";
+import { createUseStyles } from "react-jss";
+import colors from "../../assets/colors";
+
+const useStyles = createUseStyles({
+  container: {
+    display: "flex",
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    marginTop: 40,
+    padding: {
+      right: 40,
+      left: 40,
+    },
+  },
+  title: {
+    fontSize: 48,
+    fontWeight: 600,
+    color: colors.white,
+    marginBottom: 89,
+  },
+  rights: {
+    color: colors.lightGray,
+    fontSize: 16,
+    marginBottom: 20,
+  },
+});
+
+function Rights() {
+  const classes = useStyles();
+
+  return (
+    <section className={classes.container}>
+      <span className={classes.rights}>Cryptolly ©. All rights reserved.</span>
+      <div>
+        <a href="./" className={classes.rights} style={{ marginRight: 10 }}>
+          Term of Service
+        </a>
+        <a
+          href="./"
+          className={classes.rights}
+          style={{
+            borderLeft: "1px solid rgba(52, 56, 76, 1)",
+            paddingLeft: 10,
+          }}
+        >
+          Privacy Policy
+        </a>
+      </div>
+    </section>
+  );
+}
+
+export default Rights;
