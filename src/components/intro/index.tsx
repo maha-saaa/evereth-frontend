@@ -39,37 +39,88 @@ const useStyles = createUseStyles({
   },
   action: {
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "column",
     color: colors.white,
-    alignItems: "center",
     margin: {
       top: 45,
     },
-    "& div:nth-child(1)": {
+    flex: 1,
+  },
+  prices: {
+    display: "flex",
+    flex: 1,
+    flexDirection: "column",
+    boxSizing: "border-box",
+    backgroundColor: colors.grayWithOpacity,
+    // width: "44vw",
+    height: 317,
+    borderRadius: 20,
+    padding: 24,
+  },
+  priceFirstRow: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 24,
+  },
+  priceSecondRow: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    "& div": {
       display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      backgroundColor: colors.purple,
-      borderRadius: 100,
-      width: "20vw",
-      height: 65,
-      // padding: {
-      //   top: 18,
-      //   right: 40,
-      //   bottom: 18,
-      //   left: 40,
-      // },
-      margin: { right: 10 },
+      flexDirection: "column",
+      marginRight: 40,
+      "& span:nth-child(1)": {
+        fontSize: 26,
+        fontWeight: 500,
+      },
+      "& span:nth-child(2)": {
+        fontSize: 14,
+        fontWeight: 600,
+        color: colors.lighterGray,
+        marginTop: 8,
+      },
     },
-    "& div:nth-child(2)": {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      border: "1px solid white",
-      borderRadius: 100,
-      width: "12vw",
-      height: 65,
+  },
+  first: {
+    display: "flex",
+    flex: 1,
+    flexDirection: "column",
+    "& div #n1": {
+      fontSize: 32,
+      color: colors.white,
     },
+    "& div #n2": {
+      fontSize: 14,
+      color: colors.lightergreen,
+      marginLeft: 8,
+    },
+  },
+  firstTitle: {
+    fontSize: 14,
+    color: colors.lighterGray,
+    marginBottom: 8,
+  },
+  second: {
+    backgroundColor: colors.purple,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 10,
+    borderRadius: 40,
+    width: "10vw",
+  },
+  dashboard: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    border: "1px solid white",
+    borderRadius: 100,
+    // width: "12vw",
+    height: 65,
+    marginTop: 20,
   },
   featured: {
     display: "flex",
@@ -123,11 +174,36 @@ function Intro() {
         </span>
 
         <div className={classes.action}>
-          <div>
-            <span>Buy on EverETH Swap</span>
+          <div className={classes.prices}>
+            <div className={classes.priceFirstRow}>
+              <div className={classes.first}>
+                <span className={classes.firstTitle}>WILD PRICE</span>
+                <div>
+                  <span id="n1">$4.211</span>
+                  <span id="n2">3.74%</span>
+                </div>
+              </div>
+              <div className={classes.second}>
+                <span>BUY</span>
+              </div>
+            </div>
+            <div className={classes.priceSecondRow}>
+              <div>
+                <span>$210.2M</span>
+                <span>MKT. CAP</span>
+              </div>
+              <div>
+                <span>$12.7M</span>
+                <span>24H VOLUME</span>
+              </div>
+              <div>
+                <span>$7.99K</span>
+                <span>HOLDERS</span>
+              </div>
+            </div>
           </div>
-          <div>
-            <span>Dashboard</span>
+          <div className={classes.dashboard}>
+            <span>Go to Dashboard</span>
           </div>
         </div>
 

@@ -218,7 +218,7 @@ function Roadmap() {
       <section className={classes.title}>
         <span>Road Map</span>
         <span>
-          {` Soon, we have another exciting news for our\n investors that we will
+          {`Soon, we have another exciting news for our\n investors that we will
           launch our own swap like pancake swap called EverETH.`}
         </span>
       </section>

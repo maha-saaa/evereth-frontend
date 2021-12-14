@@ -21,6 +21,9 @@ const useStyles = createUseStyles({
       right: 40,
       left: 40,
     },
+    "@media screen and (max-width: 600px)": {
+      flexDirection: "column",
+    },
   },
   col: {
     display: "flex",
