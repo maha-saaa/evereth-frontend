@@ -13,8 +13,14 @@ const useStyles = createUseStyles({
     alignItems: "center",
     marginTop: 211,
     padding: {
-      right: 40,
-      left: 40,
+      right: 183,
+      left: 183,
+    },
+    "@media screen and (max-width: 600px)": {
+      padding: {
+        right: 16,
+        left: 16,
+      },
     },
   },
   title: {
@@ -32,6 +38,8 @@ const useStyles = createUseStyles({
       },
       fontSize: 48,
       marginBottom: 13,
+      whiteSpace: "pre-line",
+      textAlign: "center"
     },
     "& span:nth-child(2)": {
       fontSize: 18,
@@ -124,7 +132,7 @@ function Features() {
   return (
     <section id="section-features" className={classes.container}>
       <section className={classes.title}>
-        <span>FULLY DECENTRELASIED ECOSYSTEM</span>
+        <span>{`FULLY DECENTRELASIED\n ECOSYSTEM`}</span>
         <span>No smart contract ownership.</span>
       </section>
 
@@ -132,11 +140,7 @@ function Features() {
         {data.map((temp) => (
           <div className={classes.card} key={temp.key}>
             <div className={classes.cardIcon}>
-              <img
-                src={temp.iconName}
-                alt={temp.iconName}
-                // style={{ width: "10vw", height: 31 }}
-              />
+              <img src={temp.iconName} alt={temp.iconName} />
             </div>
 
             <span className={classes.cardName}>{temp.name}</span>

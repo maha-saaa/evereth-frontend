@@ -11,8 +11,14 @@ const useStyles = createUseStyles({
     alignItems: "center",
     marginTop: 211,
     padding: {
-      right: 40,
-      left: 40,
+      right: 183,
+      left: 183,
+    },
+    "@media screen and (max-width: 600px)": {
+      padding: {
+        right: 16,
+        left: 16,
+      },
     },
   },
   title: {
@@ -46,6 +52,7 @@ const useStyles = createUseStyles({
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
+    marginLeft: 60,
     "& div:nth-child(1)": {
       "& div #number": {
         fontSize: 82,

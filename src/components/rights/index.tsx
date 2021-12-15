@@ -10,8 +10,14 @@ const useStyles = createUseStyles({
     justifyContent: "space-around",
     marginTop: 40,
     padding: {
-      right: 40,
-      left: 40,
+      right: 183,
+      left: 183,
+    },
+    "@media screen and (max-width: 600px)": {
+      padding: {
+        right: 16,
+        left: 16,
+      },
     },
   },
   title: {

@@ -1,6 +1,7 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
 import colors from "../../assets/colors";
+import arrowRight from "../../assets/images/arrow-right.svg";
 
 const useStyles = createUseStyles({
   container: {
@@ -11,8 +12,14 @@ const useStyles = createUseStyles({
     justifyContent: "space-between",
     marginTop: 116,
     padding: {
-      right: 40,
-      left: 40,
+      right: 183,
+      left: 183,
+    },
+    "@media screen and (max-width: 600px)": {
+      padding: {
+        right: 16,
+        left: 16,
+      },
     },
   },
   info: {
@@ -44,6 +51,9 @@ const useStyles = createUseStyles({
       top: 45,
     },
     color: colors.white,
+    "& span": {
+      marginRight: 8,
+    },
   },
   image: {
     display: "flex",
@@ -64,6 +74,7 @@ function Swap() {
 
         <div className={classes.action}>
           <span>Let's get Started</span>
+          <img src={arrowRight} alt=">" />
         </div>
       </section>
 

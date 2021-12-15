@@ -14,14 +14,21 @@ const useStyles = createUseStyles({
     justifyContent: "space-between",
     marginTop: 211,
     padding: {
-      right: 40,
-      left: 40,
+      right: 183,
+      left: 183,
+    },
+    "@media screen and (max-width: 600px)": {
+      padding: {
+        right: 16,
+        left: 16,
+      },
     },
   },
   info: {
     display: "flex",
     flex: 1,
     flexDirection: "column",
+    minWidth: 340,
   },
   title: {
     color: colors.white,
@@ -40,6 +47,10 @@ const useStyles = createUseStyles({
     color: colors.white,
     justifyContent: "space-between",
     marginTop: 93,
+    "@media screen and (max-width: 600px)": {
+      flexDirection: "column",
+      justifyItems: "center"
+    },
     "& div": {
       display: "flex",
       flexDirection: "column",
@@ -58,6 +69,9 @@ const useStyles = createUseStyles({
     display: "flex",
     flex: 1,
     justifyContent: "center",
+    "@media screen and (max-width: 600px)": {
+      display: "none",
+    },
   },
 });
 
@@ -69,8 +83,8 @@ const data = [
 
 function About() {
   const classes = useStyles();
-  function onChange (isVisible: boolean) {
-    console.log('Element is now %s', isVisible ? 'visible' : 'hidden');
+  function onChange(isVisible: boolean) {
+    console.log("Element is now %s", isVisible ? "visible" : "hidden");
   }
   return (
     <VisibilitySensor onChange={onChange}>

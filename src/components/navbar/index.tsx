@@ -12,11 +12,17 @@ const useStyles = createUseStyles({
     alignItems: "center",
     justifyContent: "space-between",
     padding: {
-      right: 40,
-      left: 40,
+      right: 183,
+      left: 183,
+    },
+    "@media screen and (max-width: 600px)": {
+      padding: {
+        right: 16,
+        left: 16,
+      },
     },
     position: "sticky",
-    top: 0
+    top: 0,
   },
   logo: {
     display: "flex",

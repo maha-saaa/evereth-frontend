@@ -7,6 +7,7 @@ import coinGecko from "../../assets/images/coinGecko.svg";
 import bloomberg from "../../assets/images/bloomberg.svg";
 import yahoo from "../../assets/images/yahoo.svg";
 import benzinga from "../../assets/images/benzinga.svg";
+import arrowRight from "../../assets/images/arrow-right.svg";
 
 const useStyles = createUseStyles({
   container: {
@@ -17,14 +18,23 @@ const useStyles = createUseStyles({
     justifyContent: "space-between",
     marginTop: 116,
     padding: {
-      right: 40,
-      left: 40,
+      right: 183,
+      left: 183,
+    },
+    "@media screen and (max-width: 600px)": {
+      padding: {
+        right: 16,
+        left: 16,
+      },
     },
   },
   info: {
     display: "flex",
     flex: 1,
     flexDirection: "column",
+    "@media screen and (max-width: 600px)": {
+      minWidth: 288,
+    },
   },
   title: {
     color: colors.white,
@@ -111,6 +121,11 @@ const useStyles = createUseStyles({
     padding: 10,
     borderRadius: 40,
     width: "10vw",
+    "& span": {
+      fontSize: 18,
+      fontWeight: 700,
+      marginRight: 8,
+    },
   },
   dashboard: {
     display: "flex",
@@ -157,6 +172,9 @@ const useStyles = createUseStyles({
     display: "flex",
     flex: 1,
     justifyContent: "center",
+    "@media screen and (max-width: 600px)": {
+      display: "none",
+    },
   },
 });
 
@@ -185,6 +203,7 @@ function Intro() {
               </div>
               <div className={classes.second}>
                 <span>BUY</span>
+                <img src={arrowRight} alt=">" />
               </div>
             </div>
             <div className={classes.priceSecondRow}>

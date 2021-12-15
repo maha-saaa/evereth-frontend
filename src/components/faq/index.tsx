@@ -12,8 +12,14 @@ const useStyles = createUseStyles({
     alignItems: "center",
     marginTop: 211,
     padding: {
-      right: 40,
-      left: 40,
+      right: 183,
+      left: 183,
+    },
+    "@media screen and (max-width: 600px)": {
+      padding: {
+        right: 16,
+        left: 16,
+      },
     },
   },
   title: {
@@ -138,6 +144,7 @@ function Faq() {
     });
     setQuestions(arr);
   };
+
   return (
     <section id="section-faq" className={classes.container}>
       <section className={classes.title}>

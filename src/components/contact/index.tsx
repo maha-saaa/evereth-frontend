@@ -18,10 +18,14 @@ const useStyles = createUseStyles({
     marginTop: 116,
     color: colors.white,
     padding: {
-      right: 40,
-      left: 40,
+      right: 183,
+      left: 183,
     },
     "@media screen and (max-width: 600px)": {
+      padding: {
+        right: 16,
+        left: 16,
+      },
       flexDirection: "column",
     },
   },
@@ -105,7 +109,11 @@ function Contact() {
             alt="linkedin"
             style={{ width: 20, height: 20, marginRight: 40 }}
           />
-          <a href="https://www.facebook.com/EverETHofficial" target="_blank">
+          <a
+            href="https://www.facebook.com/EverETHofficial"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img
               src={facebook}
               alt="facebook"
