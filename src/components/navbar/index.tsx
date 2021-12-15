@@ -58,6 +58,7 @@ const useStyles = createUseStyles({
     display: "flex",
     flex: 1,
     justifyContent: "flex-end",
+    cursor: "pointer",
     "& div": {
       backgroundColor: colors.purple,
       padding: {
@@ -100,7 +101,7 @@ function Navbar() {
     <section className={classes.container}>
       <section className={classes.logo}>
         <img src={logo} alt="logo" style={{ width: 47, height: 47 }} />
-        <span>EverEth</span>
+        <span>EverETH</span>
       </section>
 
       <section className={classes.menu}>
@@ -124,7 +125,7 @@ function Navbar() {
 
       <section className={classes.button}>
         <div>
-          <span>EverEth.app</span>
+          <span>EverETH.app</span>
         </div>
       </section>
     </section>

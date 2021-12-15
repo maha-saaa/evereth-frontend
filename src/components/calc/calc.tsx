@@ -76,7 +76,7 @@ function Calc() {
     >
       <section className={classes.container}>
         <animated.section className={classes.info} style={animation}>
-          <span>Why EverEth?</span>
+          <span>Why EverETH?</span>
           <span>{`Planet.People.\nProfit.`}</span>
           <span>
             Unlike mining EverETH is programmed to strive on providing investors

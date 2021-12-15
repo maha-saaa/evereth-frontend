@@ -58,18 +58,21 @@ const useStyles = createUseStyles({
     "& div:nth-child(1)": {
       "& div #number": {
         fontSize: 82,
+        fontWeight: 200,
         color: colors.orange,
       },
     },
     "& div:nth-child(2)": {
       "& div #number": {
         fontSize: 82,
+        fontWeight: 200,
         color: colors.green,
       },
     },
     "& div:nth-child(3)": {
       "& div #number": {
         fontSize: 82,
+        fontWeight: 200,
         color: colors.pink,
       },
     },
@@ -233,10 +236,15 @@ function Roadmap() {
     transform: isVisible ? "translateY(0px)" : "translateY(80px)",
   });
 
+  const animationText = useSpring({
+    opacity: isVisible ? 1 : 0,
+    transform: isVisible ? "translateY(0px)" : "translateY(80px)",
+  });
+
   return (
     <VisibilitySensor onChange={onChange} resizeThrottle={1}>
       <section id="section-roadmap" className={classes.container}>
-        <animated.section className={classes.title} style={animation}>
+        <animated.section className={classes.title} style={animationText}>
           <span>Road Map</span>
           <span>
             {`Soon, we have another exciting news for our\n investors that we will

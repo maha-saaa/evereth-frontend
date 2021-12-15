@@ -1,5 +1,6 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
+import Typist from "react-typist";
 import colors from "../../assets/colors";
 import binance from "../../assets/images/binance.svg";
 import coinMarket from "../../assets/images/coinMarket.svg";
@@ -121,6 +122,7 @@ const useStyles = createUseStyles({
     padding: 10,
     borderRadius: 40,
     width: "10vw",
+    cursor: "pointer",
     "& span": {
       fontSize: 18,
       fontWeight: 700,
@@ -136,6 +138,7 @@ const useStyles = createUseStyles({
     // width: "12vw",
     height: 65,
     marginTop: 20,
+    cursor: "pointer",
   },
   featured: {
     display: "flex",
@@ -183,9 +186,10 @@ function Intro() {
   return (
     <section className={classes.container}>
       <section className={classes.info}>
-        <span className={classes.title}>Hold EverEth</span>
-        <span className={classes.title}>Earn</span>
-        <span className={classes.title}>Ethereum</span>
+        <span className={classes.title}>Hold EverETH</span>
+        <Typist>
+          <span className={classes.title}>Earn Ethereum</span>
+        </Typist>
         <span className={classes.desc}>
           The fastest and easiest way to earn Ethereum in a fully decentralised
           ecosystem.
@@ -269,7 +273,11 @@ function Intro() {
         </div>
       </section>
 
-      <section className={classes.image}></section>
+      <section className={classes.image}>
+        <video autoPlay loop muted>
+          <source src={"./EverETHLogo.mov"} type="video/mp4/" />
+        </video>
+      </section>
     </section>
   );
 }

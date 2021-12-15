@@ -76,6 +76,7 @@ const useStyles = createUseStyles({
     width: "20vw",
     height: 65,
     marginBottom: 24,
+    cursor: "pointer",
     "& div": {
       display: "flex",
       flexDirection: "column",
@@ -100,7 +101,7 @@ function Contact() {
       <section className={classes.col}>
         <div className={classes.logo}>
           <img src={logo} alt="logo" style={{ width: 47, height: 47 }} />
-          <span>EverEth</span>
+          <span>EverETH</span>
         </div>
         <span>Your best crypto partner.</span>
         <div className={classes.social}>

@@ -141,6 +141,11 @@ function Faq() {
     transform: isVisible ? "translateY(0px)" : "translateY(80px)",
   });
 
+  const animationText = useSpring({
+    opacity: isVisible ? 1 : 0,
+    transform: isVisible ? "translateY(0px)" : "translateY(80px)",
+  });
+
   const onClickQuestion = (key: number) => {
     const arr = questions.map((temp) => {
       if (temp.key === key) {
@@ -160,16 +165,16 @@ function Faq() {
   return (
     <VisibilitySensor onChange={onChange} resizeThrottle={1}>
       <section id="section-faq" className={classes.container}>
-        <animated.section className={classes.title} style={animation}>
+        <animated.section className={classes.title} style={animationText}>
           <span>FAQ</span>
           <span>
-            Below we’ve provided a bit of EverEth Token, cryptocurrencies, and
+            Below we’ve provided a bit of EverETH Token, cryptocurrencies, and
             few others. If you have any other questions, please get in touch
             using the contact form below.
           </span>
         </animated.section>
 
-        <section className={classes.questions}>
+        <animated.section className={classes.questions} style={animation}>
           {questions?.map((temp) => (
             <div
               className={classes.qRow}
@@ -189,7 +194,7 @@ function Faq() {
               </div>
             </div>
           ))}
-        </section>
+        </animated.section>
       </section>
     </VisibilitySensor>
   );

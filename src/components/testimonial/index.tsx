@@ -110,12 +110,14 @@ const useStyles = createUseStyles({
     borderRadius: 50,
     border: "1px solid white",
     marginRight: 16,
+    cursor: "pointer",
   },
   next: {
     width: 57,
     height: 57,
     borderRadius: 50,
     border: "1px solid white",
+    cursor: "pointer",
   },
 });
 
@@ -152,6 +154,11 @@ function Testimonial() {
     transform: isVisible ? "translateY(0px)" : "translateY(80px)",
   });
 
+  const animationText = useSpring({
+    opacity: isVisible ? 1 : 0,
+    transform: isVisible ? "translateY(0px)" : "translateY(80px)",
+  });
+
   const onPagination = (btn: number) => {
     setPagingStatus(btn);
     if (btn === 0) {
@@ -170,11 +177,11 @@ function Testimonial() {
   return (
     <VisibilitySensor onChange={onChange} resizeThrottle={1}>
       <section id="section-testimonial" className={classes.container}>
-        <animated.section className={classes.title} style={animation}>
+        <animated.section className={classes.title} style={animationText}>
           <span>Testimonial</span>
         </animated.section>
 
-        <section className={classes.carousel}>
+        <animated.section className={classes.carousel} style={animation}>
           <div className={classes.card}>
             <div className={classes.userInfo}>
               <div className={classes.avatar} />
@@ -209,7 +216,7 @@ function Testimonial() {
               />
             </div>
           </div>
-        </section>
+        </animated.section>
       </section>
     </VisibilitySensor>
   );

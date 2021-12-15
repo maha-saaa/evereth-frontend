@@ -51,6 +51,7 @@ const useStyles = createUseStyles({
       top: 45,
     },
     color: colors.white,
+    cursor: "pointer",
     "& span": {
       marginRight: 8,
     },
@@ -70,7 +71,7 @@ function Swap() {
         <span className={classes.title}>
           {`Manage your dividends\n in one Place`}
         </span>
-        <span className={classes.desc}>EverEth Swap is Coming soon</span>
+        <span className={classes.desc}>EverETH Swap is Coming soon</span>
 
         <div className={classes.action}>
           <span>Let's get Started</span>
