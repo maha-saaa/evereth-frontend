@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { createUseStyles } from "react-jss";
+import VisibilitySensor from "react-visibility-sensor";
+import { useSpring, animated } from "react-spring";
 import colors from "../../assets/colors";
 
 const useStyles = createUseStyles({
@@ -56,24 +58,40 @@ const useStyles = createUseStyles({
 
 function Calc() {
   const classes = useStyles();
-  return (
-    <section className={classes.container}>
-      <section className={classes.info}>
-        <span>Why EverEth?</span>
-        <span>{`Planet.People.\nProfit.`}</span>
-        <span>
-          Unlike mining EverETH is programmed to strive on providing investors
-          the ability to earn ethereum, without damaging the enviroment or
-          theirt wallets.
-        </span>
-        <span>
-          Become a part of the Everth family today, and earn Ethereum passively
-          for the rest of your life.
-        </span>
-      </section>
+  const [isVisible, setVisibility] = useState(false);
 
-      <section className={classes.calculator}></section>
-    </section>
+  const onChange = (isVisible: boolean) => {
+    setVisibility(isVisible);
+  };
+
+  const animation = useSpring({
+    opacity: isVisible ? 1 : 0.1,
+    transform: isVisible ? "translateY(0px)" : "translateY(80px)",
+  });
+
+  return (
+    <VisibilitySensor
+      onChange={onChange}
+      resizeThrottle={1}
+    >
+      <section className={classes.container}>
+        <animated.section className={classes.info} style={animation}>
+          <span>Why EverEth?</span>
+          <span>{`Planet.People.\nProfit.`}</span>
+          <span>
+            Unlike mining EverETH is programmed to strive on providing investors
+            the ability to earn ethereum, without damaging the enviroment or
+            theirt wallets.
+          </span>
+          <span>
+            Become a part of the Everth family today, and earn Ethereum
+            passively for the rest of your life.
+          </span>
+        </animated.section>
+
+        <section className={classes.calculator}></section>
+      </section>
+    </VisibilitySensor>
   );
 }
 

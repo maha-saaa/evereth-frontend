@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { createUseStyles } from "react-jss";
+import VisibilitySensor from "react-visibility-sensor";
+import { useSpring, animated } from "react-spring";
 import colors from "../../assets/colors";
 import world from "../../assets/images/world.svg";
-import VisibilitySensor from "react-visibility-sensor";
 
 const useStyles = createUseStyles({
   container: {
@@ -49,7 +50,7 @@ const useStyles = createUseStyles({
     marginTop: 93,
     "@media screen and (max-width: 600px)": {
       flexDirection: "column",
-      justifyItems: "center"
+      justifyItems: "center",
     },
     "& div": {
       display: "flex",
@@ -83,13 +84,26 @@ const data = [
 
 function About() {
   const classes = useStyles();
-  function onChange(isVisible: boolean) {
-    console.log("Element is now %s", isVisible ? "visible" : "hidden");
-  }
+  const [isVisible, setVisibility] = useState(false);
+
+  const onChange = (isVisible: boolean) => {
+    setVisibility(isVisible);
+  };
+
+  const animation = useSpring({
+    opacity: isVisible ? 1 : 0.1,
+    transform: isVisible ? "translateY(0px)" : "translateY(80px)",
+  });
+
   return (
-    <VisibilitySensor onChange={onChange}>
+    <VisibilitySensor
+      onChange={onChange}
+      // scrollThrottle={100}
+      // scrollCheck={true}
+      resizeThrottle={1}
+    >
       <section id="section-about" className={classes.container}>
-        <section className={classes.info}>
+        <animated.section className={classes.info} style={animation}>
           <span className={classes.title}>Worldwide devidend</span>
           <span className={classes.title}>payments in</span>
           <span className={classes.title}>Ethereum</span>
@@ -107,11 +121,11 @@ function About() {
               </div>
             ))}
           </div>
-        </section>
+        </animated.section>
 
-        <section className={classes.image}>
+        <animated.section className={classes.image} style={animation}>
           <img src={world} alt="world" style={{ width: "50vw", height: 439 }} />
-        </section>
+        </animated.section>
       </section>
     </VisibilitySensor>
   );

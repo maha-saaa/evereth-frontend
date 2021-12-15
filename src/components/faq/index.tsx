@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { createUseStyles } from "react-jss";
+import VisibilitySensor from "react-visibility-sensor";
+import { useSpring, animated } from "react-spring";
 import colors from "../../assets/colors";
 import plus from "../../assets/images/plus.svg";
 import minus from "../../assets/images/minus.svg";
@@ -128,6 +130,16 @@ const data = [
 function Faq() {
   const classes = useStyles();
   const [questions, setQuestions] = useState(data);
+  const [isVisible, setVisibility] = useState(false);
+
+  const onChange = (isVisible: boolean) => {
+    setVisibility(isVisible);
+  };
+
+  const animation = useSpring({
+    opacity: isVisible ? 1 : 0.1,
+    transform: isVisible ? "translateY(0px)" : "translateY(80px)",
+  });
 
   const onClickQuestion = (key: number) => {
     const arr = questions.map((temp) => {
@@ -146,38 +158,40 @@ function Faq() {
   };
 
   return (
-    <section id="section-faq" className={classes.container}>
-      <section className={classes.title}>
-        <span>FAQ</span>
-        <span>
-          Below we’ve provided a bit of EverEth Token, cryptocurrencies, and few
-          others. If you have any other questions, please get in touch using the
-          contact form below.
-        </span>
-      </section>
+    <VisibilitySensor onChange={onChange} resizeThrottle={1}>
+      <section id="section-faq" className={classes.container}>
+        <animated.section className={classes.title} style={animation}>
+          <span>FAQ</span>
+          <span>
+            Below we’ve provided a bit of EverEth Token, cryptocurrencies, and
+            few others. If you have any other questions, please get in touch
+            using the contact form below.
+          </span>
+        </animated.section>
 
-      <section className={classes.questions}>
-        {questions?.map((temp) => (
-          <div
-            className={classes.qRow}
-            onClick={() => onClickQuestion(temp.key)}
-          >
-            <div>
-              <img
-                src={temp.isOpen ? minus : plus}
-                alt={temp.isOpen ? "-" : "+"}
-              />
+        <section className={classes.questions}>
+          {questions?.map((temp) => (
+            <div
+              className={classes.qRow}
+              onClick={() => onClickQuestion(temp.key)}
+            >
+              <div>
+                <img
+                  src={temp.isOpen ? minus : plus}
+                  alt={temp.isOpen ? "-" : "+"}
+                />
+              </div>
+              <div>
+                <span className={classes.question}>{temp.question}</span>
+                {temp.isOpen ? (
+                  <span className={classes.answer}>{temp.answer}</span>
+                ) : null}
+              </div>
             </div>
-            <div>
-              <span className={classes.question}>{temp.question}</span>
-              {temp.isOpen ? (
-                <span className={classes.answer}>{temp.answer}</span>
-              ) : null}
-            </div>
-          </div>
-        ))}
+          ))}
+        </section>
       </section>
-    </section>
+    </VisibilitySensor>
   );
 }
 

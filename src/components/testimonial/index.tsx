@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { createUseStyles } from "react-jss";
+import VisibilitySensor from "react-visibility-sensor";
+import { useSpring, animated } from "react-spring";
 import colors from "../../assets/colors";
 
 const useStyles = createUseStyles({
@@ -139,6 +141,16 @@ function Testimonial() {
   const [user, setUser] = useState(data[0]);
   const [userIndex, setuserIndex] = useState(0);
   const [pagingStatus, setPagingStatus] = useState(1);
+  const [isVisible, setVisibility] = useState(false);
+
+  const onChange = (isVisible: boolean) => {
+    setVisibility(isVisible);
+  };
+
+  const animation = useSpring({
+    opacity: isVisible ? 1 : 0.1,
+    transform: isVisible ? "translateY(0px)" : "translateY(80px)",
+  });
 
   const onPagination = (btn: number) => {
     setPagingStatus(btn);
@@ -156,48 +168,50 @@ function Testimonial() {
   };
 
   return (
-    <section id="section-testimonial" className={classes.container}>
-      <section className={classes.title}>
-        <span>Testimonial</span>
-      </section>
+    <VisibilitySensor onChange={onChange} resizeThrottle={1}>
+      <section id="section-testimonial" className={classes.container}>
+        <animated.section className={classes.title} style={animation}>
+          <span>Testimonial</span>
+        </animated.section>
 
-      <section className={classes.carousel}>
-        <div className={classes.card}>
-          <div className={classes.userInfo}>
-            <div className={classes.avatar} />
-            <div className={classes.info}>
-              <span>{user.userName}</span>
-              <span>{user.job}</span>
+        <section className={classes.carousel}>
+          <div className={classes.card}>
+            <div className={classes.userInfo}>
+              <div className={classes.avatar} />
+              <div className={classes.info}>
+                <span>{user.userName}</span>
+                <span>{user.job}</span>
+              </div>
+            </div>
+            <span className={classes.desc}>{user.desc}</span>
+          </div>
+          <div className={classes.paging}>
+            <div className={classes.userCount}>{`${userIndex + 1}/${
+              data.length
+            } People`}</div>
+            {/* <div>----</div> */}
+            <div className={classes.buttons}>
+              <div
+                className={classes.prev}
+                style={{
+                  backgroundColor:
+                    pagingStatus === 0 ? colors.white : colors.background,
+                }}
+                onClick={() => onPagination(0)}
+              />
+              <div
+                className={classes.next}
+                style={{
+                  backgroundColor:
+                    pagingStatus === 1 ? colors.white : colors.background,
+                }}
+                onClick={() => onPagination(1)}
+              />
             </div>
           </div>
-          <span className={classes.desc}>{user.desc}</span>
-        </div>
-        <div className={classes.paging}>
-          <div className={classes.userCount}>{`${userIndex + 1}/${
-            data.length
-          } People`}</div>
-          {/* <div>----</div> */}
-          <div className={classes.buttons}>
-            <div
-              className={classes.prev}
-              style={{
-                backgroundColor:
-                  pagingStatus === 0 ? colors.white : colors.background,
-              }}
-              onClick={() => onPagination(0)}
-            />
-            <div
-              className={classes.next}
-              style={{
-                backgroundColor:
-                  pagingStatus === 1 ? colors.white : colors.background,
-              }}
-              onClick={() => onPagination(1)}
-            />
-          </div>
-        </div>
+        </section>
       </section>
-    </section>
+    </VisibilitySensor>
   );
 }
 

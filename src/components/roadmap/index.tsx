@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { createUseStyles } from "react-jss";
+import VisibilitySensor from "react-visibility-sensor";
+import { useSpring, animated } from "react-spring";
 import colors from "../../assets/colors";
 import checkbox from "../../assets/images/TickSquare.svg";
 
@@ -220,39 +222,52 @@ const data = [
 
 function Roadmap() {
   const classes = useStyles();
-  return (
-    <section id="section-roadmap" className={classes.container}>
-      <section className={classes.title}>
-        <span>Road Map</span>
-        <span>
-          {`Soon, we have another exciting news for our\n investors that we will
-          launch our own swap like pancake swap called EverETH.`}
-        </span>
-      </section>
+  const [isVisible, setVisibility] = useState(false);
 
-      <section className={classes.steps}>
-        {data.map((temp) => (
-          <div className={classes.step} key={temp.key}>
-            <div className={classes.stepNumber}>
-              <span id="number">{temp.key}</span>
-            </div>
-            <span className={classes.stepName}>{temp.name}</span>
-            {temp?.list?.map((item) => (
-              <div className={classes.stepDesc} key={item.key}>
-                <span>{item.title}</span>
-                {item.checked ? (
-                  <img
-                    src={checkbox}
-                    alt="checkbox"
-                    style={{ width: 16, height: 16 }}
-                  />
-                ) : null}
+  const onChange = (isVisible: boolean) => {
+    setVisibility(isVisible);
+  };
+
+  const animation = useSpring({
+    opacity: isVisible ? 1 : 0.1,
+    transform: isVisible ? "translateY(0px)" : "translateY(80px)",
+  });
+
+  return (
+    <VisibilitySensor onChange={onChange} resizeThrottle={1}>
+      <section id="section-roadmap" className={classes.container}>
+        <animated.section className={classes.title} style={animation}>
+          <span>Road Map</span>
+          <span>
+            {`Soon, we have another exciting news for our\n investors that we will
+          launch our own swap like pancake swap called EverETH.`}
+          </span>
+        </animated.section>
+
+        <section className={classes.steps}>
+          {data.map((temp) => (
+            <div className={classes.step} key={temp.key}>
+              <div className={classes.stepNumber}>
+                <span id="number">{temp.key}</span>
               </div>
-            ))}
-          </div>
-        ))}
+              <span className={classes.stepName}>{temp.name}</span>
+              {temp?.list?.map((item) => (
+                <div className={classes.stepDesc} key={item.key}>
+                  <span>{item.title}</span>
+                  {item.checked ? (
+                    <img
+                      src={checkbox}
+                      alt="checkbox"
+                      style={{ width: 16, height: 16 }}
+                    />
+                  ) : null}
+                </div>
+              ))}
+            </div>
+          ))}
+        </section>
       </section>
-    </section>
+    </VisibilitySensor>
   );
 }
 

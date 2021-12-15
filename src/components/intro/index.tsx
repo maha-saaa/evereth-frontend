@@ -16,7 +16,7 @@ const useStyles = createUseStyles({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    marginTop: 116,
+    marginTop: 20,
     padding: {
       right: 183,
       left: 183,

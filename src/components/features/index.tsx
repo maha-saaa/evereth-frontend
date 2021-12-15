@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { createUseStyles } from "react-jss";
+import VisibilitySensor from "react-visibility-sensor";
+import { useSpring, animated } from "react-spring";
 import colors from "../../assets/colors";
 import graph from "../../assets/images/Graph.svg";
 import star from "../../assets/images/Star.svg";
@@ -39,7 +41,7 @@ const useStyles = createUseStyles({
       fontSize: 48,
       marginBottom: 13,
       whiteSpace: "pre-line",
-      textAlign: "center"
+      textAlign: "center",
     },
     "& span:nth-child(2)": {
       fontSize: 18,
@@ -129,27 +131,43 @@ const data = [
 
 function Features() {
   const classes = useStyles();
+  const [isVisible, setVisibility] = useState(false);
+
+  const onChange = (isVisible: boolean) => {
+    setVisibility(isVisible);
+  };
+
+  const animation = useSpring({
+    opacity: isVisible ? 1 : 0.1,
+    transform: isVisible ? "translateY(0px)" : "translateY(80px)",
+  });
+
   return (
-    <section id="section-features" className={classes.container}>
-      <section className={classes.title}>
-        <span>{`FULLY DECENTRELASIED\n ECOSYSTEM`}</span>
-        <span>No smart contract ownership.</span>
-      </section>
+    <VisibilitySensor
+      onChange={onChange}
+      resizeThrottle={1}
+    >
+      <section id="section-features" className={classes.container}>
+        <animated.section className={classes.title} style={animation}>
+          <span>{`FULLY DECENTRELASIED\n ECOSYSTEM`}</span>
+          <span>No smart contract ownership.</span>
+        </animated.section>
 
-      <section className={classes.features}>
-        {data.map((temp) => (
-          <div className={classes.card} key={temp.key}>
-            <div className={classes.cardIcon}>
-              <img src={temp.iconName} alt={temp.iconName} />
+        <section className={classes.features}>
+          {data.map((temp) => (
+            <div className={classes.card} key={temp.key}>
+              <div className={classes.cardIcon}>
+                <img src={temp.iconName} alt={temp.iconName} />
+              </div>
+
+              <span className={classes.cardName}>{temp.name}</span>
+
+              <span className={classes.cardDesc}>{temp.desc}</span>
             </div>
-
-            <span className={classes.cardName}>{temp.name}</span>
-
-            <span className={classes.cardDesc}>{temp.desc}</span>
-          </div>
-        ))}
+          ))}
+        </section>
       </section>
-    </section>
+    </VisibilitySensor>
   );
 }
 

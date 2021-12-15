@@ -21,8 +21,8 @@ const useStyles = createUseStyles({
         left: 16,
       },
     },
-    position: "sticky",
-    top: 0,
+    // position: "sticky",
+    // top: 0,
   },
   logo: {
     display: "flex",
