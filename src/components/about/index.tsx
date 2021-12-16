@@ -34,12 +34,19 @@ const useStyles = createUseStyles({
   title: {
     color: colors.white,
     fontSize: 48,
+    "@media screen and (max-width: 600px)": {
+      textAlign: "center",
+      fontSize: 32,
+    },
   },
   desc: {
     color: colors.text,
     fontSize: 18,
     margin: {
       top: 28,
+    },
+    "@media screen and (max-width: 600px)": {
+      textAlign: "center",
     },
   },
   count: {
@@ -51,12 +58,16 @@ const useStyles = createUseStyles({
     "@media screen and (max-width: 600px)": {
       flexDirection: "column",
       justifyItems: "center",
+      textAlign: "center",
     },
     "& div": {
       display: "flex",
       flexDirection: "column",
       flex: 1,
       marginRight: 72,
+      "@media screen and (max-width: 600px)": {
+        marginRight: 0,
+      },
       "& span:nth-child(1)": {
         fontsize: 48,
         marginBottom: 11,
@@ -87,17 +98,20 @@ function About() {
   const [isVisible, setVisibility] = useState(false);
 
   const onChange = (isVisible: boolean) => {
-    setVisibility(isVisible);
+    if (isVisible) {
+      setVisibility(isVisible);
+    }
   };
 
   const animation = useSpring({
-    opacity: isVisible ? 1 : 0.1,
+    opacity: isVisible ? 1 : 0,
     transform: isVisible ? "translateY(0px)" : "translateY(80px)",
   });
 
   return (
     <VisibilitySensor
       onChange={onChange}
+      partialVisibility
       // scrollThrottle={100}
       // scrollCheck={true}
       resizeThrottle={1}

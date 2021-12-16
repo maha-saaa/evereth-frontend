@@ -1,7 +1,7 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
 import colors from "../../assets/colors";
-import backgroundPattern from "../../assets/images/pattern.svg";
+import backgroundPattern from "../../assets/images/BG-Pattern.png";
 import Calc from "../../components/calc/calc";
 import Features from "../../components/features";
 import Intro from "../../components/intro";
@@ -11,7 +11,7 @@ import Roadmap from "../../components/roadmap";
 import Faq from "../../components/faq";
 import Testimonial from "../../components/testimonial";
 import Swap from "../../components/swap";
-import Contact from "../../components/contact";
+import Footer from "../../components/footer";
 import Rights from "../../components/rights";
 
 const useStyles = createUseStyles({
@@ -53,7 +53,7 @@ function Landing() {
       <Testimonial />
       <Swap />
       <hr className={classes.line} />
-      <Contact />
+      <Footer />
       <Rights />
     </div>
   );

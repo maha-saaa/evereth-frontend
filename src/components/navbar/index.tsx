@@ -127,7 +127,7 @@ function Navbar() {
       </section>
 
       <section className={classes.button}>
-        <a href={EVERETHAPP} target="_blank" rel="noreferrer">
+        <a href={EVERETHAPP} target="_blank" rel="noreferrer noopener">
           <span>EverETH.app</span>
         </a>
       </section>

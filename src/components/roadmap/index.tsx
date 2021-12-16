@@ -228,23 +228,20 @@ function Roadmap() {
   const [isVisible, setVisibility] = useState(false);
 
   const onChange = (isVisible: boolean) => {
-    setVisibility(isVisible);
+    if (isVisible) {
+      setVisibility(isVisible);
+    }
   };
 
-  // const animation = useSpring({
-  //   opacity: isVisible ? 1 : 0.1,
-  //   transform: isVisible ? "translateY(0px)" : "translateY(80px)",
-  // });
-
-  const animationText = useSpring({
+  const animation = useSpring({
     opacity: isVisible ? 1 : 0,
     transform: isVisible ? "translateY(0px)" : "translateY(80px)",
   });
 
   return (
-    <VisibilitySensor onChange={onChange} resizeThrottle={1}>
+    <VisibilitySensor onChange={onChange} resizeThrottle={1} partialVisibility>
       <section id="section-roadmap" className={classes.container}>
-        <animated.section className={classes.title} style={animationText}>
+        <animated.section className={classes.title} style={animation}>
           <span>Road Map</span>
           <span>
             {`Soon, we have another exciting news for our\n investors that we will
@@ -260,7 +257,11 @@ function Roadmap() {
               </div>
               <span className={classes.stepName}>{temp.name}</span>
               {temp?.list?.map((item) => (
-                <div className={classes.stepDesc} key={item.key}>
+                <animated.div
+                  className={classes.stepDesc}
+                  key={item.key}
+                  style={animation}
+                >
                   <span>{item.title}</span>
                   {item.checked ? (
                     <img
@@ -269,7 +270,7 @@ function Roadmap() {
                       style={{ width: 16, height: 16 }}
                     />
                   ) : null}
-                </div>
+                </animated.div>
               ))}
             </div>
           ))}

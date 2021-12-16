@@ -134,23 +134,20 @@ function Features() {
   const [isVisible, setVisibility] = useState(false);
 
   const onChange = (isVisible: boolean) => {
-    setVisibility(isVisible);
+    if (isVisible) {
+      setVisibility(isVisible);
+    }
   };
 
   const animation = useSpring({
-    opacity: isVisible ? 1 : 0.1,
-    transform: isVisible ? "translateY(0px)" : "translateY(80px)",
-  });
-
-  const animationText = useSpring({
     opacity: isVisible ? 1 : 0,
     transform: isVisible ? "translateY(0px)" : "translateY(80px)",
   });
 
   return (
-    <VisibilitySensor onChange={onChange} resizeThrottle={1}>
+    <VisibilitySensor onChange={onChange} resizeThrottle={1} partialVisibility>
       <section id="section-features" className={classes.container}>
-        <animated.section className={classes.title} style={animationText}>
+        <animated.section className={classes.title} style={animation}>
           <span>{`FULLY DECENTRELASIED\n ECOSYSTEM`}</span>
           <span>No smart contract ownership.</span>
         </animated.section>

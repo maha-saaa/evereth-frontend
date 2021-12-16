@@ -21,6 +21,7 @@ const useStyles = createUseStyles({
         right: 16,
         left: 16,
       },
+      flexDirection: "column",
     },
   },
   info: {
@@ -32,12 +33,18 @@ const useStyles = createUseStyles({
     color: colors.white,
     fontSize: 48,
     whiteSpace: "pre-line",
+    "@media screen and (max-width: 600px)": {
+      textAlign: "center",
+    },
   },
   desc: {
     color: colors.text,
     fontSize: 16,
     margin: {
       top: 28,
+    },
+    "@media screen and (max-width: 600px)": {
+      textAlign: "center",
     },
   },
   action: {
@@ -55,6 +62,10 @@ const useStyles = createUseStyles({
     textDecoration: "none",
     "& span": {
       marginRight: 8,
+    },
+    "@media screen and (max-width: 600px)": {
+      alignSelf: "center",
+      width: 237,
     },
   },
   image: {
@@ -78,7 +89,7 @@ function Swap() {
           className={classes.action}
           href={EVERETHAPP}
           target="_blank"
-          rel="noreferrer"
+          rel="noreferrer noopener"
         >
           <span>Let's get Started</span>
           <img src={arrowRight} alt=">" />

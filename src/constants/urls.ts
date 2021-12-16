@@ -1,7 +1,7 @@
 export const FACEBOOK = "https://www.facebook.com/EverETHofficial";
-export const TELEGRAM = "";
-export const DISCORD = "";
-export const TWITTER = "";
+export const TELEGRAM = "https://t.me/EverETHOfficial";
+export const DISCORD = "https://discord.gg/7fTrE99ebk";
+export const TWITTER = "https://www.twitter.com/everethofficial";
 export const EVERETHAPP = "https://evereth.app/";
 export const EVERETHSWAP = "https://swap.evereth.app/";
 export const BENZINGA =

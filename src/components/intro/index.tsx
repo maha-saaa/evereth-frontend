@@ -9,7 +9,9 @@ import bloomberg from "../../assets/images/bloomberg.svg";
 import yahoo from "../../assets/images/yahoo.svg";
 import benzinga from "../../assets/images/benzinga.svg";
 import arrowRight from "../../assets/images/arrow-right.svg";
-import EverETHLogo from "../../assets/images/EverETHLogo.mp4";
+import everLogo from "../../assets/images/ever-logo.svg";
+import ethLogo from "../../assets/images/eth-logo.svg";
+
 import {
   BENZINGA,
   BLOOMBERG,
@@ -23,7 +25,7 @@ const useStyles = createUseStyles({
     display: "flex",
     flex: 1,
     flexDirection: "row",
-    alignItems: "center",
+    // alignItems: "center",
     justifyContent: "space-between",
     marginTop: 20,
     padding: {
@@ -48,12 +50,19 @@ const useStyles = createUseStyles({
   title: {
     color: colors.white,
     fontSize: 72,
+    "@media screen and (max-width: 600px)": {
+      textAlign: "center",
+      fontSize: 48,
+    },
   },
   desc: {
     color: colors.text,
     fontSize: 18,
     margin: {
       top: 28,
+    },
+    "@media screen and (max-width: 600px)": {
+      textAlign: "center",
     },
   },
   action: {
@@ -189,6 +198,14 @@ const useStyles = createUseStyles({
     "@media screen and (max-width: 600px)": {
       display: "none",
     },
+    marginLeft: 100,
+    "& img:nth-child(1)": {
+      alignSelf: "flex-start",
+      marginRight: 8,
+    },
+    "& img:nth-child(2)": {
+      alignSelf: "center",
+    },
   },
 });
 
@@ -220,7 +237,7 @@ function Intro() {
                 className={classes.second}
                 href={EVERETHSWAP}
                 target="_blank"
-                rel="noreferrer"
+                rel="noreferrer noopener"
               >
                 <span>BUY</span>
                 <img src={arrowRight} alt=">" />
@@ -245,7 +262,7 @@ function Intro() {
             className={classes.dashboard}
             href={EVERETHAPP}
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
           >
             <span>Go to Dashboard</span>
           </a>
@@ -253,21 +270,21 @@ function Intro() {
 
         <div className={classes.featured}>
           <div>
-            <a href={EVERETHSWAP} target="_blank" rel="noreferrer">
+            <a href={EVERETHSWAP} target="_blank" rel="noreferrer noopener">
               <img
                 src={binance}
                 alt="Binance"
                 style={{ width: "10vw", height: 31, marginRight: 68 }}
               />
             </a>
-            <a href={EVERETHSWAP} target="_blank" rel="noreferrer">
+            <a href={EVERETHSWAP} target="_blank" rel="noreferrer noopener">
               <img
                 src={coinMarket}
                 alt="CoinMarketCap"
                 style={{ width: "14vw", height: 43, marginRight: 68 }}
               />
             </a>
-            <a href={EVERETHSWAP} target="_blank" rel="noreferrer">
+            <a href={EVERETHSWAP} target="_blank" rel="noreferrer noopener">
               <img
                 src={coinGecko}
                 alt="CoinGecko"
@@ -281,21 +298,21 @@ function Intro() {
             <hr className={classes.line} />
           </div>
           <div>
-            <a href={BLOOMBERG} target="_blank" rel="noreferrer">
+            <a href={BLOOMBERG} target="_blank" rel="noreferrer noopener">
               <img
                 src={bloomberg}
                 alt="Bloomberg"
                 style={{ width: "12vw", height: 33, marginRight: 68 }}
               />
             </a>
-            <a href={YAHOO} target="_blank" rel="noreferrer">
+            <a href={YAHOO} target="_blank" rel="noreferrer noopener">
               <img
                 src={yahoo}
                 alt="yahoo"
                 style={{ width: "7vw", height: 27, marginRight: 68 }}
               />
             </a>
-            <a href={BENZINGA} target="_blank" rel="noreferrer">
+            <a href={BENZINGA} target="_blank" rel="noreferrer noopener">
               <img
                 src={benzinga}
                 alt="Benzinga"
@@ -314,6 +331,8 @@ function Intro() {
             style={{ width: 50, height: 50 }}
           />
         </video> */}
+        <img src={everLogo} alt="everLogo" />
+        <img src={ethLogo} alt="ethLogo" />
       </section>
     </section>
   );

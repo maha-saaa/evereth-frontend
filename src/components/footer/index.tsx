@@ -2,12 +2,13 @@ import React from "react";
 import { createUseStyles } from "react-jss";
 import colors from "../../assets/colors";
 import logo from "../../assets/images/logo.png";
-import linkedin from "../../assets/images/linkedin.svg";
+import telegram from "../../assets/images/telegram.svg";
 import facebook from "../../assets/images/facebook.svg";
-import instagram from "../../assets/images/instagram.svg";
+import discord from "../../assets/images/discord.svg";
+import twitter from "../../assets/images/twitter.svg";
 import appStore from "../../assets/images/app-store.svg";
 import googlePlay from "../../assets/images/google-play.svg";
-import { FACEBOOK } from "../../constants/urls";
+import { DISCORD, FACEBOOK, TELEGRAM, TWITTER } from "../../constants/urls";
 
 const useStyles = createUseStyles({
   container: {
@@ -28,6 +29,7 @@ const useStyles = createUseStyles({
         left: 16,
       },
       flexDirection: "column",
+      alignItems: "center",
     },
   },
   col: {
@@ -92,9 +94,14 @@ const useStyles = createUseStyles({
       },
     },
   },
+  mobileCol: {
+    "@media screen and (max-width: 600px)": {
+      display: "none",
+    },
+  },
 });
 
-function Contact() {
+function Footer() {
   const classes = useStyles();
 
   return (
@@ -106,31 +113,38 @@ function Contact() {
         </div>
         <span>Your best crypto partner.</span>
         <div className={classes.social}>
-          <img
-            src={linkedin}
-            alt="linkedin"
-            style={{ width: 20, height: 20, marginRight: 40 }}
-          />
-          <a
-            href={FACEBOOK}
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href={FACEBOOK} target="_blank" rel="noreferrer noopener">
             <img
               src={facebook}
               alt="facebook"
               style={{ width: 20, height: 20, marginRight: 40 }}
             />
           </a>
-          <img
-            src={instagram}
-            alt="instagram"
-            style={{ width: 20, height: 20 }}
-          />
+          <a href={TELEGRAM} target="_blank" rel="noreferrer noopener">
+            <img
+              src={telegram}
+              alt="telegram"
+              style={{ width: 20, height: 20, marginRight: 40 }}
+            />
+          </a>
+          <a href={DISCORD} target="_blank" rel="noreferrer noopener">
+            <img
+              src={discord}
+              alt="discord"
+              style={{ width: 20, height: 20, marginRight: 40 }}
+            />
+          </a>
+          <a href={TWITTER} target="_blank" rel="noreferrer noopener">
+            <img
+              src={twitter}
+              alt="twitter"
+              style={{ width: 20, height: 20 }}
+            />
+          </a>
         </div>
       </section>
 
-      <section className={classes.col}>
+      <section className={[classes.col, classes.mobileCol].join(" ")}>
         <span>Quick Links</span>
         <div className={classes.links}>
           <div className={classes.col}>
@@ -144,7 +158,7 @@ function Contact() {
         </div>
       </section>
 
-      <section className={classes.col}>
+      <section className={[classes.col, classes.mobileCol].join(" ")}>
         <span style={{ marginBottom: 24 }}>Coming soon...</span>
         <div className={classes.downloadBtn}>
           <img src={appStore} alt="appStore" />
@@ -165,4 +179,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default Footer;
