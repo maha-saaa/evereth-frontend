@@ -3,6 +3,7 @@ import { createUseStyles } from "react-jss";
 import colors from "../../assets/colors";
 import logo from "../../assets/images/logo.png";
 import Scrollspy from "react-scrollspy";
+import { EVERETHAPP } from "../../constants/urls";
 
 const useStyles = createUseStyles({
   container: {
@@ -59,7 +60,7 @@ const useStyles = createUseStyles({
     flex: 1,
     justifyContent: "flex-end",
     cursor: "pointer",
-    "& div": {
+    "& a": {
       backgroundColor: colors.purple,
       padding: {
         top: 12,
@@ -68,6 +69,8 @@ const useStyles = createUseStyles({
         left: 24,
       },
       borderRadius: 100,
+      textDecoration: "none",
+      color: colors.white,
     },
   },
 });
@@ -124,9 +127,9 @@ function Navbar() {
       </section>
 
       <section className={classes.button}>
-        <div>
+        <a href={EVERETHAPP} target="_blank" rel="noreferrer">
           <span>EverETH.app</span>
-        </div>
+        </a>
       </section>
     </section>
   );

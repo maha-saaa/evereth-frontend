@@ -7,6 +7,7 @@ import facebook from "../../assets/images/facebook.svg";
 import instagram from "../../assets/images/instagram.svg";
 import appStore from "../../assets/images/app-store.svg";
 import googlePlay from "../../assets/images/google-play.svg";
+import { FACEBOOK } from "../../constants/urls";
 
 const useStyles = createUseStyles({
   container: {
@@ -111,7 +112,7 @@ function Contact() {
             style={{ width: 20, height: 20, marginRight: 40 }}
           />
           <a
-            href="https://www.facebook.com/EverETHofficial"
+            href={FACEBOOK}
             target="_blank"
             rel="noreferrer"
           >

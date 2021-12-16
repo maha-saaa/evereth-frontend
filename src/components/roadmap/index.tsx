@@ -231,10 +231,10 @@ function Roadmap() {
     setVisibility(isVisible);
   };
 
-  const animation = useSpring({
-    opacity: isVisible ? 1 : 0.1,
-    transform: isVisible ? "translateY(0px)" : "translateY(80px)",
-  });
+  // const animation = useSpring({
+  //   opacity: isVisible ? 1 : 0.1,
+  //   transform: isVisible ? "translateY(0px)" : "translateY(80px)",
+  // });
 
   const animationText = useSpring({
     opacity: isVisible ? 1 : 0,

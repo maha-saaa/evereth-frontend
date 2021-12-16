@@ -2,6 +2,7 @@ import React from "react";
 import { createUseStyles } from "react-jss";
 import colors from "../../assets/colors";
 import arrowRight from "../../assets/images/arrow-right.svg";
+import { EVERETHAPP } from "../../constants/urls";
 
 const useStyles = createUseStyles({
   container: {
@@ -51,7 +52,7 @@ const useStyles = createUseStyles({
       top: 45,
     },
     color: colors.white,
-    cursor: "pointer",
+    textDecoration: "none",
     "& span": {
       marginRight: 8,
     },
@@ -73,10 +74,15 @@ function Swap() {
         </span>
         <span className={classes.desc}>EverETH Swap is Coming soon</span>
 
-        <div className={classes.action}>
+        <a
+          className={classes.action}
+          href={EVERETHAPP}
+          target="_blank"
+          rel="noreferrer"
+        >
           <span>Let's get Started</span>
           <img src={arrowRight} alt=">" />
-        </div>
+        </a>
       </section>
 
       <section className={classes.image}></section>

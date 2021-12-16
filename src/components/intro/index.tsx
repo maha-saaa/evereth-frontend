@@ -9,6 +9,14 @@ import bloomberg from "../../assets/images/bloomberg.svg";
 import yahoo from "../../assets/images/yahoo.svg";
 import benzinga from "../../assets/images/benzinga.svg";
 import arrowRight from "../../assets/images/arrow-right.svg";
+import EverETHLogo from "../../assets/images/EverETHLogo.mp4";
+import {
+  BENZINGA,
+  BLOOMBERG,
+  EVERETHAPP,
+  EVERETHSWAP,
+  YAHOO,
+} from "../../constants/urls";
 
 const useStyles = createUseStyles({
   container: {
@@ -122,7 +130,8 @@ const useStyles = createUseStyles({
     padding: 10,
     borderRadius: 40,
     width: "10vw",
-    cursor: "pointer",
+    textDecoration: "none",
+    color: colors.white,
     "& span": {
       fontSize: 18,
       fontWeight: 700,
@@ -135,17 +144,19 @@ const useStyles = createUseStyles({
     justifyContent: "center",
     border: "1px solid white",
     borderRadius: 100,
-    // width: "12vw",
     height: 65,
     marginTop: 20,
-    cursor: "pointer",
+    textDecoration: "none",
+    color: colors.white,
   },
   featured: {
     display: "flex",
     flexDirection: "column",
     marginTop: 78,
-    "& img": {
+    "& a": {
       flex: 1,
+      textDecoration: "none",
+      color: colors.white,
     },
     "& div": {
       display: "flex",
@@ -205,10 +216,15 @@ function Intro() {
                   <span id="n2">3.74%</span>
                 </div>
               </div>
-              <div className={classes.second}>
+              <a
+                className={classes.second}
+                href={EVERETHSWAP}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <span>BUY</span>
                 <img src={arrowRight} alt=">" />
-              </div>
+              </a>
             </div>
             <div className={classes.priceSecondRow}>
               <div>
@@ -225,28 +241,39 @@ function Intro() {
               </div>
             </div>
           </div>
-          <div className={classes.dashboard}>
+          <a
+            className={classes.dashboard}
+            href={EVERETHAPP}
+            target="_blank"
+            rel="noreferrer"
+          >
             <span>Go to Dashboard</span>
-          </div>
+          </a>
         </div>
 
         <div className={classes.featured}>
           <div>
-            <img
-              src={binance}
-              alt="Binance"
-              style={{ width: "10vw", height: 31, marginRight: 68 }}
-            />
-            <img
-              src={coinMarket}
-              alt="CoinMarketCap"
-              style={{ width: "14vw", height: 43, marginRight: 68 }}
-            />
-            <img
-              src={coinGecko}
-              alt="CoinGecko"
-              style={{ width: "9vw", height: 28 }}
-            />
+            <a href={EVERETHSWAP} target="_blank" rel="noreferrer">
+              <img
+                src={binance}
+                alt="Binance"
+                style={{ width: "10vw", height: 31, marginRight: 68 }}
+              />
+            </a>
+            <a href={EVERETHSWAP} target="_blank" rel="noreferrer">
+              <img
+                src={coinMarket}
+                alt="CoinMarketCap"
+                style={{ width: "14vw", height: 43, marginRight: 68 }}
+              />
+            </a>
+            <a href={EVERETHSWAP} target="_blank" rel="noreferrer">
+              <img
+                src={coinGecko}
+                alt="CoinGecko"
+                style={{ width: "9vw", height: 28 }}
+              />
+            </a>
           </div>
           <div>
             <hr className={classes.line} />
@@ -254,29 +281,39 @@ function Intro() {
             <hr className={classes.line} />
           </div>
           <div>
-            <img
-              src={bloomberg}
-              alt="Bloomberg"
-              style={{ width: "12vw", height: 33, marginRight: 68 }}
-            />
-            <img
-              src={yahoo}
-              alt="yahoo"
-              style={{ width: "7vw", height: 27, marginRight: 68 }}
-            />
-            <img
-              src={benzinga}
-              alt="Benzinga"
-              style={{ width: "12vw", height: 17 }}
-            />
+            <a href={BLOOMBERG} target="_blank" rel="noreferrer">
+              <img
+                src={bloomberg}
+                alt="Bloomberg"
+                style={{ width: "12vw", height: 33, marginRight: 68 }}
+              />
+            </a>
+            <a href={YAHOO} target="_blank" rel="noreferrer">
+              <img
+                src={yahoo}
+                alt="yahoo"
+                style={{ width: "7vw", height: 27, marginRight: 68 }}
+              />
+            </a>
+            <a href={BENZINGA} target="_blank" rel="noreferrer">
+              <img
+                src={benzinga}
+                alt="Benzinga"
+                style={{ width: "12vw", height: 17 }}
+              />
+            </a>
           </div>
         </div>
       </section>
 
       <section className={classes.image}>
-        <video autoPlay loop muted>
-          <source src={"./EverETHLogo.mov"} type="video/mp4/" />
-        </video>
+        {/* <video autoPlay loop muted style={{ width: 500, height:500 }}>
+          <source
+            src={EverETHLogo}
+            type="video/mp4"
+            style={{ width: 50, height: 50 }}
+          />
+        </video> */}
       </section>
     </section>
   );

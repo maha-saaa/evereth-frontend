@@ -177,6 +177,7 @@ function Faq() {
         <animated.section className={classes.questions} style={animation}>
           {questions?.map((temp) => (
             <div
+              key={temp.key}
               className={classes.qRow}
               onClick={() => onClickQuestion(temp.key)}
             >
