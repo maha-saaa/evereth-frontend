@@ -102,6 +102,9 @@ const useStyles = createUseStyles({
       "& span:nth-child(1)": {
         fontSize: 26,
         fontWeight: 500,
+        "@media screen and (max-width: 600px)": {
+          fontSize: 18,
+        },
       },
       "& span:nth-child(2)": {
         fontSize: 14,
@@ -141,6 +144,9 @@ const useStyles = createUseStyles({
     width: "10vw",
     textDecoration: "none",
     color: colors.white,
+    "@media screen and (max-width: 600px)": {
+      width: 100,
+    },
     "& span": {
       fontSize: 18,
       fontWeight: 700,

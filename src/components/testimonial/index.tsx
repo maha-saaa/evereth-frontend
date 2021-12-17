@@ -50,6 +50,10 @@ const useStyles = createUseStyles({
     borderRadius: 20,
     marginRight: 107,
     padding: 32,
+    "@media screen and (max-width: 600px)": {
+      marginRight: 0,
+      marginBottom: 10,
+    },
   },
   userInfo: {
     display: "flex",
@@ -91,6 +95,9 @@ const useStyles = createUseStyles({
     flex: 1,
     flexDirection: "column",
     justifyContent: "center",
+    "@media screen and (max-width: 600px)": {
+      textAlign: "center",
+    },
   },
   userCount: {
     fontWeight: 500,

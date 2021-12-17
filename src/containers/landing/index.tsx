@@ -13,6 +13,8 @@ import Testimonial from "../../components/testimonial";
 import Swap from "../../components/swap";
 import Footer from "../../components/footer";
 import Rights from "../../components/rights";
+import axios from "axios";
+import { useQuery } from "react-query";
 
 const useStyles = createUseStyles({
   container: {
@@ -36,8 +38,30 @@ const useStyles = createUseStyles({
   },
 });
 
+// const url =
+//   "http://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=11770";
+// const apiKey = "4c321287-33c6-4014-b98e-c3b3ad007efa";
+
+// const instance = axios.create({
+//   timeout: 1000,
+//   headers: { "X-CMC_PRO_API_KEY": apiKey },
+// });
+
 function Landing() {
   const classes = useStyles();
+  // const fetchEverETH = async () => {
+  //   const { data } = await instance.get(url);
+  //   return data;
+  // };
+
+  // const { data, error, isError, isLoading } = useQuery(
+  //   "everETHData",
+  //   fetchEverETH
+  // );
+  // if (isLoading) {
+  //   return <div>Loading...</div>;
+  // }
+
   return (
     <div
       className={classes.container}
