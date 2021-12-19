@@ -152,6 +152,11 @@ const useStyles = createUseStyles({
       fontWeight: 700,
       marginRight: 8,
     },
+    "&:hover": {
+      backgroundColor: colors.lighterGray,
+      color: colors.purple,
+      fontWeight: 700,
+    },
   },
   dashboard: {
     display: "flex",
@@ -163,6 +168,10 @@ const useStyles = createUseStyles({
     marginTop: 20,
     textDecoration: "none",
     color: colors.white,
+    "&:hover": {
+      backgroundColor: colors.grayWithOpacity2,
+      fontWeight: 700,
+    },
   },
   featured: {
     display: "flex",
@@ -246,7 +255,7 @@ function Intro() {
                 rel="noreferrer noopener"
               >
                 <span>BUY</span>
-                <img src={arrowRight} alt=">" />
+                <img src={arrowRight} alt=">" color={colors.green} />
               </a>
             </div>
             <div className={classes.priceSecondRow}>

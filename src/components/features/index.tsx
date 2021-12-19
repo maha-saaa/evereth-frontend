@@ -86,6 +86,9 @@ const useStyles = createUseStyles({
       top: 40,
     },
     boxSizing: "border-box",
+    "&:hover": {
+      backgroundColor: colors.cardWithOpacity,
+    },
   },
   cardIcon: {
     display: "flex",
@@ -95,6 +98,9 @@ const useStyles = createUseStyles({
     borderRadius: 50,
     padding: 30,
     marginBottom: 24,
+    "&:hover": {
+      backgroundColor: colors.white,
+    },
   },
   cardName: {
     color: colors.white,

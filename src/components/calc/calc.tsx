@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { createUseStyles } from "react-jss";
 import VisibilitySensor from "react-visibility-sensor";
 import { useSpring, animated } from "react-spring";
+import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
 import colors from "../../assets/colors";
 
 const useStyles = createUseStyles({
@@ -56,7 +58,18 @@ const useStyles = createUseStyles({
   },
   calculator: {
     display: "flex",
-    flex: 2,
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 1,
+  },
+  card: {
+    width: "90%",
+    height: 442,
+    borderRadius: 20,
+    backgroundColor: colors.grayWithOpacity,
+    marginLeft: 100,
+    padding: 24,
   },
 });
 
@@ -92,7 +105,10 @@ function Calc() {
           </span>
         </animated.section>
 
-        <section className={classes.calculator}></section>
+        <section className={classes.calculator}>
+          <div className={classes.card}></div>
+          <Slider />
+        </section>
       </section>
     </VisibilitySensor>
   );

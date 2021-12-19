@@ -51,6 +51,9 @@ const useStyles = createUseStyles({
         "& a": {
           textDecoration: "none",
           color: colors.text,
+          "&:hover": {
+            color: colors.white,
+          },
         },
       },
     },
@@ -59,9 +62,15 @@ const useStyles = createUseStyles({
     display: "flex",
     flex: 1,
     justifyContent: "flex-end",
+    alignItems: "center",
     cursor: "pointer",
     "& a": {
       backgroundColor: colors.purple,
+      "&:hover": {
+        backgroundColor: colors.lighterGray,
+        color: colors.purple,
+        fontWeight: 700,
+      },
       padding: {
         top: 12,
         right: 24,

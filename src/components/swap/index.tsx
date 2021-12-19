@@ -67,6 +67,11 @@ const useStyles = createUseStyles({
       alignSelf: "center",
       width: 237,
     },
+    "&:hover": {
+      backgroundColor: colors.lighterGray,
+      color: colors.purple,
+      fontWeight: 700,
+    },
   },
   image: {
     display: "flex",

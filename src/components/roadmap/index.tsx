@@ -99,6 +99,9 @@ const useStyles = createUseStyles({
     width: 111,
     height: 111,
     marginBottom: 24,
+    "&:hover": {
+      backgroundColor: colors.cardWithOpacity,
+    },
   },
   stepName: {
     color: colors.white,
