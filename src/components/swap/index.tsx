@@ -3,6 +3,7 @@ import { createUseStyles } from "react-jss";
 import colors from "../../assets/colors";
 import arrowRight from "../../assets/images/arrow-right.svg";
 import { EVERETHAPP } from "../../constants/urls";
+import iphone from "../../assets/images/iphone.png";
 
 const useStyles = createUseStyles({
   container: {
@@ -76,7 +77,6 @@ const useStyles = createUseStyles({
   image: {
     display: "flex",
     flex: 1,
-    justifyContent: "center",
   },
 });
 
@@ -101,7 +101,9 @@ function Swap() {
         </a>
       </section>
 
-      <section className={classes.image}></section>
+      <section className={classes.image}>
+        <img src={iphone} alt={"iphone"} />
+      </section>
     </section>
   );
 }
