@@ -19,6 +19,7 @@ const useStyles = createUseStyles({
       left: 183,
     },
     "@media screen and (max-width: 600px)": {
+      marginTop: 111,
       padding: {
         right: 16,
         left: 16,
@@ -30,6 +31,7 @@ const useStyles = createUseStyles({
     flex: 1,
     flexDirection: "column",
     minWidth: 340,
+    backgroundSize: "contain",
   },
   title: {
     color: colors.white,
@@ -59,6 +61,7 @@ const useStyles = createUseStyles({
       flexDirection: "column",
       justifyItems: "center",
       textAlign: "center",
+      marginTop: 42,
     },
     "& div": {
       display: "flex",
@@ -67,6 +70,7 @@ const useStyles = createUseStyles({
       marginRight: 72,
       "@media screen and (max-width: 600px)": {
         marginRight: 0,
+        marginBottom: 40,
       },
       "& span:nth-child(1)": {
         fontsize: 48,
@@ -85,12 +89,17 @@ const useStyles = createUseStyles({
       display: "none",
     },
   },
+  mobileImage: {
+    "@media screen and (max-width: 600px)": {
+      ackgroundImage: `url(${world})`,
+    },
+  },
 });
 
 const data = [
-  { key: 1, name: "$3M+", desc: "paid so far in Binance-peg Ethereum" },
-  { key: 2, name: "20K+", desc: "Comminuty of EverETH holders" },
-  { key: 3, name: "3", desc: "Blockchain summmit sponsership" },
+  { key: 1, name: "$3M+", desc: "paid so far in\n Binance-peg Ethereum" },
+  { key: 2, name: "20K+", desc: "Comminuty of\n EverETH holders" },
+  { key: 3, name: "3", desc: "Blockchain summmit\n sponsership" },
 ];
 
 function About() {
@@ -118,20 +127,26 @@ function About() {
     >
       <section id="section-about" className={classes.container}>
         <animated.section className={classes.info} style={animation}>
-          <span className={classes.title}>Worldwide devidend</span>
-          <span className={classes.title}>payments in</span>
-          <span className={classes.title}>Ethereum</span>
-          <span className={classes.desc}>
-            The safest and easiest way to earn WTH on Binance Smart Chain
-            Passively. and easiest way to earn Ethereum in a fully decentralised
-            ecosystem.
-          </span>
+          <div
+            className={[classes.info, classes.mobileImage].join(" ")}
+          >
+            <span className={classes.title}>Worldwide devidend</span>
+            <span className={classes.title}>payments in</span>
+            <span className={classes.title}>Ethereum</span>
+            <span className={classes.desc}>
+              The safest and easiest way to earn WTH on Binance Smart Chain
+              Passively. and easiest way to earn Ethereum in a fully
+              decentralised ecosystem.
+            </span>
+          </div>
 
           <div className={classes.count}>
             {data.map((temp) => (
               <div key={temp.key}>
                 <span style={{ fontSize: 48 }}>{temp.name}</span>
-                <span style={{ fontSize: 18 }}>{temp.desc}</span>
+                <span style={{ fontSize: 18, whiteSpace: "pre-line" }}>
+                  {temp.desc}
+                </span>
               </div>
             ))}
           </div>

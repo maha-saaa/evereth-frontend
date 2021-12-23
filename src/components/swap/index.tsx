@@ -4,6 +4,7 @@ import colors from "../../assets/colors";
 import arrowRight from "../../assets/images/arrow-right.svg";
 import { EVERETHAPP } from "../../constants/urls";
 import iphone from "../../assets/images/iphone.png";
+import iphoneSec from "../../assets/images/iphone-sec.png";
 
 const useStyles = createUseStyles({
   container: {
@@ -77,6 +78,17 @@ const useStyles = createUseStyles({
   image: {
     display: "flex",
     flex: 1,
+    "@media screen and (max-width: 600px)": {
+      display: "none",
+    },
+  },
+  imageSec: {
+    display: "none",
+    flex: 1,
+    "@media screen and (max-width: 600px)": {
+      display: "flex",
+      flex: 1,
+    },
   },
 });
 
@@ -84,6 +96,9 @@ function Swap() {
   const classes = useStyles();
   return (
     <section className={classes.container}>
+      <section className={classes.imageSec}>
+        <img src={iphoneSec} alt={"iphone"} />
+      </section>
       <section className={classes.info}>
         <span className={classes.title}>
           {`Manage your dividends\n in one Place`}

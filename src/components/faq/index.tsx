@@ -18,6 +18,7 @@ const useStyles = createUseStyles({
       left: 183,
     },
     "@media screen and (max-width: 600px)": {
+      marginTop: 111,
       padding: {
         right: 16,
         left: 16,
@@ -33,7 +34,9 @@ const useStyles = createUseStyles({
     color: colors.white,
     marginBottom: 72,
     width: "70vw",
-
+    "@media screen and (max-width: 600px)": {
+      marginBottom: 42,
+    },
     "& span:nth-child(1)": {
       "@media screen and (max-width: 600px)": {
         fontSize: 29,
@@ -42,7 +45,8 @@ const useStyles = createUseStyles({
       marginBottom: 13,
     },
     "& span:nth-child(2)": {
-      fontSize: 18,
+      fontSize: 16,
+      fontWeight: 400,
       color: colors.text,
       textAlign: "center",
     },
@@ -61,6 +65,14 @@ const useStyles = createUseStyles({
       top: 32,
       right: 47,
       bottom: 32,
+    },
+    "@media screen and (max-width: 600px)": {
+      padding: {
+        left: 12,
+        top: 24,
+        right: 12,
+        bottom: 24,
+      },
     },
   },
   qRow: {
@@ -83,6 +95,9 @@ const useStyles = createUseStyles({
     fontSize: 20,
     color: colors.white,
     marginLeft: 40,
+    "@media screen and (max-width: 600px)": {
+      fontSize: 18,
+    },
   },
   answer: {
     fontSize: 16,

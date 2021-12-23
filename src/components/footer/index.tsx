@@ -16,7 +16,7 @@ const useStyles = createUseStyles({
     flex: 1,
     flexDirection: "row",
     alignItems: "flex-start",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     marginTop: 116,
     color: colors.white,
     padding: {
@@ -24,6 +24,7 @@ const useStyles = createUseStyles({
       left: 183,
     },
     "@media screen and (max-width: 600px)": {
+      marginTop: 26,
       padding: {
         right: 16,
         left: 16,
@@ -36,6 +37,12 @@ const useStyles = createUseStyles({
     display: "flex",
     flex: 1,
     flexDirection: "column",
+  },
+  mainCol: {
+    margin: {
+      left: 24,
+      right: 24,
+    },
   },
   logo: {
     display: "flex",
@@ -106,7 +113,7 @@ function Footer() {
 
   return (
     <section className={classes.container}>
-      <section className={classes.col}>
+      <section className={[classes.col, classes.mainCol].join(" ")}>
         <div className={classes.logo}>
           <img src={logo} alt="logo" style={{ width: 47, height: 47 }} />
           <span>EverETH</span>
@@ -144,7 +151,7 @@ function Footer() {
         </div>
       </section>
 
-      <section className={[classes.col, classes.mobileCol].join(" ")}>
+      <section className={[classes.col, classes.mobileCol, classes.mainCol].join(" ")}>
         <span>Quick Links</span>
         <div className={classes.links}>
           <div className={classes.col}>
@@ -158,7 +165,7 @@ function Footer() {
         </div>
       </section>
 
-      <section className={[classes.col, classes.mobileCol].join(" ")}>
+      <section className={[classes.col, classes.mobileCol, classes.mainCol].join(" ")}>
         <span style={{ marginBottom: 24 }}>Coming soon...</span>
         <div className={classes.downloadBtn}>
           <img src={appStore} alt="appStore" />

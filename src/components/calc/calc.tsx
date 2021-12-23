@@ -21,6 +21,8 @@ const useStyles = createUseStyles({
       left: 183,
     },
     "@media screen and (max-width: 600px)": {
+      flexDirection: "column",
+      marginTop: 111,
       padding: {
         right: 16,
         left: 16,
@@ -34,6 +36,7 @@ const useStyles = createUseStyles({
     "@media screen and (max-width: 600px)": {
       textAlign: "center",
       fontSize: 32,
+      marginBottom: 38,
     },
     "& span:nth-child(1)": {
       fontSize: 20,
@@ -66,13 +69,16 @@ const useStyles = createUseStyles({
     marginLeft: 20,
   },
   table: {
-    width: 632,
+    width: "44vw",
     height: 442,
     borderRadius: 20,
     backgroundColor: colors.grayWithOpacity,
     marginBottom: 24,
     padding: 24,
     boxSizing: "border-box",
+    "@media screen and (max-width: 600px)": {
+      width: "90vw",
+    },
   },
   tableBody: {
     display: "flex",
@@ -261,17 +267,26 @@ function Calc() {
               <span>Your Number:</span>
               <span>{`${selectedSliderValue} Billions`}</span>
             </div>
-            <Slider
-              min={min}
-              max={20000}
-              onChange={onSliderChange}
-              trackStyle={{ backgroundColor: colors.purple }}
-              railStyle={{ backgroundColor: colors.gray }}
-              handleStyle={{
-                backgroundColor: colors.purple,
-                borderColor: colors.purple,
+            <div
+              style={{
+                backgroundColor: colors.grayWithOpacity2,
+                borderRadius: 20,
+                padding: 4,
               }}
-            />
+            >
+              <Slider
+                min={min}
+                max={20000}
+                onChange={onSliderChange}
+                trackStyle={{ backgroundColor: colors.purple }}
+                railStyle={{ backgroundColor: colors.gray }}
+                handleStyle={{
+                  backgroundColor: colors.purple,
+                  borderColor: colors.purple,
+                }}
+              />
+            </div>
+
             <div className={classes.range}>
               <span>{`${min} Billions`}</span>
               <span>{`${max} Trillions`}</span>

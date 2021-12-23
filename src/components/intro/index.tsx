@@ -55,6 +55,11 @@ const useStyles = createUseStyles({
       fontSize: 48,
     },
   },
+  typist: {
+    "@media screen and (max-width: 600px)": {
+      textAlign: "center",
+    },
+  },
   desc: {
     color: colors.text,
     fontSize: 18,
@@ -177,6 +182,9 @@ const useStyles = createUseStyles({
     display: "flex",
     flexDirection: "column",
     marginTop: 78,
+    "@media screen and (max-width: 600px)": {
+      alignItems: "center",
+    },
     "& a": {
       flex: 1,
       textDecoration: "none",
@@ -230,7 +238,7 @@ function Intro() {
     <section className={classes.container}>
       <section className={classes.info}>
         <span className={classes.title}>Hold EverETH</span>
-        <Typist>
+        <Typist className={classes.typist}>
           <span className={classes.title}>Earn Ethereum</span>
         </Typist>
         <span className={classes.desc}>

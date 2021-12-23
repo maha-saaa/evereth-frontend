@@ -3,6 +3,10 @@ import { createUseStyles } from "react-jss";
 import VisibilitySensor from "react-visibility-sensor";
 import { useSpring, animated } from "react-spring";
 import colors from "../../assets/colors";
+import arrowRightBlack from "../../assets/images/arrow-right-black.svg";
+import arrowRightWhite from "../../assets/images/arrow-right-white.svg";
+import arrowLeftBlack from "../../assets/images/arrow-left-black.svg";
+import arrowLeftWhite from "../../assets/images/arrow-left-white.svg";
 
 const useStyles = createUseStyles({
   container: {
@@ -16,6 +20,7 @@ const useStyles = createUseStyles({
       left: 183,
     },
     "@media screen and (max-width: 600px)": {
+      marginTop: 111,
       padding: {
         right: 16,
         left: 16,
@@ -28,6 +33,9 @@ const useStyles = createUseStyles({
     color: colors.white,
     marginBottom: 89,
     alignSelf: "center",
+    "@media screen and (max-width: 600px)": {
+      marginBottom: 16,
+    },
   },
   carousel: {
     display: "flex",
@@ -53,6 +61,7 @@ const useStyles = createUseStyles({
     "@media screen and (max-width: 600px)": {
       marginRight: 0,
       marginBottom: 10,
+      width: "95vw",
     },
   },
   userInfo: {
@@ -118,6 +127,9 @@ const useStyles = createUseStyles({
     border: "1px solid white",
     marginRight: 16,
     cursor: "pointer",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
   next: {
     width: 57,
@@ -125,6 +137,9 @@ const useStyles = createUseStyles({
     borderRadius: 50,
     border: "1px solid white",
     cursor: "pointer",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 
@@ -209,7 +224,12 @@ function Testimonial() {
                     pagingStatus === 0 ? colors.white : colors.background,
                 }}
                 onClick={() => onPagination(0)}
-              />
+              >
+                <img
+                  src={pagingStatus === 0 ? arrowLeftBlack : arrowLeftWhite}
+                  alt="<"
+                />
+              </div>
               <div
                 className={classes.next}
                 style={{
@@ -217,7 +237,12 @@ function Testimonial() {
                     pagingStatus === 1 ? colors.white : colors.background,
                 }}
                 onClick={() => onPagination(1)}
-              />
+              >
+                <img
+                  src={pagingStatus === 1 ? arrowRightBlack : arrowRightWhite}
+                  alt=">"
+                />
+              </div>
             </div>
           </div>
         </animated.section>

@@ -14,10 +14,7 @@ const useStyles = createUseStyles({
       left: 183,
     },
     "@media screen and (max-width: 600px)": {
-      padding: {
-        right: 16,
-        left: 16,
-      },
+      display: "none",
     },
   },
   title: {

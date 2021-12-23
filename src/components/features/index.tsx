@@ -19,6 +19,7 @@ const useStyles = createUseStyles({
       left: 183,
     },
     "@media screen and (max-width: 600px)": {
+      marginTop: 111,
       padding: {
         right: 16,
         left: 16,
@@ -33,7 +34,9 @@ const useStyles = createUseStyles({
     alignItems: "center",
     color: colors.white,
     marginBottom: 72,
-
+    "@media screen and (max-width: 600px)": {
+      marginBottom: 42,
+    },
     "& span:nth-child(1)": {
       "@media screen and (max-width: 600px)": {
         fontSize: 29,
@@ -45,6 +48,7 @@ const useStyles = createUseStyles({
     },
     "& span:nth-child(2)": {
       fontSize: 18,
+      fontWeight: 400,
     },
   },
   features: {
@@ -84,6 +88,7 @@ const useStyles = createUseStyles({
       left: 25,
       right: 25,
       top: 40,
+      bottom: 16,
     },
     boxSizing: "border-box",
     "&:hover": {
