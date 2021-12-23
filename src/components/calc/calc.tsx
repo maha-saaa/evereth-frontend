@@ -67,6 +67,9 @@ const useStyles = createUseStyles({
     alignItems: "center",
     flex: 1,
     marginLeft: 20,
+    "@media screen and (max-width: 600px)": {
+      overflowX: "scroll",
+    },
   },
   table: {
     width: "44vw",
@@ -76,9 +79,6 @@ const useStyles = createUseStyles({
     marginBottom: 24,
     padding: 24,
     boxSizing: "border-box",
-    "@media screen and (max-width: 600px)": {
-      width: "90vw",
-    },
   },
   tableBody: {
     display: "flex",
@@ -86,6 +86,10 @@ const useStyles = createUseStyles({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    "@media screen and (max-width: 600px)": {
+      backgroundColor: colors.grayWithOpacity,
+      width: 400,
+    },
   },
   tableHeader: {
     display: "flex",
@@ -93,6 +97,9 @@ const useStyles = createUseStyles({
     flex: 1,
     alignSelf: "stretch",
     marginBottom: 30,
+    "@media screen and (max-width: 600px)": {
+      width: 400,
+    },
   },
   tableRow: {
     display: "flex",

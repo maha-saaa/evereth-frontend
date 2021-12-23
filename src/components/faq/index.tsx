@@ -5,6 +5,7 @@ import { useSpring, animated } from "react-spring";
 import colors from "../../assets/colors";
 import plus from "../../assets/images/plus.svg";
 import minus from "../../assets/images/minus.svg";
+import Expand from "../expand";
 
 const useStyles = createUseStyles({
   container: {
@@ -84,6 +85,7 @@ const useStyles = createUseStyles({
     "& div:nth-child(1)": {
       display: "flex",
       justifyContent: "flex-start",
+      alignSelf: "flex-start",
     },
     "& div:nth-child(2)": {
       display: "flex",
@@ -193,7 +195,7 @@ function Faq() {
               className={classes.qRow}
               onClick={() => onClickQuestion(temp.key)}
             >
-              <div>
+              <div style={{ marginTop: temp.isOpen ? 12 : 0 }}>
                 <img
                   src={temp.isOpen ? minus : plus}
                   alt={temp.isOpen ? "-" : "+"}
@@ -201,9 +203,9 @@ function Faq() {
               </div>
               <div>
                 <span className={classes.question}>{temp.question}</span>
-                {temp.isOpen ? (
+                <Expand expanded={temp.isOpen} config={{}}>
                   <span className={classes.answer}>{temp.answer}</span>
-                ) : null}
+                </Expand>
               </div>
             </div>
           ))}

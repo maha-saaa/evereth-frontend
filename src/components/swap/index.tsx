@@ -3,7 +3,7 @@ import { createUseStyles } from "react-jss";
 import colors from "../../assets/colors";
 import arrowRight from "../../assets/images/arrow-right.svg";
 import { EVERETHAPP } from "../../constants/urls";
-import iphone from "../../assets/images/iphone.png";
+import iphone from "../../assets/images/iphone.svg";
 import iphoneSec from "../../assets/images/iphone-sec.png";
 
 const useStyles = createUseStyles({
@@ -97,7 +97,7 @@ function Swap() {
   return (
     <section className={classes.container}>
       <section className={classes.imageSec}>
-        <img src={iphoneSec} alt={"iphone"} />
+        <img src={iphoneSec} alt={"iphone"} style={{ width: "100%" }} />
       </section>
       <section className={classes.info}>
         <span className={classes.title}>

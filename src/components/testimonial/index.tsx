@@ -61,7 +61,7 @@ const useStyles = createUseStyles({
     "@media screen and (max-width: 600px)": {
       marginRight: 0,
       marginBottom: 10,
-      width: "95vw",
+      width: "90vw",
     },
   },
   userInfo: {
