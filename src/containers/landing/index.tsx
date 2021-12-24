@@ -38,26 +38,24 @@ const useStyles = createUseStyles({
   },
 });
 
-// const url =
-//   "http://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=11770";
-// const apiKey = "4c321287-33c6-4014-b98e-c3b3ad007efa";
+const url = "http://162.0.211.97:4000/api/assets/evereth";
 
-// const instance = axios.create({
-//   timeout: 1000,
-//   headers: { "X-CMC_PRO_API_KEY": apiKey },
-// });
+const instance = axios.create({
+  timeout: 1000,
+});
 
 function Landing() {
   const classes = useStyles();
-  // const fetchEverETH = async () => {
-  //   const { data } = await instance.get(url);
-  //   return data;
-  // };
+  
+  const fetchEverETH = async () => {
+    const { data } = await instance.get(url);
+    return data;
+  };
 
-  // const { data, error, isError, isLoading } = useQuery(
-  //   "everETHData",
-  //   fetchEverETH
-  // );
+  const { data, error, isError, isLoading } = useQuery(
+    "everETHData",
+    fetchEverETH
+  );
   // if (isLoading) {
   //   return <div>Loading...</div>;
   // }
