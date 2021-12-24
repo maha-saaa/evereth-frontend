@@ -1,3 +1,4 @@
+export const BASEURL = "http://162.0.211.97:4000";
 export const FACEBOOK = "https://www.facebook.com/EverETHofficial";
 export const TELEGRAM = "https://t.me/EverETHOfficial";
 export const DISCORD = "https://discord.gg/7fTrE99ebk";

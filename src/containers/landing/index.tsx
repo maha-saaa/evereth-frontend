@@ -13,8 +13,8 @@ import Testimonial from "../../components/testimonial";
 import Swap from "../../components/swap";
 import Footer from "../../components/footer";
 import Rights from "../../components/rights";
-import axios from "axios";
 import { useQuery } from "react-query";
+import API from "../../services/http";
 
 const useStyles = createUseStyles({
   container: {
@@ -38,17 +38,13 @@ const useStyles = createUseStyles({
   },
 });
 
-const url = "http://162.0.211.97:4000/api/assets/evereth";
-
-const instance = axios.create({
-  timeout: 1000,
-});
+const url = "/api/assets/evereth";
 
 function Landing() {
   const classes = useStyles();
-  
+
   const fetchEverETH = async () => {
-    const { data } = await instance.get(url);
+    const { data } = await API.get(url);
     return data;
   };
 
@@ -56,6 +52,7 @@ function Landing() {
     "everETHData",
     fetchEverETH
   );
+  
   // if (isLoading) {
   //   return <div>Loading...</div>;
   // }
