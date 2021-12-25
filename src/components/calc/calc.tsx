@@ -173,7 +173,7 @@ const useStyles = createUseStyles({
   },
 });
 
-function Calc() {
+function Calc({ethPrice, ethPriceIsLoading}) {
   const classes = useStyles();
   const [isVisible, setVisibility] = useState(false);
   const [selectedSliderValue, setSelectedSliderValue] = useState<number>(500);
@@ -190,7 +190,7 @@ function Calc() {
   const onSliderChange = (value: number) => {
     console.log(`value`, value);
     setSelectedSliderValue(value);
-    const profit = (value / 1000) * 0.07 * 1;
+    const profit = (value / 1000) * 0.07 * ethPrice;
     setSelectedEverETH(profit);
   };
 

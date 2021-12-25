@@ -11,6 +11,7 @@ import benzinga from "../../assets/images/benzinga.svg";
 import arrowRight from "../../assets/images/arrow-right.svg";
 import everLogo from "../../assets/images/ever-logo.svg";
 import ethLogo from "../../assets/images/eth-logo.svg";
+import Spinner from "../spinner";
 
 import {
   BENZINGA,
@@ -232,7 +233,7 @@ const useStyles = createUseStyles({
   },
 });
 
-function Intro() {
+function Intro({ everETHDetails, everETHDetailsIsLoading }) {
   const classes = useStyles();
   return (
     <section className={classes.container}>
@@ -252,8 +253,14 @@ function Intro() {
               <div className={classes.first}>
                 <span className={classes.firstTitle}>WILD PRICE</span>
                 <div>
-                  <span id="n1">$4.211</span>
-                  <span id="n2">3.74%</span>
+                  {everETHDetailsIsLoading ? (
+                    <Spinner />
+                  ) : (
+                    <>
+                      <span id="n1">{`$${everETHDetails?.price}`}</span>
+                      <span id="n2">{`${everETHDetails?.diff24H}%`}</span>
+                    </>
+                  )}
                 </div>
               </div>
               <a
@@ -268,15 +275,27 @@ function Intro() {
             </div>
             <div className={classes.priceSecondRow}>
               <div>
-                <span>$210.2M</span>
+                {everETHDetailsIsLoading ? (
+                  <Spinner />
+                ) : (
+                  <span>{`$${everETHDetails?.marketCap}`}</span>
+                )}
                 <span>MKT. CAP</span>
               </div>
               <div>
-                <span>$12.7M</span>
+                {everETHDetailsIsLoading ? (
+                  <Spinner />
+                ) : (
+                  <span>{`$${everETHDetails?.volume24H}`}</span>
+                )}
                 <span>24H VOLUME</span>
               </div>
               <div>
-                <span>$7.99K</span>
+                {everETHDetailsIsLoading ? (
+                  <Spinner />
+                ) : (
+                  <span>{`$${everETHDetails?.holders}`}</span>
+                )}
                 <span>HOLDERS</span>
               </div>
             </div>

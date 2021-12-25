@@ -15,6 +15,7 @@ import Footer from "../../components/footer";
 import Rights from "../../components/rights";
 import { useQuery } from "react-query";
 import API from "../../services/http";
+import { ethPriceUrl, everethDetailsUrl } from "../../constants/urls";
 
 const useStyles = createUseStyles({
   container: {
@@ -38,24 +39,28 @@ const useStyles = createUseStyles({
   },
 });
 
-const url = "/api/assets/evereth";
-
 function Landing() {
   const classes = useStyles();
 
-  const fetchEverETH = async () => {
-    const { data } = await API.get(url);
+  const fetchEthPrice = async () => {
+    const { data } = await API.get(ethPriceUrl);
     return data;
   };
 
-  const { data, error, isError, isLoading } = useQuery(
-    "everETHData",
-    fetchEverETH
+  const fetchEverETHDetails = async () => {
+    const { data } = await API.get(everethDetailsUrl);
+    return data;
+  };
+
+  const { data: ethPrice, isLoading: ethPriceIsLoading } = useQuery(
+    "fetchEthPrice",
+    fetchEthPrice
   );
-  
-  // if (isLoading) {
-  //   return <div>Loading...</div>;
-  // }
+
+  const { data: everETHDetails, isLoading: everETHDetailsIsLoading } = useQuery(
+    "fetchEverETHDetails",
+    fetchEverETHDetails
+  );
 
   return (
     <div
@@ -63,10 +68,10 @@ function Landing() {
       style={{ backgroundImage: `url(${backgroundPattern})` }}
     >
       <Navbar />
-      <Intro />
+      <Intro {...{ everETHDetails, everETHDetailsIsLoading }} />
       <About />
       <Features />
-      <Calc />
+      <Calc {...{ ethPrice, ethPriceIsLoading }} />
       <Roadmap />
       <Faq />
       <Testimonial />
