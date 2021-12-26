@@ -11,6 +11,7 @@ import benzinga from "../../assets/images/benzinga.svg";
 import arrowRight from "../../assets/images/arrow-right.svg";
 import everLogo from "../../assets/images/ever-logo.svg";
 import ethLogo from "../../assets/images/eth-logo.svg";
+import EverETHLogo from "../../assets/images/EverETHLogo.mp4";
 import Spinner from "../spinner";
 
 import {
@@ -96,6 +97,10 @@ const useStyles = createUseStyles({
     flexDirection: "row",
     justifyContent: "space-between",
     marginBottom: 24,
+    "@media screen and (max-width: 600px)": {
+      flexDirection: "column",
+      alignItems: "center",
+    },
   },
   priceSecondRow: {
     display: "flex",
@@ -130,7 +135,6 @@ const useStyles = createUseStyles({
     },
     "& div #n2": {
       fontSize: 14,
-      color: colors.lightergreen,
       marginLeft: 8,
     },
   },
@@ -148,6 +152,8 @@ const useStyles = createUseStyles({
     padding: 10,
     borderRadius: 40,
     width: "10vw",
+    height: 49,
+    boxSizing: "border-box",
     textDecoration: "none",
     color: colors.white,
     "@media screen and (max-width: 600px)": {
@@ -235,12 +241,18 @@ const useStyles = createUseStyles({
 
 function Intro({ everETHDetails, everETHDetailsIsLoading }) {
   const classes = useStyles();
+
+  const negativeDiff = everETHDetails?.diff24H < 0;
+
   return (
     <section className={classes.container}>
       <section className={classes.info}>
-        <span className={classes.title}>Hold EverETH</span>
+        <span className={classes.title}>{`Hold EverETH`}</span>
         <Typist className={classes.typist}>
-          <span className={classes.title}>Earn Ethereum</span>
+          <span className={classes.title}>{`Earn`}</span>
+        </Typist>
+        <Typist className={classes.typist}>
+          <span className={classes.title}>{`Ethereum`}</span>
         </Typist>
         <span className={classes.desc}>
           The fastest and easiest way to earn Ethereum in a fully decentralised
@@ -251,15 +263,30 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
           <div className={classes.prices}>
             <div className={classes.priceFirstRow}>
               <div className={classes.first}>
-                <span className={classes.firstTitle}>WILD PRICE</span>
+                <span className={classes.firstTitle}>everETH PRICE</span>
                 <div>
                   {everETHDetailsIsLoading ? (
-                    <Spinner />
+                    <div style={{ height: 15 }}>
+                      <Spinner />
+                    </div>
                   ) : (
-                    <>
-                      <span id="n1">{`$${everETHDetails?.price}`}</span>
-                      <span id="n2">{`${everETHDetails?.diff24H}%`}</span>
-                    </>
+                    <span id="n1">{`$${Number(
+                      everETHDetails?.price.toFixed(20)
+                    )?.toFixed(11)}`}</span>
+                  )}
+                </div>
+                <div>
+                  {everETHDetailsIsLoading ? (
+                    <div style={{ height: 15 }}>
+                      <Spinner />
+                    </div>
+                  ) : (
+                    <span
+                      id="n2"
+                      style={{
+                        color: negativeDiff ? "red" : colors.lightergreen,
+                      }}
+                    >{`${(everETHDetails?.diff24H).toFixed(2)}%`}</span>
                   )}
                 </div>
               </div>
@@ -276,25 +303,37 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
             <div className={classes.priceSecondRow}>
               <div>
                 {everETHDetailsIsLoading ? (
-                  <Spinner />
+                  <div style={{ height: 15 }}>
+                    <Spinner />
+                  </div>
                 ) : (
-                  <span>{`$${everETHDetails?.marketCap}`}</span>
+                  <span>{`$${(everETHDetails?.marketCap * 0.000001).toFixed(
+                    2
+                  )}M`}</span>
                 )}
                 <span>MKT. CAP</span>
               </div>
               <div>
                 {everETHDetailsIsLoading ? (
-                  <Spinner />
+                  <div style={{ height: 15 }}>
+                    <Spinner />
+                  </div>
                 ) : (
-                  <span>{`$${everETHDetails?.volume24H}`}</span>
+                  <span>{`$${(everETHDetails?.volume24H * 0.000001).toFixed(
+                    2
+                  )}M`}</span>
                 )}
                 <span>24H VOLUME</span>
               </div>
               <div>
                 {everETHDetailsIsLoading ? (
-                  <Spinner />
+                  <div style={{ height: 15 }}>
+                    <Spinner />
+                  </div>
                 ) : (
-                  <span>{`$${everETHDetails?.holders}`}</span>
+                  <span>{`${Math.round(
+                    everETHDetails?.holders * 0.001
+                  )}K`}</span>
                 )}
                 <span>HOLDERS</span>
               </div>
@@ -366,7 +405,7 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
       </section>
 
       <section className={classes.image}>
-        {/* <video autoPlay loop muted style={{ width: 500, height:500 }}>
+        {/* <video autoPlay loop muted style={{ width: 500, height: 900 }}>
           <source
             src={EverETHLogo}
             type="video/mp4"

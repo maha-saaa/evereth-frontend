@@ -19,6 +19,7 @@ const useStyles = createUseStyles({
       left: 183,
     },
     "@media screen and (max-width: 600px)": {
+      justifyContent: "center",
       marginTop: 111,
       padding: {
         right: 16,
@@ -85,13 +86,14 @@ const useStyles = createUseStyles({
     display: "flex",
     flex: 1,
     justifyContent: "center",
+    paddingLeft: 50,
     "@media screen and (max-width: 600px)": {
       display: "none",
     },
   },
   mobileImage: {
     "@media screen and (max-width: 600px)": {
-      ackgroundImage: `url(${world})`,
+      backgroundImage: `url(${world})`,
     },
   },
 });
@@ -121,8 +123,6 @@ function About() {
     <VisibilitySensor
       onChange={onChange}
       partialVisibility
-      // scrollThrottle={100}
-      // scrollCheck={true}
       resizeThrottle={1}
     >
       <section id="section-about" className={classes.container}>

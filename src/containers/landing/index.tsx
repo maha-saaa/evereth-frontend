@@ -1,7 +1,7 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
 import colors from "../../assets/colors";
-import backgroundPattern from "../../assets/images/BG-Pattern.png";
+import backgroundPattern from "../../assets/images/BG.png";
 import Calc from "../../components/calc/calc";
 import Features from "../../components/features";
 import Intro from "../../components/intro";
@@ -20,10 +20,10 @@ import { ethPriceUrl, everethDetailsUrl } from "../../constants/urls";
 const useStyles = createUseStyles({
   container: {
     display: "flex",
-    flex: 1,
+    // flex: 1,
     flexDirection: "column",
     backgroundColor: colors.background,
-    backgroundSize: "cover",
+    backgroundSize: "contain",
     minHeight: window.innerHeight,
     padding: {
       top: 16,

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { createUseStyles } from "react-jss";
 import VisibilitySensor from "react-visibility-sensor";
 import { useSpring, animated } from "react-spring";
@@ -68,17 +68,19 @@ const useStyles = createUseStyles({
     flex: 1,
     marginLeft: 20,
     "@media screen and (max-width: 600px)": {
-      overflowX: "scroll",
+      marginLeft: 0,
     },
   },
   table: {
-    width: "44vw",
     height: 442,
     borderRadius: 20,
     backgroundColor: colors.grayWithOpacity,
     marginBottom: 24,
     padding: 24,
     boxSizing: "border-box",
+    "@media screen and (max-width: 600px)": {
+      padding: 10,
+    },
   },
   tableBody: {
     display: "flex",
@@ -86,10 +88,6 @@ const useStyles = createUseStyles({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    "@media screen and (max-width: 600px)": {
-      backgroundColor: colors.grayWithOpacity,
-      width: 400,
-    },
   },
   tableHeader: {
     display: "flex",
@@ -97,8 +95,9 @@ const useStyles = createUseStyles({
     flex: 1,
     alignSelf: "stretch",
     marginBottom: 30,
+    paddingLeft: 24,
     "@media screen and (max-width: 600px)": {
-      width: 400,
+      paddingLeft: 8,
     },
   },
   tableRow: {
@@ -110,6 +109,9 @@ const useStyles = createUseStyles({
     marginBottom: 41,
     paddingLeft: 24,
     borderRadius: 20,
+    "@media screen and (max-width: 600px)": {
+      paddingLeft: 8,
+    },
   },
   tableHeaderText: {
     fontSize: 16,
@@ -124,6 +126,12 @@ const useStyles = createUseStyles({
     color: colors.white,
     alignSelf: "center",
     flex: 1,
+    margin: {
+      left: 8,
+    },
+    "@media screen and (max-width: 600px)": {
+      fontSize: 12,
+    },
   },
   tablePurpleCell: {
     display: "flex",
@@ -133,17 +141,23 @@ const useStyles = createUseStyles({
     borderRadius: 20,
     textAlign: "center",
     padding: 20,
-    // width: 148,
+    width: 100,
     height: 64,
     boxSizing: "border-box",
+    "@media screen and (max-width: 600px)": {
+      padding: 10,
+    },
   },
   slider: {
     width: "100%",
-    // height: 122,
     borderRadius: 20,
     backgroundColor: colors.grayWithOpacity,
     padding: 24,
     boxSizing: "border-box",
+    "@media screen and (max-width: 600px)": {
+      padding: 14,
+      width: 320,
+    },
   },
   selectedNumber: {
     display: "flex",
@@ -155,6 +169,9 @@ const useStyles = createUseStyles({
     fontSize: 16,
     fontWeight: 600,
     marginBottom: 16,
+    "@media screen and (max-width: 600px)": {
+      fontSize: 14,
+    },
   },
   range: {
     display: "flex",
@@ -170,16 +187,25 @@ const useStyles = createUseStyles({
     color: colors.lighterGray,
     fontSize: 16,
     fontWeight: 500,
+    "@media screen and (max-width: 600px)": {
+      fontSize: 14,
+    },
   },
 });
 
-function Calc({ethPrice, ethPriceIsLoading}) {
+function Calc({ ethPrice, ethPriceIsLoading }) {
   const classes = useStyles();
   const [isVisible, setVisibility] = useState(false);
   const [selectedSliderValue, setSelectedSliderValue] = useState<number>(500);
-  const [selectedEverETH, setSelectedEverETH] = useState(13.69);
+  const [selectedEverETH, setSelectedEverETH] = useState(
+    ((500 / 1000) * 0.07 * ethPrice).toFixed(2)
+  );
   const min = 500;
   const max = 20;
+
+  useEffect(() => {
+    setSelectedEverETH(((500 / 1000) * 0.07 * ethPrice).toFixed(2));
+  }, [ethPrice]);
 
   const onChange = (isVisible: boolean) => {
     if (isVisible) {
@@ -188,9 +214,8 @@ function Calc({ethPrice, ethPriceIsLoading}) {
   };
 
   const onSliderChange = (value: number) => {
-    console.log(`value`, value);
     setSelectedSliderValue(value);
-    const profit = (value / 1000) * 0.07 * ethPrice;
+    const profit = ((value / 1000) * 0.07 * ethPrice).toFixed(2);
     setSelectedEverETH(profit);
   };
 
@@ -267,7 +292,7 @@ function Calc({ethPrice, ethPriceIsLoading}) {
           </span>
         </animated.section>
 
-        <section className={classes.calculator}>
+        <animated.section className={classes.calculator} style={animation}>
           <div className={classes.table}>{renderTableData()}</div>
           <div className={classes.slider}>
             <div className={classes.selectedNumber}>
@@ -302,7 +327,7 @@ function Calc({ethPrice, ethPriceIsLoading}) {
               <span>results are based on 24 hour trading volume of 1M$</span>
             </div>
           </div>
-        </section>
+        </animated.section>
       </section>
     </VisibilitySensor>
   );

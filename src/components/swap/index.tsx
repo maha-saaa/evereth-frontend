@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { createUseStyles } from "react-jss";
+import VisibilitySensor from "react-visibility-sensor";
+import { useSpring, animated } from "react-spring";
 import colors from "../../assets/colors";
 import arrowRight from "../../assets/images/arrow-right.svg";
 import { EVERETHAPP } from "../../constants/urls";
@@ -94,32 +96,47 @@ const useStyles = createUseStyles({
 
 function Swap() {
   const classes = useStyles();
+  const [isVisible, setVisibility] = useState(false);
+
+  const onChange = (isVisible: boolean) => {
+    if (isVisible) {
+      setVisibility(isVisible);
+    }
+  };
+
+  const animation = useSpring({
+    opacity: isVisible ? 1 : 0,
+    transform: isVisible ? "translateY(0px)" : "translateY(80px)",
+  });
+
   return (
-    <section className={classes.container}>
-      <section className={classes.imageSec}>
-        <img src={iphoneSec} alt={"iphone"} style={{ width: "100%" }} />
-      </section>
-      <section className={classes.info}>
-        <span className={classes.title}>
-          {`Manage your dividends\n in one Place`}
-        </span>
-        <span className={classes.desc}>EverETH Swap is Coming soon</span>
+    <VisibilitySensor onChange={onChange} resizeThrottle={1} partialVisibility>
+      <animated.section className={classes.container} style={animation}>
+        <section className={classes.imageSec}>
+          <img src={iphoneSec} alt={"iphone"} style={{ width: "100%" }} />
+        </section>
+        <section className={classes.info}>
+          <span className={classes.title}>
+            {`Manage your dividends\n in one Place`}
+          </span>
+          <span className={classes.desc}>EverETH Swap is Coming soon</span>
 
-        <a
-          className={classes.action}
-          href={EVERETHAPP}
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <span>Let's get Started</span>
-          <img src={arrowRight} alt=">" />
-        </a>
-      </section>
+          <a
+            className={classes.action}
+            href={EVERETHAPP}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <span>Let's get Started</span>
+            <img src={arrowRight} alt=">" />
+          </a>
+        </section>
 
-      <section className={classes.image}>
-        <img src={iphone} alt={"iphone"} />
-      </section>
-    </section>
+        <section className={classes.image}>
+          <img src={iphone} alt={"iphone"} />
+        </section>
+      </animated.section>
+    </VisibilitySensor>
   );
 }
 

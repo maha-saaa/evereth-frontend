@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSpring, animated } from "react-spring";
 
 export default function Expand({ children, expanded, config }) {
