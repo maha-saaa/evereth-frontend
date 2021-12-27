@@ -6,6 +6,8 @@ import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import colors from "../../assets/colors";
 import menu from "../../assets/images/menu.svg";
+import rectangle from "../../assets/images/Rectangle.png";
+import Spinner from "../spinner";
 
 const useStyles = createUseStyles({
   container: {
@@ -54,10 +56,12 @@ const useStyles = createUseStyles({
       fontSize: 16,
       color: colors.text,
       marginBottom: 30,
+      whiteSpace: "pre-line",
     },
     "& span:nth-child(4)": {
       fontSize: 16,
       color: colors.text,
+      whiteSpace: "pre-line",
     },
   },
   calculator: {
@@ -106,6 +110,7 @@ const useStyles = createUseStyles({
     flex: 1,
     alignSelf: "stretch",
     backgroundColor: colors.grayWithOpacity,
+    border: "1px solid #34384C",
     marginBottom: 41,
     paddingLeft: 24,
     borderRadius: 20,
@@ -191,6 +196,14 @@ const useStyles = createUseStyles({
       fontSize: 14,
     },
   },
+  rec: {
+    marginRight: -460,
+    marginBottom: 188,
+    width: 579,
+    "@media screen and (max-width: 1000px)": {
+      display: "none",
+    },
+  },
 });
 
 function Calc({ ethPrice, ethPriceIsLoading }) {
@@ -237,6 +250,7 @@ function Calc({ ethPrice, ethPriceIsLoading }) {
           </div>
           <div
             className={[classes.tableData, classes.tablePurpleCell].join(" ")}
+            style={{ fontWeight: 700 }}
           >
             EverETH
           </div>
@@ -245,11 +259,17 @@ function Calc({ ethPrice, ethPriceIsLoading }) {
           <span className={classes.tableHeaderText}>Income</span>
           <span className={classes.tableData}>$8.33/day</span>
           <span className={classes.tableData}>$33.79/day</span>
-          <span
-            className={[classes.tableData, classes.tablePurpleCell].join(" ")}
-          >
-            {`${selectedEverETH}/day`}
-          </span>
+          {ethPriceIsLoading ? (
+            <div style={{ height: 64 }}>
+              <Spinner />
+            </div>
+          ) : (
+            <span
+              className={[classes.tableData, classes.tablePurpleCell].join(" ")}
+            >
+              {`${selectedEverETH}/day`}
+            </span>
+          )}
         </div>
         <div className={classes.tableRow}>
           <span className={classes.tableHeaderText}>Electricity</span>
@@ -265,11 +285,17 @@ function Calc({ ethPrice, ethPriceIsLoading }) {
           <span className={classes.tableHeaderText}>Profit</span>
           <span className={classes.tableData}>$7.64/day*</span>
           <span className={classes.tableData}>$31.02/day*</span>
-          <span
-            className={[classes.tableData, classes.tablePurpleCell].join(" ")}
-          >
-            {`${selectedEverETH}/day**`}
-          </span>
+          {ethPriceIsLoading ? (
+            <div style={{ height: 64 }}>
+              <Spinner />
+            </div>
+          ) : (
+            <span
+              className={[classes.tableData, classes.tablePurpleCell].join(" ")}
+            >
+              {`${selectedEverETH}/day**`}
+            </span>
+          )}
         </div>
       </div>
     );
@@ -282,18 +308,29 @@ function Calc({ ethPrice, ethPriceIsLoading }) {
           <span>Why EverETH?</span>
           <span>{`Planet.People.\nProfit.`}</span>
           <span>
-            Unlike mining EverETH is programmed to strive on providing investors
-            the ability to earn ethereum, without damaging the enviroment or
-            theirt wallets.
+            {`Unlike mining EverETH is programmed to strive\n on providing investors
+            the ability to earn\n ethereum, without damaging the enviroment or\n
+            theirt wallets.`}
           </span>
           <span>
-            Become a part of the Everth family today, and earn Ethereum
-            passively for the rest of your life.
+            {`Become a part of the Everth family today, and\n earn Ethereum
+            passively for the rest of your life.`}
           </span>
         </animated.section>
 
+        {/* <img
+          src={rectangle}
+          alt=""
+          className={classes.rec}
+        /> */}
+
         <animated.section className={classes.calculator} style={animation}>
-          <div className={classes.table}>{renderTableData()}</div>
+          <div
+            className={classes.table}
+            // style={{ background: `url(${rectangle})` }}
+          >
+            {renderTableData()}
+          </div>
           <div className={classes.slider}>
             <div className={classes.selectedNumber}>
               <span>Your Number:</span>
@@ -301,9 +338,13 @@ function Calc({ ethPrice, ethPriceIsLoading }) {
             </div>
             <div
               style={{
-                backgroundColor: colors.grayWithOpacity2,
+                backgroundColor: colors.grayWithOpacity,
                 borderRadius: 20,
-                padding: 4,
+                paddingLeft: 10,
+                paddingRight: 10,
+                paddingTop: 4,
+                paddingBottom: 4,
+                border: "1px solid #34384C",
               }}
             >
               <Slider
@@ -311,7 +352,7 @@ function Calc({ ethPrice, ethPriceIsLoading }) {
                 max={20000}
                 onChange={onSliderChange}
                 trackStyle={{ backgroundColor: colors.purple }}
-                railStyle={{ backgroundColor: colors.gray }}
+                railStyle={{ backgroundColor: colors.grayWithOpacity }}
                 handleStyle={{
                   backgroundColor: colors.purple,
                   borderColor: colors.purple,

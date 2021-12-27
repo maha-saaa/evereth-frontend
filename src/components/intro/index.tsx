@@ -11,7 +11,7 @@ import benzinga from "../../assets/images/benzinga.svg";
 import arrowRight from "../../assets/images/arrow-right.svg";
 import everLogo from "../../assets/images/ever-logo.svg";
 import ethLogo from "../../assets/images/eth-logo.svg";
-import EverETHLogo from "../../assets/images/EverETHLogo.mp4";
+import EverETHLogo from "../../assets/images/everEth.mp4";
 import Spinner from "../spinner";
 
 import {
@@ -134,10 +134,12 @@ const useStyles = createUseStyles({
     flexDirection: "column",
     "& div #n1": {
       fontSize: 32,
+      fontWeight: 500,
       color: colors.white,
     },
     "& div #n2": {
       fontSize: 14,
+      fontWeight: 500,
       marginLeft: 8,
     },
   },
@@ -169,7 +171,6 @@ const useStyles = createUseStyles({
     },
     "&:hover": {
       backgroundColor: colors.lighterGray,
-      color: colors.purple,
       fontWeight: 700,
     },
   },
@@ -250,7 +251,7 @@ const useStyles = createUseStyles({
     position: "relative",
     zIndex: 0,
     bottom: 150,
-    right: 90,
+    right: 96,
     "@media screen and (max-width: 1000px)": {
       display: "none",
     },
@@ -295,8 +296,6 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
                       everETHDetails?.price.toFixed(20)
                     )?.toFixed(11)}`}</span>
                   )}
-                </div>
-                <div>
                   {everETHDetailsIsLoading ? (
                     <div style={{ height: 15 }}>
                       <Spinner />

@@ -35,13 +35,6 @@ const useStyles = createUseStyles({
       right: 0,
     },
   },
-  line: {
-    flex: 1,
-    color: colors.gray,
-    width: "100vw",
-    marginTop: 70,
-    opacity: 0.3,
-  },
 });
 
 function Landing() {
@@ -81,7 +74,6 @@ function Landing() {
       <Faq />
       <Testimonial />
       <Swap />
-      <hr className={classes.line} />
       <Footer />
       <Rights />
     </div>

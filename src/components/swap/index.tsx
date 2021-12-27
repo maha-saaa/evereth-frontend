@@ -5,8 +5,9 @@ import { useSpring, animated } from "react-spring";
 import colors from "../../assets/colors";
 import arrowRight from "../../assets/images/arrow-right.svg";
 import { EVERETHAPP } from "../../constants/urls";
-import iphone from "../../assets/images/iphone.svg";
+import iphone from "../../assets/images/iphone.png";
 import iphoneSec from "../../assets/images/iphone-sec.png";
+import card from "../../assets/images/Card-Bg.png";
 
 const useStyles = createUseStyles({
   container: {
@@ -15,12 +16,19 @@ const useStyles = createUseStyles({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    marginTop: 116,
+    marginTop: 316,
     padding: {
       right: 183,
       left: 183,
+      top: 74,
+      bottom: 74,
+    },
+    "@media screen and (min-width: 1000px)": {
+      backgroundImage: `url(${card})`,
+      backgroundSize: "cover",
     },
     "@media screen and (max-width: 1000px)": {
+      marginTop: 111,
       padding: {
         right: 16,
         left: 16,
@@ -73,7 +81,6 @@ const useStyles = createUseStyles({
     },
     "&:hover": {
       backgroundColor: colors.lighterGray,
-      color: colors.purple,
       fontWeight: 700,
     },
   },
@@ -83,6 +90,11 @@ const useStyles = createUseStyles({
     "@media screen and (max-width: 1000px)": {
       display: "none",
     },
+    width: 878,
+    height: 625,
+    position: "absolute",
+    bottom: 5,
+    right: 10,
   },
   imageSec: {
     display: "none",

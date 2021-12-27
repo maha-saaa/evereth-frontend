@@ -4,6 +4,9 @@ import VisibilitySensor from "react-visibility-sensor";
 import { useSpring, animated } from "react-spring";
 import colors from "../../assets/colors";
 import checkbox from "../../assets/images/TickSquare.svg";
+import one from "../../assets/images/1.svg";
+import two from "../../assets/images/2.svg";
+import three from "../../assets/images/3.svg";
 
 const useStyles = createUseStyles({
   container: {
@@ -57,7 +60,7 @@ const useStyles = createUseStyles({
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    marginLeft: 60,
+    marginLeft: 134,
     "& div:nth-child(1)": {
       "& div #number": {
         fontSize: 82,
@@ -132,6 +135,7 @@ const data = [
   {
     key: 1,
     name: "Phase One",
+    icon: one,
     list: [
       {
         key: 11,
@@ -173,6 +177,7 @@ const data = [
   {
     key: 2,
     name: "Phase Two",
+    icon: two,
     list: [
       {
         key: 21,
@@ -199,6 +204,7 @@ const data = [
   {
     key: 3,
     name: "Phase Three",
+    icon: three,
     list: [
       {
         key: 31,
@@ -259,7 +265,8 @@ function Roadmap() {
           {data.map((temp) => (
             <div className={classes.step} key={temp.key}>
               <div className={classes.stepNumber}>
-                <span id="number">{temp.key}</span>
+                {/* <span id="number">{temp.key}</span> */}
+                <img src={temp.icon} alt={`${temp.key}`} />
               </div>
               <span className={classes.stepName}>{temp.name}</span>
               {temp?.list?.map((item) => (

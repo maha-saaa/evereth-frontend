@@ -3,7 +3,7 @@ import { createUseStyles } from "react-jss";
 import VisibilitySensor from "react-visibility-sensor";
 import { useSpring, animated } from "react-spring";
 import colors from "../../assets/colors";
-import world from "../../assets/images/world.svg";
+import world from "../../assets/images/world.png";
 
 const useStyles = createUseStyles({
   container: {
