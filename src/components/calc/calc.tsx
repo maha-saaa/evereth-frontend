@@ -318,19 +318,10 @@ function Calc({ ethPrice, ethPriceIsLoading }) {
           </span>
         </animated.section>
 
-        {/* <img
-          src={rectangle}
-          alt=""
-          className={classes.rec}
-        /> */}
+        <img src={rectangle} alt="" className={classes.rec} />
 
         <animated.section className={classes.calculator} style={animation}>
-          <div
-            className={classes.table}
-            // style={{ background: `url(${rectangle})` }}
-          >
-            {renderTableData()}
-          </div>
+          <div className={classes.table}>{renderTableData()}</div>
           <div className={classes.slider}>
             <div className={classes.selectedNumber}>
               <span>Your Number:</span>
