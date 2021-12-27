@@ -20,7 +20,7 @@ const useStyles = createUseStyles({
       right: 183,
       left: 183,
     },
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       padding: {
         right: 16,
         left: 16,
@@ -37,7 +37,7 @@ const useStyles = createUseStyles({
     color: colors.white,
     fontSize: 48,
     whiteSpace: "pre-line",
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       textAlign: "center",
     },
   },
@@ -47,7 +47,7 @@ const useStyles = createUseStyles({
     margin: {
       top: 28,
     },
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       textAlign: "center",
     },
   },
@@ -67,7 +67,7 @@ const useStyles = createUseStyles({
     "& span": {
       marginRight: 8,
     },
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       alignSelf: "center",
       width: 237,
     },
@@ -80,14 +80,14 @@ const useStyles = createUseStyles({
   image: {
     display: "flex",
     flex: 1,
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       display: "none",
     },
   },
   imageSec: {
     display: "none",
     flex: 1,
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       display: "flex",
       flex: 1,
     },

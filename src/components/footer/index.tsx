@@ -23,7 +23,7 @@ const useStyles = createUseStyles({
       right: 183,
       left: 183,
     },
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       marginTop: 26,
       padding: {
         right: 16,
@@ -102,7 +102,7 @@ const useStyles = createUseStyles({
     },
   },
   mobileCol: {
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       display: "none",
     },
   },
@@ -151,7 +151,9 @@ function Footer() {
         </div>
       </section>
 
-      <section className={[classes.col, classes.mobileCol, classes.mainCol].join(" ")}>
+      <section
+        className={[classes.col, classes.mobileCol, classes.mainCol].join(" ")}
+      >
         <span>Quick Links</span>
         <div className={classes.links}>
           <div className={classes.col}>
@@ -165,7 +167,9 @@ function Footer() {
         </div>
       </section>
 
-      <section className={[classes.col, classes.mobileCol, classes.mainCol].join(" ")}>
+      <section
+        className={[classes.col, classes.mobileCol, classes.mainCol].join(" ")}
+      >
         <span style={{ marginBottom: 24 }}>Coming soon...</span>
         <div className={classes.downloadBtn}>
           <img src={appStore} alt="appStore" />

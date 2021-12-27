@@ -29,6 +29,11 @@ const useStyles = createUseStyles({
       top: 16,
     },
     boxSizing: "border-box",
+    "@media screen and (min-width: 1000px)": {
+      position: "absolute",
+      left: 0,
+      right: 0,
+    },
   },
   line: {
     flex: 1,

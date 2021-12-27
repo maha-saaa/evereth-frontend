@@ -18,7 +18,7 @@ const useStyles = createUseStyles({
       right: 183,
       left: 183,
     },
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       justifyContent: "center",
       marginTop: 111,
       padding: {
@@ -37,7 +37,7 @@ const useStyles = createUseStyles({
   title: {
     color: colors.white,
     fontSize: 48,
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       textAlign: "center",
       fontSize: 32,
     },
@@ -48,7 +48,7 @@ const useStyles = createUseStyles({
     margin: {
       top: 28,
     },
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       textAlign: "center",
     },
   },
@@ -58,7 +58,7 @@ const useStyles = createUseStyles({
     color: colors.white,
     justifyContent: "space-between",
     marginTop: 93,
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       flexDirection: "column",
       justifyItems: "center",
       textAlign: "center",
@@ -69,7 +69,7 @@ const useStyles = createUseStyles({
       flexDirection: "column",
       flex: 1,
       marginRight: 72,
-      "@media screen and (max-width: 600px)": {
+      "@media screen and (max-width: 1000px)": {
         marginRight: 0,
         marginBottom: 40,
       },
@@ -87,12 +87,12 @@ const useStyles = createUseStyles({
     flex: 1,
     justifyContent: "center",
     paddingLeft: 50,
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       display: "none",
     },
   },
   mobileImage: {
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       backgroundImage: `url(${world})`,
     },
   },
@@ -120,16 +120,10 @@ function About() {
   });
 
   return (
-    <VisibilitySensor
-      onChange={onChange}
-      partialVisibility
-      resizeThrottle={1}
-    >
+    <VisibilitySensor onChange={onChange} partialVisibility resizeThrottle={1}>
       <section id="section-about" className={classes.container}>
         <animated.section className={classes.info} style={animation}>
-          <div
-            className={[classes.info, classes.mobileImage].join(" ")}
-          >
+          <div className={[classes.info, classes.mobileImage].join(" ")}>
             <span className={classes.title}>Worldwide devidend</span>
             <span className={classes.title}>payments in</span>
             <span className={classes.title}>Ethereum</span>

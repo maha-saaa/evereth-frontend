@@ -16,7 +16,8 @@ const useStyles = createUseStyles({
       right: 183,
       left: 183,
     },
-    "@media screen and (max-width: 600px)": {
+    zIndex: 1000,
+    "@media screen and (max-width: 1000px)": {
       padding: {
         right: 16,
         left: 16,
@@ -33,7 +34,7 @@ const useStyles = createUseStyles({
     justifyContent: "flex-start",
   },
   menu: {
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       display: "none",
     },
     display: "flex",

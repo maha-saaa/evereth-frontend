@@ -16,7 +16,7 @@ const useStyles = createUseStyles({
       right: 183,
       left: 183,
     },
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       marginTop: 111,
       padding: {
         right: 16,
@@ -32,11 +32,11 @@ const useStyles = createUseStyles({
     alignItems: "center",
     color: colors.white,
     marginBottom: 72,
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       marginBottom: 42,
     },
     "& span:nth-child(1)": {
-      "@media screen and (max-width: 600px)": {
+      "@media screen and (max-width: 1000px)": {
         fontSize: 29,
       },
       fontSize: 48,
@@ -50,7 +50,7 @@ const useStyles = createUseStyles({
     },
   },
   steps: {
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       flexDirection: "column",
     },
     display: "flex",
@@ -81,7 +81,7 @@ const useStyles = createUseStyles({
     },
   },
   step: {
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       marginBottom: 40,
     },
     display: "flex",

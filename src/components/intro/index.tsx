@@ -34,7 +34,7 @@ const useStyles = createUseStyles({
       right: 183,
       left: 183,
     },
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       padding: {
         right: 16,
         left: 16,
@@ -45,20 +45,23 @@ const useStyles = createUseStyles({
     display: "flex",
     flex: 1,
     flexDirection: "column",
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       minWidth: 288,
+    },
+    "@media screen and (min-width: 1000px)": {
+      position: "absolute",
     },
   },
   title: {
     color: colors.white,
     fontSize: 72,
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       textAlign: "center",
       fontSize: 48,
     },
   },
   typist: {
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       textAlign: "center",
     },
   },
@@ -68,7 +71,7 @@ const useStyles = createUseStyles({
     margin: {
       top: 28,
     },
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       textAlign: "center",
     },
   },
@@ -97,7 +100,7 @@ const useStyles = createUseStyles({
     flexDirection: "row",
     justifyContent: "space-between",
     marginBottom: 24,
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       flexDirection: "column",
       alignItems: "center",
     },
@@ -113,7 +116,7 @@ const useStyles = createUseStyles({
       "& span:nth-child(1)": {
         fontSize: 26,
         fontWeight: 500,
-        "@media screen and (max-width: 600px)": {
+        "@media screen and (max-width: 1000px)": {
           fontSize: 18,
         },
       },
@@ -156,7 +159,7 @@ const useStyles = createUseStyles({
     boxSizing: "border-box",
     textDecoration: "none",
     color: colors.white,
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       width: 100,
     },
     "& span": {
@@ -189,7 +192,7 @@ const useStyles = createUseStyles({
     display: "flex",
     flexDirection: "column",
     marginTop: 78,
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       alignItems: "center",
     },
     "& a": {
@@ -223,18 +226,33 @@ const useStyles = createUseStyles({
   },
   image: {
     display: "flex",
+    flexDirection: "column",
     flex: 1,
     justifyContent: "center",
-    "@media screen and (max-width: 600px)": {
+    "@media screen and (max-width: 1000px)": {
       display: "none",
     },
-    marginLeft: 100,
     "& img:nth-child(1)": {
-      alignSelf: "flex-start",
-      marginRight: 8,
+      "@media screen and (min-width: 1000px)": {
+        position: "absolute",
+        right: 180,
+        top: 120,
+      },
     },
     "& img:nth-child(2)": {
-      alignSelf: "center",
+      "@media screen and (min-width: 1000px)": {
+        position: "absolute",
+        right: 40,
+      },
+    },
+  },
+  video: {
+    position: "relative",
+    zIndex: 0,
+    bottom: 150,
+    right: 90,
+    "@media screen and (max-width: 1000px)": {
+      display: "none",
     },
   },
 });
@@ -246,6 +264,9 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
 
   return (
     <section className={classes.container}>
+      <video autoPlay loop muted className={classes.video}>
+        <source src={EverETHLogo} type="video/mp4" />
+      </video>
       <section className={classes.info}>
         <span className={classes.title}>{`Hold EverETH`}</span>
         <Typist className={classes.typist}>
@@ -405,13 +426,6 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
       </section>
 
       <section className={classes.image}>
-        {/* <video autoPlay loop muted style={{ width: 500, height: 900 }}>
-          <source
-            src={EverETHLogo}
-            type="video/mp4"
-            style={{ width: 50, height: 50 }}
-          />
-        </video> */}
         <img src={everLogo} alt="everLogo" />
         <img src={ethLogo} alt="ethLogo" />
       </section>
