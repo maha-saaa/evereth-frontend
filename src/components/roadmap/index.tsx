@@ -55,6 +55,7 @@ const useStyles = createUseStyles({
   steps: {
     "@media screen and (max-width: 1000px)": {
       flexDirection: "column",
+      marginLeft: 0,
     },
     display: "flex",
     flex: 1,

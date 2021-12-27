@@ -206,6 +206,13 @@ const useStyles = createUseStyles({
       alignItems: "center",
       color: colors.text,
     },
+    "& div:nth-child(1)": {
+      "@media screen and (max-width: 600px)": {
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      },
+    },
     "& div:nth-child(2)": {
       margin: {
         top: 22,
@@ -217,7 +224,25 @@ const useStyles = createUseStyles({
           left: 11,
           right: 11,
         },
+        "@media screen and (max-width: 600px)": {
+          fontSize: 32,
+          fontWeight: 700,
+        },
       },
+    },
+    "& div:nth-child(3)": {
+      "@media screen and (max-width: 600px)": {
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      },
+    },
+  },
+  icons: {
+    marginRight: 68,
+    "@media screen and (max-width: 600px)": {
+      marginRight: 0,
+      marginBottom: 20,
     },
   },
   line: {
@@ -372,25 +397,17 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
         <div className={classes.featured}>
           <div>
             <a href={EVERETHSWAP} target="_blank" rel="noreferrer noopener">
-              <img
-                src={binance}
-                alt="Binance"
-                style={{ width: "10vw", height: 31, marginRight: 68 }}
-              />
+              <img src={binance} alt="Binance" className={classes.icons} />
             </a>
             <a href={EVERETHSWAP} target="_blank" rel="noreferrer noopener">
               <img
                 src={coinMarket}
                 alt="CoinMarketCap"
-                style={{ width: "14vw", height: 43, marginRight: 68 }}
+                className={classes.icons}
               />
             </a>
             <a href={EVERETHSWAP} target="_blank" rel="noreferrer noopener">
-              <img
-                src={coinGecko}
-                alt="CoinGecko"
-                style={{ width: "9vw", height: 28 }}
-              />
+              <img src={coinGecko} alt="CoinGecko" />
             </a>
           </div>
           <div>
@@ -400,25 +417,13 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
           </div>
           <div>
             <a href={BLOOMBERG} target="_blank" rel="noreferrer noopener">
-              <img
-                src={bloomberg}
-                alt="Bloomberg"
-                style={{ width: "12vw", height: 33, marginRight: 68 }}
-              />
+              <img src={bloomberg} alt="Bloomberg" className={classes.icons} />
             </a>
             <a href={YAHOO} target="_blank" rel="noreferrer noopener">
-              <img
-                src={yahoo}
-                alt="yahoo"
-                style={{ width: "7vw", height: 27, marginRight: 68 }}
-              />
+              <img src={yahoo} alt="yahoo" className={classes.icons} />
             </a>
             <a href={BENZINGA} target="_blank" rel="noreferrer noopener">
-              <img
-                src={benzinga}
-                alt="Benzinga"
-                style={{ width: "12vw", height: 17 }}
-              />
+              <img src={benzinga} alt="Benzinga" />
             </a>
           </div>
         </div>
