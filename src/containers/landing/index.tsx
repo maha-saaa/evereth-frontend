@@ -72,7 +72,7 @@ function Landing() {
       <Calc {...{ ethPrice, ethPriceIsLoading }} />
       <Roadmap />
       <Faq />
-      <Testimonial />
+      {/* <Testimonial /> */}
       <Swap />
       <Footer />
       <Rights />
