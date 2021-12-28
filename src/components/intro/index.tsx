@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { createUseStyles } from "react-jss";
 import Typist from "react-typist";
 import colors from "../../assets/colors";
@@ -48,6 +48,8 @@ const useStyles = createUseStyles({
     "@media screen and (max-width: 1000px)": {
       minWidth: 288,
     },
+  },
+  infoWithLoadedVideo: {
     "@media screen and (min-width: 1000px)": {
       position: "absolute",
     },
@@ -74,6 +76,7 @@ const useStyles = createUseStyles({
     "@media screen and (max-width: 1000px)": {
       textAlign: "center",
     },
+    whiteSpace: "pre-line",
   },
   action: {
     display: "flex",
@@ -276,7 +279,7 @@ const useStyles = createUseStyles({
     position: "relative",
     zIndex: 0,
     bottom: 150,
-    right: 96,
+    right: 103,
     "@media screen and (max-width: 1000px)": {
       display: "none",
     },
@@ -285,15 +288,27 @@ const useStyles = createUseStyles({
 
 function Intro({ everETHDetails, everETHDetailsIsLoading }) {
   const classes = useStyles();
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   const negativeDiff = everETHDetails?.diff24H < 0;
 
   return (
     <section className={classes.container}>
-      <video autoPlay loop muted className={classes.video}>
+      <video
+        autoPlay
+        loop
+        muted
+        className={classes.video}
+        onCanPlay={() => setVideoLoaded(true)}
+      >
         <source src={EverETHLogo} type="video/mp4" />
       </video>
-      <section className={classes.info}>
+      <section
+        className={[
+          classes.info,
+          videoLoaded && classes.infoWithLoadedVideo,
+        ].join(" ")}
+      >
         <span className={classes.title}>{`Hold EverETH`}</span>
         <Typist className={classes.typist}>
           <span className={classes.title}>{`Earn`}</span>
@@ -302,15 +317,15 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
           <span className={classes.title}>{`Ethereum`}</span>
         </Typist>
         <span className={classes.desc}>
-          The fastest and easiest way to earn Ethereum in a fully decentralised
-          ecosystem.
+          {`The fastest and easiest way to earn Ethereum in\n a fully decentralised
+          ecosystem.`}
         </span>
 
         <div className={classes.action}>
           <div className={classes.prices}>
             <div className={classes.priceFirstRow}>
               <div className={classes.first}>
-                <span className={classes.firstTitle}>everETH PRICE</span>
+                <span className={classes.firstTitle}>EverETH PRICE</span>
                 <div>
                   {everETHDetailsIsLoading ? (
                     <div style={{ height: 15 }}>
