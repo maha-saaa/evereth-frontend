@@ -80,7 +80,7 @@ const useStyles = createUseStyles({
       width: 237,
     },
     "&:hover": {
-      backgroundColor: colors.lighterGray,
+      backgroundColor: colors.darkPurple,
       fontWeight: 700,
     },
   },
@@ -129,9 +129,11 @@ function Swap() {
         </section>
         <section className={classes.info}>
           <span className={classes.title}>
-            {`Manage your dividends\n in one Place`}
+            {`Manage your dividends\n in one place`}
           </span>
-          <span className={classes.desc}>EverETH Swap is Coming soon</span>
+          <span
+            className={classes.desc}
+          >{`EverETH Wallet is Coming soon.`}</span>
 
           <a
             className={classes.action}

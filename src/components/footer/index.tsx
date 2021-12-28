@@ -162,7 +162,7 @@ function Footer() {
           </div>
           <div className={classes.col}>
             <a href="#section-testimonial">Testimonial</a>
-            <a href="#section-faq">FaQ</a>
+            <a href="#section-faq">FAQ</a>
           </div>
         </div>
       </section>

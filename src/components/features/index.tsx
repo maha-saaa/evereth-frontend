@@ -123,19 +123,19 @@ const data = [
   {
     key: 1,
     name: "Comfortable Ecosystem",
-    desc: `You don’t need tp cliam your\n earned Ethereum.\n its automatically sent to your\n wallet.`,
+    desc: `You don’t need to cliam your\n earned Ethereum.\n its automatically sent to your\n wallet.`,
     iconName: graph,
   },
   {
     key: 2,
     name: "10% Dividends",
-    desc: `10%of every transaction value is\n taken and redistributed to all\n holders\n Hold EverETH tokens and earn\n Ethereum.`,
+    desc: `10% of every transaction value is\n taken and redistributed to all\n holders\n Hold EverETH tokens and earn\n Ethereum.`,
     iconName: star,
   },
   {
     key: 3,
     name: "Trusted Security",
-    desc: `The smart contract was being\n audited by TechRate,\n and is currently onboarding for\n Certik Audit with 12 month of\n Sky Net.`,
+    desc: `The smart contract was being\n audited by TechRate,\n and is currently onboarding for\n Certik Audit with 12 months of\n Sky Net.`,
     iconName: lock,
   },
 ];

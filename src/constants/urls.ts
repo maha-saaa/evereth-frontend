@@ -5,6 +5,9 @@ export const DISCORD = "https://discord.gg/7fTrE99ebk";
 export const TWITTER = "https://www.twitter.com/everethofficial";
 export const EVERETHAPP = "https://evereth.app/";
 export const EVERETHSWAP = "https://swap.evereth.app/";
+export const BINANCE = "https://www.binance.com/";
+export const COINMARKETCAP = "https://coinmarketcap.com/currencies/evereth/";
+export const COINGECKO = "https://coingecko.com/";
 export const BENZINGA =
   "https://www.benzinga.com/pressreleases/21/10/23777110/evereth-is-recording-a-total-of-1-5m-in-ethereum-reflections";
 export const YAHOO =

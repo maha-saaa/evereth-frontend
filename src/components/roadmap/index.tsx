@@ -210,7 +210,7 @@ const data = [
       {
         key: 31,
         title: "NFT Collectione",
-        checked: false,
+        checked: true,
       },
       {
         key: 32,
@@ -220,7 +220,7 @@ const data = [
       {
         key: 33,
         title: "Charity Events",
-        checked: false,
+        checked: true,
       },
       {
         key: 34,

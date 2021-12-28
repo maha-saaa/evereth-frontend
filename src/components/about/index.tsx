@@ -124,9 +124,8 @@ function About() {
       <section id="section-about" className={classes.container}>
         <animated.section className={classes.info} style={animation}>
           <div className={[classes.info, classes.mobileImage].join(" ")}>
-            <span className={classes.title}>Worldwide devidend</span>
-            <span className={classes.title}>payments in</span>
-            <span className={classes.title}>Ethereum</span>
+            <span className={classes.title}>Worldwide devidend </span>
+            <span className={classes.title}>payments in Ethereum</span>
             <span className={classes.desc}>
               The safest and easiest way to earn WTH on Binance Smart Chain
               Passively. and easiest way to earn Ethereum in a fully
@@ -147,7 +146,7 @@ function About() {
         </animated.section>
 
         <animated.section className={classes.image} style={animation}>
-          <img src={world} alt="world" style={{ width: "50vw", height: 439 }} />
+          <img src={world} alt="world" style={{ width: "100%", height: 439 }} />
         </animated.section>
       </section>
     </VisibilitySensor>

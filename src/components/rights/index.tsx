@@ -35,10 +35,12 @@ function Rights() {
 
   return (
     <section className={classes.container}>
-      <span className={classes.rights}>Cryptolly ©. All rights reserved.</span>
+      <span
+        className={classes.rights}
+      >{`EverETH ©. All rights reserved.`}</span>
       <div>
         <a href="./" className={classes.rights} style={{ marginRight: 10 }}>
-          Term of Service
+          {`Term of Service`}
         </a>
         <a
           href="./"

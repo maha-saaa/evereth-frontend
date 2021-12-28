@@ -16,7 +16,10 @@ import Spinner from "../spinner";
 
 import {
   BENZINGA,
+  BINANCE,
   BLOOMBERG,
+  COINGECKO,
+  COINMARKETCAP,
   EVERETHAPP,
   EVERETHSWAP,
   YAHOO,
@@ -63,6 +66,9 @@ const useStyles = createUseStyles({
     },
   },
   typist: {
+    display: "flex",
+    flex: 1,
+    flexDirection: "column",
     "@media screen and (max-width: 1000px)": {
       textAlign: "center",
     },
@@ -173,7 +179,7 @@ const useStyles = createUseStyles({
       marginRight: 8,
     },
     "&:hover": {
-      backgroundColor: colors.lighterGray,
+      backgroundColor: colors.darkPurple,
       fontWeight: 700,
     },
   },
@@ -264,14 +270,14 @@ const useStyles = createUseStyles({
     "& img:nth-child(1)": {
       "@media screen and (min-width: 1000px)": {
         position: "absolute",
-        right: 180,
+        right: 340,
         top: 120,
       },
     },
     "& img:nth-child(2)": {
       "@media screen and (min-width: 1000px)": {
         position: "absolute",
-        right: 40,
+        right: 183,
       },
     },
   },
@@ -310,15 +316,14 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
         ].join(" ")}
       >
         <span className={classes.title}>{`Hold EverETH`}</span>
-        <Typist className={classes.typist}>
+        <Typist className={classes.typist} cursor={{ show: false }}>
+          <Typist.Delay ms={500} />
           <span className={classes.title}>{`Earn`}</span>
-        </Typist>
-        <Typist className={classes.typist}>
+          <Typist.Delay ms={500} />
           <span className={classes.title}>{`Ethereum`}</span>
         </Typist>
         <span className={classes.desc}>
-          {`The fastest and easiest way to earn Ethereum in\n a fully decentralised
-          ecosystem.`}
+          {`The fastest and easiest way to earn Ethereum in a\n fully decentralised ecosystem.`}
         </span>
 
         <div className={classes.action}>
@@ -411,17 +416,17 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
 
         <div className={classes.featured}>
           <div>
-            <a href={EVERETHSWAP} target="_blank" rel="noreferrer noopener">
+            <a href={BINANCE} target="_blank" rel="noreferrer noopener">
               <img src={binance} alt="Binance" className={classes.icons} />
             </a>
-            <a href={EVERETHSWAP} target="_blank" rel="noreferrer noopener">
+            <a href={COINMARKETCAP} target="_blank" rel="noreferrer noopener">
               <img
                 src={coinMarket}
                 alt="CoinMarketCap"
                 className={classes.icons}
               />
             </a>
-            <a href={EVERETHSWAP} target="_blank" rel="noreferrer noopener">
+            <a href={COINGECKO} target="_blank" rel="noreferrer noopener">
               <img src={coinGecko} alt="CoinGecko" />
             </a>
           </div>

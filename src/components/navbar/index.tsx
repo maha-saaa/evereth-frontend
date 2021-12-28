@@ -29,9 +29,15 @@ const useStyles = createUseStyles({
   logo: {
     display: "flex",
     flex: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "flex-start",
+    "& a": {
+      textDecoration: "none",
+      color: colors.white,
+      display: "flex",
+      flex: 1,
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "flex-start",
+    },
   },
   menu: {
     "@media screen and (max-width: 1000px)": {
@@ -64,12 +70,10 @@ const useStyles = createUseStyles({
     flex: 1,
     justifyContent: "flex-end",
     alignItems: "center",
-    cursor: "pointer",
     "& a": {
       backgroundColor: colors.purple,
       "&:hover": {
-        backgroundColor: colors.lighterGray,
-        color: colors.purple,
+        backgroundColor: colors.darkPurple,
         fontWeight: 700,
       },
       padding: {
@@ -100,7 +104,7 @@ const navbarMenu = [
   },
   {
     key: "#section-faq",
-    title: "FaQ",
+    title: "FAQ",
   },
   {
     key: "#section-testimonial",
@@ -113,8 +117,10 @@ function Navbar() {
   return (
     <section className={classes.container}>
       <section className={classes.logo}>
-        <img src={logo} alt="logo" style={{ width: 47, height: 47 }} />
-        <span>EverETH</span>
+        <a href={"./"}>
+          <img src={logo} alt="logo" style={{ width: 47, height: 47 }} />
+          <span>EverETH</span>
+        </a>
       </section>
 
       <section className={classes.menu}>

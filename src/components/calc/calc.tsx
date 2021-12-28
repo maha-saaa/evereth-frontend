@@ -82,6 +82,9 @@ const useStyles = createUseStyles({
     marginBottom: 24,
     padding: 24,
     boxSizing: "border-box",
+    "@media screen and (min-width: 1000px)": {
+      width: 532,
+    },
     "@media screen and (max-width: 1000px)": {
       padding: 10,
     },
@@ -188,6 +191,7 @@ const useStyles = createUseStyles({
       top: 8,
       left: 16,
       right: 16,
+      bottom: 8,
     },
     color: colors.lighterGray,
     fontSize: 16,
@@ -197,7 +201,7 @@ const useStyles = createUseStyles({
     },
   },
   rec: {
-    marginRight: -460,
+    marginRight: -530,
     marginBottom: 188,
     width: 579,
     "@media screen and (max-width: 1000px)": {
@@ -309,12 +313,11 @@ function Calc({ ethPrice, ethPriceIsLoading }) {
           <span>{`Planet.People.\nProfit.`}</span>
           <span>
             {`Unlike mining EverETH is programmed to strive\n on providing investors
-            the ability to earn\n ethereum, without damaging the enviroment or\n
-            theirt wallets.`}
+            the ability to earn\n ethereum, without damaging the enviroment or
+            their wallets.`}
           </span>
           <span>
-            {`Become a part of the Everth family today, and\n earn Ethereum
-            passively for the rest of your life.`}
+            {`Become a part of the EverETH family today, and\n earn Ethereum passively for the rest of your life.`}
           </span>
         </animated.section>
 
@@ -324,8 +327,8 @@ function Calc({ ethPrice, ethPriceIsLoading }) {
           <div className={classes.table}>{renderTableData()}</div>
           <div className={classes.slider}>
             <div className={classes.selectedNumber}>
-              <span>Your Number:</span>
-              <span>{`${selectedSliderValue} Billions`}</span>
+              <span>{`Your Holdings:`}</span>
+              <span>{`${selectedSliderValue} Billion`}</span>
             </div>
             <div
               style={{
@@ -352,11 +355,11 @@ function Calc({ ethPrice, ethPriceIsLoading }) {
             </div>
 
             <div className={classes.range}>
-              <span>{`${min} Billions`}</span>
-              <span>{`${max} Trillions`}</span>
+              <span>{`${min} Billion`}</span>
+              <span>{`${max} Trillion`}</span>
             </div>
             <div style={{ color: colors.lighterGray, textAlign: "center" }}>
-              <span>results are based on 24 hour trading volume of 1M$</span>
+              <span>{`These results are based on a 24 hour trading volume of $1M`}</span>
             </div>
           </div>
         </animated.section>

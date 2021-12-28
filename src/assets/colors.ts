@@ -13,6 +13,7 @@ const colors = {
   green: "#11CABE",
   pink: "#BD47FB",
   lightergreen: "#398964",
+  darkPurple: "#3F23AA",
 };
 
 export default colors;
