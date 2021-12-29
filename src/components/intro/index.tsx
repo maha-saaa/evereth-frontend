@@ -287,7 +287,7 @@ const useStyles = createUseStyles({
     position: "relative",
     zIndex: 0,
     bottom: 150,
-    right: 103,
+    // right: 103,
     "@media screen and (max-width: 1000px)": {
       display: "none",
     },
