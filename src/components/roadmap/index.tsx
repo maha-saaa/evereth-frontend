@@ -45,12 +45,6 @@ const useStyles = createUseStyles({
       fontSize: 48,
       marginBottom: 13,
     },
-    "& span:nth-child(2)": {
-      fontSize: 16,
-      whiteSpace: "pre-line",
-      textAlign: "center",
-      color: colors.text,
-    },
   },
   steps: {
     "@media screen and (max-width: 1000px)": {
@@ -255,11 +249,7 @@ function Roadmap() {
     <VisibilitySensor onChange={onChange} resizeThrottle={1} partialVisibility>
       <section id="section-roadmap" className={classes.container}>
         <animated.section className={classes.title} style={animation}>
-          <span>Road Map</span>
-          <span>
-            {`Soon, we have another exciting news for our\n investors that we will
-          launch our own swap like pancake swap called EverETH.`}
-          </span>
+          <span>Roadmap</span>
         </animated.section>
 
         <section className={classes.steps}>

@@ -11,6 +11,7 @@ import benzinga from "../../assets/images/benzinga.svg";
 import arrowRight from "../../assets/images/arrow-right.svg";
 import everLogo from "../../assets/images/ever-logo.svg";
 import ethLogo from "../../assets/images/eth-logo.svg";
+import certik from "../../assets/images/certik.png";
 import EverETHLogo from "../../assets/images/everEth.mp4";
 import Spinner from "../spinner";
 
@@ -18,6 +19,7 @@ import {
   BENZINGA,
   BINANCE,
   BLOOMBERG,
+  CERTIK,
   COINGECKO,
   COINMARKETCAP,
   EVERETHAPP,
@@ -427,7 +429,10 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
               />
             </a>
             <a href={COINGECKO} target="_blank" rel="noreferrer noopener">
-              <img src={coinGecko} alt="CoinGecko" />
+              <img src={coinGecko} alt="CoinGecko" className={classes.icons} />
+            </a>
+            <a href={CERTIK} target="_blank" rel="noreferrer noopener">
+              <img src={certik} alt="CoinGecko" />
             </a>
           </div>
           <div>

@@ -9,7 +9,7 @@ import Navbar from "../../components/navbar";
 import About from "../../components/about";
 import Roadmap from "../../components/roadmap";
 import Faq from "../../components/faq";
-import Testimonial from "../../components/testimonial";
+// import Testimonial from "../../components/testimonial";
 import Swap from "../../components/swap";
 import Footer from "../../components/footer";
 import Rights from "../../components/rights";

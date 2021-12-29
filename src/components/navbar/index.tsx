@@ -37,6 +37,10 @@ const useStyles = createUseStyles({
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "flex-start",
+      "& span": {
+        fontSize: 18,
+        fontWeight: 700,
+      },
     },
   },
   menu: {
@@ -107,8 +111,8 @@ const navbarMenu = [
     title: "FAQ",
   },
   {
-    key: "#section-testimonial",
-    title: "Testimonial",
+    key: process.env.PUBLIC_URL + "/everETHWhitepaper.pdf",
+    title: "WhitePaper",
   },
 ];
 
@@ -119,7 +123,7 @@ function Navbar() {
       <section className={classes.logo}>
         <a href={"./"}>
           <img src={logo} alt="logo" style={{ width: 47, height: 47 }} />
-          <span>EverETH</span>
+          <span>EverETH.</span>
         </a>
       </section>
 
@@ -130,13 +134,18 @@ function Navbar() {
             "section-features",
             "section-roadmap",
             "section-faq",
-            "section-testimonial",
+            // "section-testimonial",
           ]}
           currentClassName="is-current"
         >
           {navbarMenu?.map((temp) => (
             <li key={temp.key}>
-              <a href={temp.key}>{temp.title}</a>
+              <a
+                href={temp.key}
+                download={temp.title === "WhitePaper" ? true : false}
+              >
+                {temp.title}
+              </a>
             </li>
           ))}
         </Scrollspy>

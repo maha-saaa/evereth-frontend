@@ -8,6 +8,7 @@ export const EVERETHSWAP = "https://swap.evereth.app/";
 export const BINANCE = "https://www.binance.com/";
 export const COINMARKETCAP = "https://coinmarketcap.com/currencies/evereth/";
 export const COINGECKO = "https://coingecko.com/";
+export const CERTIK = "https://www.certik.com/";
 export const BENZINGA =
   "https://www.benzinga.com/pressreleases/21/10/23777110/evereth-is-recording-a-total-of-1-5m-in-ethereum-reflections";
 export const YAHOO =
