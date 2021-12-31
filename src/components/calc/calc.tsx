@@ -287,8 +287,8 @@ function Calc({ ethPrice, ethPriceIsLoading }) {
         </div>
         <div className={classes.tableRow}>
           <span className={classes.tableHeaderText}>Profit</span>
-          <span className={classes.tableData}>$7.64/day*</span>
-          <span className={classes.tableData}>$31.02/day*</span>
+          <span className={classes.tableData}>$7.64/day</span>
+          <span className={classes.tableData}>$31.02/day</span>
           {ethPriceIsLoading ? (
             <div style={{ height: 64 }}>
               <Spinner />
@@ -297,7 +297,7 @@ function Calc({ ethPrice, ethPriceIsLoading }) {
             <span
               className={[classes.tableData, classes.tablePurpleCell].join(" ")}
             >
-              {`${selectedEverETH}/day**`}
+              {`${selectedEverETH}/day*`}
             </span>
           )}
         </div>
@@ -359,7 +359,7 @@ function Calc({ ethPrice, ethPriceIsLoading }) {
               <span>{`${max} Trillion`}</span>
             </div>
             <div style={{ color: colors.lighterGray, textAlign: "center" }}>
-              <span>{`These results are based on a 24 hour trading volume of $1M`}</span>
+              <span>{`*These results are based on a 24 hour trading volume of $1M`}</span>
             </div>
           </div>
         </animated.section>

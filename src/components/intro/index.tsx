@@ -50,13 +50,9 @@ const useStyles = createUseStyles({
     display: "flex",
     flex: 1,
     flexDirection: "column",
+    zIndex: 1000,
     "@media screen and (max-width: 1000px)": {
       minWidth: 288,
-    },
-  },
-  infoWithLoadedVideo: {
-    "@media screen and (min-width: 1000px)": {
-      position: "absolute",
     },
   },
   title: {
@@ -272,22 +268,23 @@ const useStyles = createUseStyles({
     "& img:nth-child(1)": {
       "@media screen and (min-width: 1000px)": {
         position: "absolute",
-        right: 340,
+        right: 283,
         top: 120,
       },
     },
     "& img:nth-child(2)": {
       "@media screen and (min-width: 1000px)": {
         position: "absolute",
-        right: 183,
+        top: 500,
+        right: 100,
       },
     },
   },
   video: {
-    position: "relative",
+    position: "absolute",
     zIndex: 0,
-    bottom: 150,
-    // right: 103,
+    top: 0,
+    right: 0,
     "@media screen and (max-width: 1000px)": {
       display: "none",
     },
@@ -296,33 +293,19 @@ const useStyles = createUseStyles({
 
 function Intro({ everETHDetails, everETHDetailsIsLoading }) {
   const classes = useStyles();
-  const [videoLoaded, setVideoLoaded] = useState(false);
 
   const negativeDiff = everETHDetails?.diff24H < 0;
 
   return (
     <section className={classes.container}>
-      <video
-        autoPlay
-        loop
-        muted
-        className={classes.video}
-        onCanPlay={() => setVideoLoaded(true)}
-      >
+      <video autoPlay loop muted className={classes.video}>
         <source src={EverETHLogo} type="video/mp4" />
       </video>
-      <section
-        className={[
-          classes.info,
-          videoLoaded && classes.infoWithLoadedVideo,
-        ].join(" ")}
-      >
+      <section className={classes.info}>
         <span className={classes.title}>{`Hold EverETH`}</span>
         <Typist className={classes.typist} cursor={{ show: false }}>
           <Typist.Delay ms={500} />
-          <span className={classes.title}>{`Earn`}</span>
-          <Typist.Delay ms={500} />
-          <span className={classes.title}>{`Ethereum`}</span>
+          <span className={classes.title}>{`Earn Ethereum`}</span>
         </Typist>
         <span className={classes.desc}>
           {`The fastest and easiest way to earn Ethereum in a\n fully decentralised ecosystem.`}

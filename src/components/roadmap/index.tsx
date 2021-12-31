@@ -203,7 +203,7 @@ const data = [
     list: [
       {
         key: 31,
-        title: "NFT Collectione",
+        title: "Charity Events",
         checked: true,
       },
       {
@@ -213,8 +213,8 @@ const data = [
       },
       {
         key: 33,
-        title: "Charity Events",
-        checked: true,
+        title: "NFT Collection",
+        checked: false,
       },
       {
         key: 34,

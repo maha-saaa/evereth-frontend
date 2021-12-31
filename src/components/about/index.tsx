@@ -100,8 +100,8 @@ const useStyles = createUseStyles({
 
 const data = [
   { key: 1, name: "$3M+", desc: "paid so far in\n Binance-peg Ethereum" },
-  { key: 2, name: "20K+", desc: "Comminuty of\n EverETH holders" },
-  { key: 3, name: "3", desc: "Blockchain summmit\n sponsership" },
+  { key: 2, name: "30K+", desc: "Community of\n EverETH holders" },
+  { key: 3, name: "3", desc: "Blockchain summmit\n sponsorship" },
 ];
 
 function About() {
@@ -127,9 +127,8 @@ function About() {
             <span className={classes.title}>Worldwide devidend </span>
             <span className={classes.title}>payments in Ethereum</span>
             <span className={classes.desc}>
-              The safest and easiest way to earn WTH on Binance Smart Chain
-              Passively. and easiest way to earn Ethereum in a fully
-              decentralised ecosystem.
+              The safest and easiest way to passively earn ETHER on the BEP-20
+              Network in a fully decentralized ecosystem!
             </span>
           </div>
 
