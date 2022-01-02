@@ -123,7 +123,7 @@ const data = [
   {
     key: 1,
     name: "Comfortable Ecosystem",
-    desc: `You don’t need to cliam your\n earned Ethereum.\n its automatically sent to your\n wallet.`,
+    desc: `You don’t need to claim your\n earned Ethereum.\n It’s automatically sent to your\n wallet.`,
     iconName: graph,
   },
   {
@@ -159,8 +159,8 @@ function Features() {
     <VisibilitySensor onChange={onChange} resizeThrottle={1} partialVisibility>
       <section id="section-features" className={classes.container}>
         <animated.section className={classes.title} style={animation}>
-          <span>{`FULLY DECENTRELASIED\n ECOSYSTEM`}</span>
-          <span>No smart contract ownership.</span>
+          <span>{`FULLY DECENTRRALIZED\n ECOSYSTEM`}</span>
+          <span>{`No smart contract ownership.`}</span>
         </animated.section>
 
         <animated.section className={classes.features} style={animation}>

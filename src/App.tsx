@@ -1,16 +1,21 @@
 import React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
-// import { createUseStyles } from "react-jss";
-import Landing from "./containers/landing";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-// const useStyles = createUseStyles({});
+import Landing from "./containers/landing";
+import WhitePaper from "./containers/whitePaper";
 
 const queryClient = new QueryClient();
 
 function App() {
   return (
     <QueryClientProvider client={queryClient} contextSharing={true}>
-      <Landing />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/whitepaper" element={<WhitePaper />} />
+        </Routes>
+      </BrowserRouter>
     </QueryClientProvider>
   );
 }

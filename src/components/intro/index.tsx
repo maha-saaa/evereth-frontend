@@ -10,11 +10,11 @@ import yahoo from "../../assets/images/yahoo.svg";
 import benzinga from "../../assets/images/benzinga.svg";
 import arrowRight from "../../assets/images/arrow-right.svg";
 import everLogo from "../../assets/images/ever-logo.svg";
-import ethLogo from "../../assets/images/eth-logo.svg";
+import ethLogo from "../../assets/images/eth-logo.png";
 import certik from "../../assets/images/certik.png";
 import EverETHLogo from "../../assets/images/everEth.mp4";
+import copy from "../../assets/images/copy.svg";
 import Spinner from "../spinner";
-
 import {
   BENZINGA,
   BINANCE,
@@ -55,6 +55,28 @@ const useStyles = createUseStyles({
       minWidth: 288,
     },
   },
+  copy: {
+    display: "flex",
+    justifyContent: "space-between",
+    boxSizing: "border-box",
+    backgroundColor: colors.grayWithOpacity,
+    marginTop: 66,
+    cursor: "pointer",
+    padding: {
+      left: 26,
+      right: 26,
+      top: 12,
+      bottom: 12,
+    },
+    borderRadius: 20,
+    "@media screen and (max-width: 1000px)": {
+      alignItems: "center",
+      fontSize: 12,
+    },
+    "& span:nth-child(1)": {
+      color: colors.white,
+    },
+  },
   title: {
     color: colors.white,
     fontSize: 72,
@@ -87,7 +109,7 @@ const useStyles = createUseStyles({
     flexDirection: "column",
     color: colors.white,
     margin: {
-      top: 45,
+      top: 12,
     },
     flex: 1,
   },
@@ -302,14 +324,29 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
         <source src={EverETHLogo} type="video/mp4" />
       </video>
       <section className={classes.info}>
-        <span className={classes.title}>{`Hold EverETH`}</span>
-        <Typist className={classes.typist} cursor={{ show: false }}>
+        <span className={classes.title}>{`HOLD EVERETH`}</span>
+        <Typist
+          className={classes.typist}
+          cursor={{ show: false }}
+          avgTypingDelay={200}
+        >
           <Typist.Delay ms={500} />
-          <span className={classes.title}>{`Earn Ethereum`}</span>
+          <span className={classes.title}>{`EARN ETHEREUM`}</span>
         </Typist>
         <span className={classes.desc}>
-          {`The fastest and easiest way to earn Ethereum in a\n fully decentralised ecosystem.`}
+          {`The fastest and easiest way to earn Ethereum in a fully decentralised ecosystem.`}
         </span>
+        <div
+          onClick={() =>
+            navigator.clipboard.writeText(
+              "0x16dCc0eC78E91e868DCa64bE86aeC62bf7C61037"
+            )
+          }
+          className={classes.copy}
+        >
+          <span>{`0x27899282184a2c...0a70`}</span>
+          <img src={copy} alt="copy" />
+        </div>
 
         <div className={classes.action}>
           <div className={classes.prices}>

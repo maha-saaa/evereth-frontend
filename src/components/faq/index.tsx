@@ -122,8 +122,8 @@ const data = [
     key: 2,
     question: "When I will recieve my Ethereum dividends?",
     answer:
-      `Our unique reward system is triggered by volume (buy + sell activity to cover gas fees). ayouts to holders may not occur every 30 minutes if the trading volume is low. When this is the case, the amount of rewarded Ethereum each holder will receive does not decrease. ` +
-      `However, will accrue over a longer period of time until it is suitable for a payout to trigger, (usually between 1-2 hours).`,
+      `Our unique reward system is triggered by volume (buy + sell activity to cover gas fees). Payouts to holders may not occur every 30 minutes if the trading volume is low. When this is the case, the amount of rewarded Ethereum each holder will receive does not decrease. ` +
+      `However, will occure over a longer period of time until it is suitable for a payout to trigger, (usually between 1-2 hours).`,
     isOpen: false,
   },
   {

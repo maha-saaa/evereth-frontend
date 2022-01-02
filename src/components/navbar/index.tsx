@@ -111,7 +111,7 @@ const navbarMenu = [
     title: "FAQ",
   },
   {
-    key: process.env.PUBLIC_URL + "/everETHWhitepaper.pdf",
+    key: "./whitepaper",
     title: "WhitePaper",
   },
 ];
@@ -140,12 +140,7 @@ function Navbar() {
         >
           {navbarMenu?.map((temp) => (
             <li key={temp.key}>
-              <a
-                href={temp.key}
-                download={temp.title === "WhitePaper" ? true : false}
-              >
-                {temp.title}
-              </a>
+              <a href={temp.key}>{temp.title}</a>
             </li>
           ))}
         </Scrollspy>
