@@ -80,6 +80,7 @@ const useStyles = createUseStyles({
   title: {
     color: colors.white,
     fontSize: 72,
+    fontFamily: "TwCenMTStd",
     "@media screen and (max-width: 1000px)": {
       textAlign: "center",
       fontSize: 48,
@@ -331,7 +332,10 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
           avgTypingDelay={200}
         >
           <Typist.Delay ms={500} />
-          <span className={classes.title}>{`EARN ETHEREUM`}</span>
+          <span
+            className={classes.title}
+            style={{ marginTop: 26 }}
+          >{`EARN ETHEREUM`}</span>
         </Typist>
         <span className={classes.desc}>
           {`The fastest and easiest way to earn Ethereum in a fully decentralised ecosystem.`}

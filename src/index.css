@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'TwCenMTStd';
+  src: local('TwCenMTStd'), url(./assets/fonts/TwCenMTStd.otf) format('truetype');
+}
