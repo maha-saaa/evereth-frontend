@@ -272,7 +272,6 @@ function WhitePaper() {
         </div>
       </section>
 
-      <Footer />
       <Rights />
     </div>
   );

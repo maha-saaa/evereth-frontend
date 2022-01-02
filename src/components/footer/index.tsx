@@ -181,7 +181,7 @@ function Footer() {
         <div className={classes.downloadBtn}>
           <img src={googlePlay} alt="googlePlay" />
           <div>
-            <span>GET IT ON</span>
+            <span>Get it on</span>
             <span>Google Play</span>
           </div>
         </div>
