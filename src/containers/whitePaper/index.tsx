@@ -173,7 +173,7 @@ const navbarMenu = [
   },
   {
     key: "./whitepaper",
-    title: "WhitePaper",
+    title: "Whitepaper",
   },
 ];
 

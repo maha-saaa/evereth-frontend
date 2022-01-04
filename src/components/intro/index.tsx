@@ -26,6 +26,8 @@ import {
   EVERETHSWAP,
   YAHOO,
 } from "../../constants/urls";
+import { useWindowSize } from "../../hooks/useWindowSize";
+import "react-typist/dist/Typist.css";
 
 const useStyles = createUseStyles({
   container: {
@@ -59,7 +61,6 @@ const useStyles = createUseStyles({
     display: "flex",
     justifyContent: "space-between",
     boxSizing: "border-box",
-    backgroundColor: colors.grayWithOpacity,
     marginTop: 66,
     cursor: "pointer",
     padding: {
@@ -73,7 +74,7 @@ const useStyles = createUseStyles({
       alignItems: "center",
       fontSize: 12,
     },
-    "& span:nth-child(1)": {
+    "& span": {
       color: colors.white,
     },
   },
@@ -89,7 +90,10 @@ const useStyles = createUseStyles({
   typist: {
     display: "flex",
     flex: 1,
-    flexDirection: "column",
+    flexDirection: "row",
+    alignContent: "center",
+    color: colors.white,
+    fontSize: 72,
     "@media screen and (max-width: 1000px)": {
       textAlign: "center",
     },
@@ -316,8 +320,18 @@ const useStyles = createUseStyles({
 
 function Intro({ everETHDetails, everETHDetailsIsLoading }) {
   const classes = useStyles();
+  const [copySuccess, setCopySuccess] = useState("");
+  const [width, height] = useWindowSize();
 
   const negativeDiff = everETHDetails?.diff24H < 0;
+
+  const onCopy = () => {
+    navigator.clipboard.writeText("0x16dCc0eC78E91e868DCa64bE86aeC62bf7C61037");
+    setCopySuccess("saved to the clipboard!");
+    setTimeout(() => {
+      setCopySuccess("");
+    }, 2000);
+  };
 
   return (
     <section className={classes.container}>
@@ -326,11 +340,7 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
       </video>
       <section className={classes.info}>
         <span className={classes.title}>{`HOLD EVERETH`}</span>
-        <Typist
-          className={classes.typist}
-          cursor={{ show: false }}
-          avgTypingDelay={200}
-        >
+        <Typist className={classes.typist} avgTypingDelay={200}>
           <Typist.Delay ms={500} />
           <span
             className={classes.title}
@@ -341,14 +351,20 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
           {`The fastest and easiest way to earn Ethereum in a fully decentralised ecosystem.`}
         </span>
         <div
-          onClick={() =>
-            navigator.clipboard.writeText(
-              "0x16dCc0eC78E91e868DCa64bE86aeC62bf7C61037"
-            )
-          }
+          onClick={onCopy}
           className={classes.copy}
+          style={{
+            backgroundColor: !copySuccess
+              ? colors.grayWithOpacity
+              : colors.gray,
+          }}
         >
-          <span>{`0x27899282184a2c...0a70`}</span>
+          <span>
+            {width < 600
+              ? `0x27899282184a2c...0a70`
+              : `0x16dCc0eC78E91e868DCa64bE86aeC62bf7C61037`}
+          </span>
+          <span>{copySuccess}</span>
           <img src={copy} alt="copy" />
         </div>
 
