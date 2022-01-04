@@ -364,7 +364,7 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
               ? `0x27899282184a2c...0a70`
               : `0x16dCc0eC78E91e868DCa64bE86aeC62bf7C61037`}
           </span>
-          <span>{copySuccess}</span>
+          <span style={{marginLeft: 18}}>{copySuccess}</span>
           <img src={copy} alt="copy" />
         </div>
 
