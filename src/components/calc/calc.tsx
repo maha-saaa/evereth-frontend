@@ -212,16 +212,16 @@ const useStyles = createUseStyles({
 
 function Calc({ ethPrice, ethPriceIsLoading }) {
   const classes = useStyles();
-  const [isVisible, setVisibility] = useState(false);
-  const [selectedSliderValue, setSelectedSliderValue] = useState<number>(500);
-  const [selectedEverETH, setSelectedEverETH] = useState(
-    ((500 / 1000) * 0.07 * ethPrice).toFixed(2)
-  );
-  const min = 500;
+  const min = 5;
   const max = 20;
+  const [isVisible, setVisibility] = useState(false);
+  const [selectedSliderValue, setSelectedSliderValue] = useState<number>(min);
+  const [selectedEverETH, setSelectedEverETH] = useState(
+    ((min / 1000) * 0.07 * ethPrice).toFixed(2)
+  );
 
   useEffect(() => {
-    setSelectedEverETH(((500 / 1000) * 0.07 * ethPrice).toFixed(2));
+    setSelectedEverETH(((min / 1000) * 0.07 * ethPrice).toFixed(2));
   }, [ethPrice]);
 
   const onChange = (isVisible: boolean) => {

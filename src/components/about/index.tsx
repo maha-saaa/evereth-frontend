@@ -101,7 +101,7 @@ const useStyles = createUseStyles({
 const data = [
   { key: 1, name: "$3M+", desc: "paid so far in\n Binance-peg Ethereum" },
   { key: 2, name: "30K+", desc: "Community of\n EverETH holders" },
-  { key: 3, name: "3", desc: "Blockchain summmit\n sponsorship" },
+  { key: 3, name: "3", desc: "Blockchain summmit\n sponsorships" },
 ];
 
 function About() {
@@ -124,7 +124,7 @@ function About() {
       <section id="section-about" className={classes.container}>
         <animated.section className={classes.info} style={animation}>
           <div className={[classes.info, classes.mobileImage].join(" ")}>
-            <span className={classes.title}>Worldwide devidend </span>
+            <span className={classes.title}>Worldwide dividend </span>
             <span className={classes.title}>payments in Ethereum</span>
             <span className={classes.desc}>
               The safest and easiest way to passively earn ETHER on the BEP-20

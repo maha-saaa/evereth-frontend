@@ -96,6 +96,8 @@ const useStyles = createUseStyles({
     fontSize: 72,
     "@media screen and (max-width: 1000px)": {
       textAlign: "center",
+      justifyContent: "center",
+      fontSize: 56,
     },
   },
   desc: {
@@ -361,7 +363,7 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
         >
           <span>
             {width < 600
-              ? `0x27899282184a2c...0a70`
+              ? `0x16dCc0eC78E91e...1037`
               : `0x16dCc0eC78E91e868DCa64bE86aeC62bf7C61037`}
           </span>
           <span style={{marginLeft: 18}}>{copySuccess}</span>
