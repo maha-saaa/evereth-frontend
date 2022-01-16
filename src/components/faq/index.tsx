@@ -33,7 +33,7 @@ const useStyles = createUseStyles({
     justifyContent: "center",
     alignItems: "center",
     color: colors.white,
-    marginBottom: 72,
+    marginBottom: 52,
     width: "70vw",
     "@media screen and (max-width: 1000px)": {
       marginBottom: 42,
@@ -44,12 +44,6 @@ const useStyles = createUseStyles({
       },
       fontSize: 48,
       marginBottom: 13,
-    },
-    "& span:nth-child(2)": {
-      fontSize: 16,
-      fontWeight: 400,
-      color: colors.text,
-      textAlign: "center",
     },
   },
   questions: {
@@ -120,7 +114,7 @@ const data = [
   },
   {
     key: 2,
-    question: "When I will recieve my Ethereum dividends?",
+    question: "When will I receive my Ethereum dividends?",
     answer:
       `Our unique reward system is triggered by volume (buy + sell activity to cover gas fees). Payouts to holders may not occur every 30 minutes if the trading volume is low. When this is the case, the amount of rewarded Ethereum each holder will receive does not decrease. ` +
       `However, will occure over a longer period of time until it is suitable for a payout to trigger, (usually between 1-2 hours).`,
@@ -128,7 +122,7 @@ const data = [
   },
   {
     key: 3,
-    question: "Where to check how much I earned?",
+    question: "Where do I check how much I’ve already earned?",
     answer:
       `Our developers created the EverETH dashboard where you can check your earnings live.\n` +
       `Go to : https://EverETH.app\n` +
@@ -181,16 +175,6 @@ function Faq() {
       <section id="section-faq" className={classes.container}>
         <animated.section className={classes.title} style={animation}>
           <span>FAQ</span>
-          <span>
-            The Content shared on this website is for information purpose only
-            and, thus, should not be considered as financial advice.
-            Trading/Investing is risky and you should never invest more than you
-            can afford to lose. Cryptocurrencies are risky. Never invest more
-            than you can afford to lose. You alone assume the sole
-            responsibility of evaluating the merits and risks associated with
-            the use of any information or other Content on the Site before
-            making any decisions based on such information or other Content.
-          </span>
         </animated.section>
 
         <animated.section className={classes.questions} style={animation}>

@@ -16,6 +16,7 @@ import Rights from "../../components/rights";
 import { useQuery } from "react-query";
 import API from "../../services/http";
 import { ethPriceUrl, everethDetailsUrl } from "../../constants/urls";
+import Disclaimer from "../../components/disclaimer";
 
 const useStyles = createUseStyles({
   container: {
@@ -72,6 +73,7 @@ function Landing() {
       <Calc {...{ ethPrice, ethPriceIsLoading }} />
       <Roadmap />
       <Faq />
+      <Disclaimer />
       {/* <Testimonial /> */}
       <Swap />
       <Footer />

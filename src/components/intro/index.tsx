@@ -350,7 +350,7 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
           >{`EARN ETHEREUM`}</span>
         </Typist>
         <span className={classes.desc}>
-          {`The fastest and easiest way to earn Ethereum in a fully decentralised ecosystem.`}
+          {`The fastest and easiest way to earn Ethereum in a fully decentralized ecosystem.`}
         </span>
         <div
           onClick={onCopy}

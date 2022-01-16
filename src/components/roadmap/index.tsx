@@ -208,7 +208,7 @@ const data = [
       },
       {
         key: 32,
-        title: "Expanding Community",
+        title: "CEX Listing",
         checked: false,
       },
       {

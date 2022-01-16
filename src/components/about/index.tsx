@@ -99,7 +99,7 @@ const useStyles = createUseStyles({
 });
 
 const data = [
-  { key: 1, name: "$3M+", desc: "paid so far in\n Binance-peg Ethereum" },
+  { key: 1, name: "$3M+", desc: "Paid so far in\n Binance-peg Ethereum" },
   { key: 2, name: "30K+", desc: "Community of\n EverETH holders" },
   { key: 3, name: "3", desc: "Blockchain summmit\n sponsorships" },
 ];

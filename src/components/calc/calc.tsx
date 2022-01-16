@@ -312,7 +312,7 @@ function Calc({ ethPrice, ethPriceIsLoading }) {
           <span>Why EverETH?</span>
           <span>{`Planet.People.\nProfit.`}</span>
           <span>
-            {`Unlike mining EverETH is programmed to strive\n on providing investors
+            {`Unlike mining, EverETH is programmed to strive\n on providing investors
             the ability to earn\n ethereum, without damaging the enviroment or
             their wallets.`}
           </span>
