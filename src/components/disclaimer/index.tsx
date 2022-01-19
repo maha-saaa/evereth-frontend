@@ -69,7 +69,7 @@ function Disclaimer() {
 
   return (
     <VisibilitySensor onChange={onChange} resizeThrottle={1} partialVisibility>
-      <section id="section-faq" className={classes.container}>
+      <section id="section-disclaimer" className={classes.container}>
         <animated.section className={classes.title} style={animation}>
           <span>Disclaimer</span>
           <span>

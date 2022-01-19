@@ -3,12 +3,14 @@ import { createUseStyles } from "react-jss";
 import colors from "../../assets/colors";
 import backgroundPattern from "../../assets/images/BG.png";
 import Calc from "../../components/calc/calc";
+import Buy from "../../components/buy";
 import Features from "../../components/features";
 import Intro from "../../components/intro";
 import Navbar from "../../components/navbar";
 import About from "../../components/about";
 import Roadmap from "../../components/roadmap";
 import Faq from "../../components/faq";
+import Disclaimer from "../../components/disclaimer";
 // import Testimonial from "../../components/testimonial";
 import Swap from "../../components/swap";
 import Footer from "../../components/footer";
@@ -16,7 +18,6 @@ import Rights from "../../components/rights";
 import { useQuery } from "react-query";
 import API from "../../services/http";
 import { ethPriceUrl, everethDetailsUrl } from "../../constants/urls";
-import Disclaimer from "../../components/disclaimer";
 
 const useStyles = createUseStyles({
   container: {
@@ -71,6 +72,7 @@ function Landing() {
       <About />
       <Features />
       <Calc {...{ ethPrice, ethPriceIsLoading }} />
+      <Buy />
       <Roadmap />
       <Faq />
       <Disclaimer />
