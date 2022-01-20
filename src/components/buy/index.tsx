@@ -31,7 +31,7 @@ const useStyles = createUseStyles({
   },
   steps: {
     display: "flex",
-    flex: 2,
+    flex: 1,
     flexDirection: "column",
     color: colors.white,
     marginLeft: 50,
