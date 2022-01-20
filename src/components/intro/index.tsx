@@ -23,7 +23,7 @@ import {
   COINGECKO,
   COINMARKETCAP,
   EVERETHAPP,
-  EVERETHSWAP,
+  // EVERETHSWAP,
   YAHOO,
 } from "../../constants/urls";
 import { useWindowSize } from "../../hooks/useWindowSize";
@@ -216,13 +216,21 @@ const useStyles = createUseStyles({
     justifyContent: "center",
     border: "1px solid white",
     borderRadius: 100,
-    height: 65,
-    marginTop: 20,
+    height: 45,
     textDecoration: "none",
     color: colors.white,
+    padding: {
+      left: 10,
+      right: 10,
+    },
+    marginLeft: 8,
     "&:hover": {
       backgroundColor: colors.grayWithOpacity2,
       fontWeight: 700,
+    },
+    "@media screen and (max-width: 1000px)": {
+      marginTop: 10,
+      marginLeft: 0,
     },
   },
   featured: {
@@ -366,7 +374,7 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
               ? `0x16dCc0eC78E91e...1037`
               : `0x16dCc0eC78E91e868DCa64bE86aeC62bf7C61037`}
           </span>
-          <span style={{marginLeft: 18}}>{copySuccess}</span>
+          <span style={{ marginLeft: 18 }}>{copySuccess}</span>
           <img src={copy} alt="copy" />
         </div>
 
@@ -399,14 +407,17 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
                   )}
                 </div>
               </div>
+              <a className={classes.second} href={`#section-buy`}>
+                <span>BUY</span>
+                <img src={arrowRight} alt=">" color={colors.green} />
+              </a>
               <a
-                className={classes.second}
-                href={EVERETHSWAP}
+                className={classes.dashboard}
+                href={EVERETHAPP}
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                <span>BUY</span>
-                <img src={arrowRight} alt=">" color={colors.green} />
+                <span>Go to Dashboard</span>
               </a>
             </div>
             <div className={classes.priceSecondRow}>
@@ -448,14 +459,6 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
               </div>
             </div>
           </div>
-          <a
-            className={classes.dashboard}
-            href={EVERETHAPP}
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            <span>Go to Dashboard</span>
-          </a>
         </div>
 
         <div className={classes.featured}>
