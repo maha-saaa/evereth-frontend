@@ -18,5 +18,6 @@ export const BLOOMBERG =
   "https://www.bloomberg.com/press-releases/2021-10-31/evereth-is-recording-a-total-of-1-5m-in-ethereum-reflections";
 export const ethPriceUrl = "/api/assets/eth";
 export const everethDetailsUrl = "/api/assets/evereth";
-export const PANCAKESWAP = "https://pancakeswap.finance/";
-export const LATOKEN = "https://latoken.com/";
+export const PANCAKESWAP =
+  "https://pancakeswap.finance/swap#/swap?outputCurrency=0x16dcc0ec78e91e868dca64be86aec62bf7c61037";
+export const LATOKEN = "https://latoken.com/exchange/EVERETH_USDT";

@@ -214,14 +214,16 @@ function Calc({ ethPrice, ethPriceIsLoading }) {
   const classes = useStyles();
   const min = 5;
   const max = 20;
+  const defaultSliderValue = 1000;
   const [isVisible, setVisibility] = useState(false);
-  const [selectedSliderValue, setSelectedSliderValue] = useState<number>(min);
+  const [selectedSliderValue, setSelectedSliderValue] =
+    useState<number>(defaultSliderValue);
   const [selectedEverETH, setSelectedEverETH] = useState(
-    ((min / 1000) * 0.07 * ethPrice).toFixed(2)
+    ((defaultSliderValue / 1000) * 0.07 * ethPrice).toFixed(2)
   );
 
   useEffect(() => {
-    setSelectedEverETH(((min / 1000) * 0.07 * ethPrice).toFixed(2));
+    setSelectedEverETH(((defaultSliderValue / 1000) * 0.07 * ethPrice).toFixed(2));
   }, [ethPrice]);
 
   const onChange = (isVisible: boolean) => {
@@ -271,7 +273,7 @@ function Calc({ ethPrice, ethPriceIsLoading }) {
             <span
               className={[classes.tableData, classes.tablePurpleCell].join(" ")}
             >
-              {`${selectedEverETH}/day`}
+              {`$${selectedEverETH}/day`}
             </span>
           )}
         </div>
@@ -297,7 +299,7 @@ function Calc({ ethPrice, ethPriceIsLoading }) {
             <span
               className={[classes.tableData, classes.tablePurpleCell].join(" ")}
             >
-              {`${selectedEverETH}/day*`}
+              {`$${selectedEverETH}/day*`}
             </span>
           )}
         </div>
@@ -351,6 +353,7 @@ function Calc({ ethPrice, ethPriceIsLoading }) {
                   backgroundColor: colors.purple,
                   borderColor: colors.purple,
                 }}
+                defaultValue={defaultSliderValue}
               />
             </div>
 

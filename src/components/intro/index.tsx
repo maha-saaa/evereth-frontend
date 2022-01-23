@@ -226,7 +226,6 @@ const useStyles = createUseStyles({
     marginLeft: 8,
     "&:hover": {
       backgroundColor: colors.grayWithOpacity2,
-      fontWeight: 700,
     },
     "@media screen and (max-width: 1000px)": {
       marginTop: 10,

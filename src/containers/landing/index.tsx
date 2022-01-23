@@ -18,6 +18,7 @@ import Rights from "../../components/rights";
 import { useQuery } from "react-query";
 import API from "../../services/http";
 import { ethPriceUrl, everethDetailsUrl } from "../../constants/urls";
+import Gallery from "../../components/gallery";
 
 const useStyles = createUseStyles({
   container: {
@@ -70,6 +71,7 @@ function Landing() {
       <Navbar />
       <Intro {...{ everETHDetails, everETHDetailsIsLoading }} />
       <About />
+      <Gallery />
       <Features />
       <Calc {...{ ethPrice, ethPriceIsLoading }} />
       <Buy />

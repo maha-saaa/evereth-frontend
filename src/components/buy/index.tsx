@@ -9,17 +9,38 @@ const useStyles = createUseStyles({
   container: {
     display: "flex",
     flex: 1,
-    flexDirection: "row",
+    flexDirection: "column",
     alignItems: "center",
-    justifyContent: "space-between",
     marginTop: 211,
     padding: {
       right: 183,
       left: 183,
     },
     "@media screen and (max-width: 1000px)": {
-      flexDirection: "column",
       marginTop: 90,
+      padding: {
+        right: 16,
+        left: 16,
+      },
+    },
+  },
+  header: {
+    fontSize: 49,
+    fontWeight: "bold",
+    marginBottom: 10,
+    whiteSpace: "pre-line",
+    color: colors.white,
+    textAlign: "center",
+  },
+  instructions: {
+    display: "flex",
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginTop: 42,
+    "@media screen and (max-width: 1000px)": {
+      flexDirection: "column",
       padding: {
         right: 16,
         left: 16,
@@ -37,7 +58,7 @@ const useStyles = createUseStyles({
     marginLeft: 50,
     "@media screen and (max-width: 1000px)": {
       marginLeft: 0,
-      width: "100%",
+      width: "80%",
       textAlign: "center",
       marginTop: 20,
     },
@@ -82,6 +103,7 @@ const useStyles = createUseStyles({
     fontWeight: "bold",
     marginBottom: 10,
     whiteSpace: "pre-line",
+    color: colors.white,
   },
   desc: { marginBottom: 18, whiteSpace: "pre-line" },
 });
@@ -104,76 +126,79 @@ function Buy() {
   return (
     <VisibilitySensor onChange={onChange} resizeThrottle={1} partialVisibility>
       <section id="section-buy" className={classes.container}>
-        <animated.section style={animation} className={classes.buy}>
-          <iframe
-            title="EverEth"
-            width="100%"
-            height={700}
-            src="https://www.flooz.trade/embedded/0x16dcc0ec78e91e868dca64be86aec62bf7c61037/?backgroundColor=transparent"
-            style={{ border: "none" }}
-          />
-        </animated.section>
+        <span className={classes.header}>{`Buy EverETH`}</span>
+        <div className={classes.instructions}>
+          <animated.section style={animation} className={classes.buy}>
+            <iframe
+              title="EverEth"
+              width="100%"
+              height={700}
+              src="https://www.flooz.trade/embedded/0x16dcc0ec78e91e868dca64be86aec62bf7c61037/?backgroundColor=transparent"
+              style={{ border: "none" }}
+            />
+          </animated.section>
 
-        <animated.section style={animation} className={classes.steps}>
-          <div className={classes.howTo}>
-            <span className={classes.title}>{`HOW TO BUY $EverETH`}</span>
-            <span>{`The easiest way to buy $EverETH token is via Flooz. Trade on our website. Alternatively,\n you can buy on EverETH Swap, PancakeSwap or LAToken exchange via the buttons below:`}</span>
-            <div className={classes.btns}>
-              <a
-                className={classes.button}
-                href={EVERETHSWAP}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <span>EverETH Swap</span>
-              </a>
-              <a
-                className={classes.button}
-                href={PANCAKESWAP}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <span>PancakeSwap</span>
-              </a>
-              <a
+          <animated.section style={animation} className={classes.steps}>
+            <div className={classes.howTo}>
+              <span className={classes.title}>{`HOW TO BUY $EverETH`}</span>
+              <span>{`The easiest way to buy $EverETH token is via Flooz. Trade on our website. Alternatively,\n you can buy on EverETH Swap or PancakeSwap via the buttons below:`}</span>
+              <div className={classes.btns}>
+                <a
+                  className={classes.button}
+                  href={EVERETHSWAP}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <span>EverETH Swap</span>
+                </a>
+                <a
+                  className={classes.button}
+                  href={PANCAKESWAP}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <span>PancakeSwap</span>
+                </a>
+                {/* <a
                 className={classes.button}
                 href={LATOKEN}
                 target="_blank"
                 rel="noreferrer noopener"
               >
                 <span>LATOKEN</span>
-              </a>
+              </a> */}
+              </div>
             </div>
-          </div>
-          <span
-            className={classes.desc}
-          >{`I'm still confused!😳\n No problem! Follow these steps:`}</span>
-          <span
-            className={classes.desc}
-          >{`Step 1: Download MetaMask or TrustWallet
+            <span
+              className={classes.desc}
+            >{`I'm still confused!😳\n No problem! Follow these steps:`}</span>
+            <span
+              className={classes.desc}
+            >{`Step 1: Download MetaMask or TrustWallet
               These apps are safe, secure and widely used in the DeFi Market (Metamask is suggested). 
               This becomes your secure wallet where your $EverETH (and other cryptocurrencies) are stored. 
               Remember to never share your seed phrase!`}</span>
-          <span className={classes.desc}>{`Step 2: Fund Your Wallet
+            <span className={classes.desc}>{`Step 2: Fund Your Wallet
               Purchase BNB or BSC (Binance Smart Chain) to fund your wallet. 
               Popular USD-pegged stable coins such as USDT, USDC, and BUSD also work. 
               These coins are all used in the Binance Smart Chain (BNB is suggested)`}</span>
-          <span className={classes.desc}>{`Step 3: Open Your Browser
+            <span className={classes.desc}>{`Step 3: Open Your Browser
               Revisit this section of our website to use the recommended "Buy Now with Flooz.Trade" option,
               or visit swap.evereth.app or pancakeswap.finance. 
               Pancakeswap is an exchange that allows users to swap BNB with other DeFi tokens; 
               it's the largest & most popular decentralized platform in the space.`}</span>
-          <span className={classes.desc}>{`Step 4: Swap for EverETH
+            <span className={classes.desc}>{`Step 4: Swap for EverETH
               Using Flooz, "Connect" to your Metamask, or TrustWallet, enter the amount you want to spend 
               and click Swap — Done!.`}</span>
-          <span
-            className={classes.desc}
-          >{`If you prefer the PancakeSwap option, click "select a currency", and enter the $EverETH contract address:`}</span>
-          <span
-            className={classes.desc}
-          >{`0x16dCc0eC78E91e868DCa64bE86aeC62bf7C61037
+            <span
+              className={classes.desc}
+            >{`If you prefer the PancakeSwap option, click "select a currency", and enter the $EverETH contract address:`}</span>
+            <span
+              className={classes.desc}
+            >{`0x16dCc0eC78E91e868DCa64bE86aeC62bf7C61037
             (We recommend you use slippage 12 to 15% or 0.1% with ".000" trick).`}</span>
-        </animated.section>
+          </animated.section>
+        </div>
       </section>
     </VisibilitySensor>
   );
