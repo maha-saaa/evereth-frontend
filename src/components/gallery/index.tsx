@@ -44,8 +44,8 @@ const useStyles = createUseStyles({
     "& span:nth-child(1)": {
       "@media screen and (max-width: 1000px)": {
         fontSize: 29,
-        textAlign: "center",
       },
+      textAlign: "center",
       fontSize: 48,
       marginBottom: 13,
     },

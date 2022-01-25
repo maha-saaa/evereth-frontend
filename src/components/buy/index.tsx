@@ -26,11 +26,13 @@ const useStyles = createUseStyles({
   },
   header: {
     fontSize: 49,
-    fontWeight: "bold",
     marginBottom: 10,
     whiteSpace: "pre-line",
     color: colors.white,
     textAlign: "center",
+    "@media screen and (max-width: 600px)": {
+      fontSize: 29,
+    },
   },
   instructions: {
     display: "flex",
