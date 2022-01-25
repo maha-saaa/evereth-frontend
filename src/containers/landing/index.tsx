@@ -1,5 +1,6 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
+import { useQuery } from "react-query";
 import colors from "../../assets/colors";
 import backgroundPattern from "../../assets/images/BG.png";
 import Calc from "../../components/calc/calc";
@@ -15,10 +16,9 @@ import Disclaimer from "../../components/disclaimer";
 import Swap from "../../components/swap";
 import Footer from "../../components/footer";
 import Rights from "../../components/rights";
-import { useQuery } from "react-query";
+import MediaGallery from "../../components/gallery";
 import API from "../../services/http";
 import { ethPriceUrl, everethDetailsUrl } from "../../constants/urls";
-import Gallery from "../../components/gallery";
 
 const useStyles = createUseStyles({
   container: {
@@ -71,7 +71,7 @@ function Landing() {
       <Navbar />
       <Intro {...{ everETHDetails, everETHDetailsIsLoading }} />
       <About />
-      <Gallery />
+      <MediaGallery />
       <Features />
       <Calc {...{ ethPrice, ethPriceIsLoading }} />
       <Buy />

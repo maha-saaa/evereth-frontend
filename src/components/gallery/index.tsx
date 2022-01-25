@@ -3,6 +3,11 @@ import { createUseStyles } from "react-jss";
 import VisibilitySensor from "react-visibility-sensor";
 import { useSpring, animated } from "react-spring";
 import colors from "../../assets/colors";
+import gal1 from "../../assets/images/gal1.png";
+import gal2 from "../../assets/images/gal2.png";
+import gal3 from "../../assets/images/gal3.mp4";
+import gal4 from "../../assets/images/gal4.mp4";
+import gal5 from "../../assets/images/gal5.mp4";
 
 const useStyles = createUseStyles({
   container: {
@@ -34,18 +39,42 @@ const useStyles = createUseStyles({
     width: "70vw",
     "@media screen and (max-width: 1000px)": {
       marginBottom: 42,
+      textAlign: "center",
     },
     "& span:nth-child(1)": {
       "@media screen and (max-width: 1000px)": {
         fontSize: 29,
+        textAlign: "center",
       },
       fontSize: 48,
       marginBottom: 13,
     },
   },
+  gallery: {
+    display: "flex",
+    flexDirection: "column",
+    flex: 1,
+    width: "80%",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  gallerySection: {
+    display: "flex",
+    flexDirection: "row",
+    "@media screen and (max-width: 600px)": {
+      flexDirection: "column",
+    },
+  },
+  size: {
+    width: 140,
+    height: 250,
+    "@media screen and (max-width: 600px)": {
+      display: "none",
+    },
+  },
 });
 
-function Gallery() {
+function MediaGallery() {
   const classes = useStyles();
   const [isVisible, setVisibility] = useState(false);
 
@@ -64,11 +93,37 @@ function Gallery() {
     <VisibilitySensor onChange={onChange} resizeThrottle={1} partialVisibility>
       <section id="section-gallery" className={classes.container}>
         <animated.section className={classes.title} style={animation}>
-          <span>EverETH around the world</span>
+          <span>{`EverETH around the world`}</span>
+        </animated.section>
+
+        <animated.section style={animation} className={classes.gallery}>
+          <div className={classes.gallerySection}>
+            <img
+              src={gal1}
+              alt="1"
+              className={classes.size}
+              style={{ marginRight: 10 }}
+            />
+            <video autoPlay loop muted height={250} style={{ marginRight: 10 }}>
+              <source src={gal4} type="video/mp4" />
+            </video>
+            <video autoPlay loop muted height={250} style={{ marginRight: 10 }}>
+              <source src={gal5} type="video/mp4" />
+            </video>
+            <img
+              src={gal2}
+              alt="2"
+              className={classes.size}
+              style={{ marginRight: 10 }}
+            />
+            <video autoPlay loop muted height={250} style={{ marginRight: 10 }}>
+              <source src={gal3} type="video/mp4" />
+            </video>
+          </div>
         </animated.section>
       </section>
     </VisibilitySensor>
   );
 }
 
-export default Gallery;
+export default MediaGallery;
