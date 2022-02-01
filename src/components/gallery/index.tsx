@@ -13,15 +13,18 @@ const useStyles = createUseStyles({
   container: {
     display: "flex",
     flex: 1,
-    flexDirection: "column",
+    flexDirection: "row",
     alignItems: "center",
+    justifyContent: "space-between",
     marginTop: 211,
     padding: {
       right: 183,
       left: 183,
     },
     "@media screen and (max-width: 1000px)": {
-      marginTop: 90,
+      flexDirection: "column",
+      justifyContent: "center",
+      marginTop: 92,
       padding: {
         right: 16,
         left: 16,
@@ -33,21 +36,20 @@ const useStyles = createUseStyles({
     flex: 1,
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center",
     color: colors.white,
-    marginBottom: 72,
-    width: "70vw",
+    whiteSpace: "pre-line",
+    marginRight: 40,
     "@media screen and (max-width: 1000px)": {
       marginBottom: 42,
+      marginRight: 0,
       textAlign: "center",
     },
     "& span:nth-child(1)": {
+      fontSize: 48,
+      marginBottom: 13,
       "@media screen and (max-width: 1000px)": {
         fontSize: 29,
       },
-      textAlign: "center",
-      fontSize: 48,
-      marginBottom: 13,
     },
   },
   gallery: {
@@ -60,10 +62,12 @@ const useStyles = createUseStyles({
   },
   gallerySection: {
     display: "flex",
+    flexDirection: "column",
+  },
+  galleryRow: {
+    display: "flex",
     flexDirection: "row",
-    "@media screen and (max-width: 600px)": {
-      flexDirection: "column",
-    },
+    justifyContent: "center",
   },
   size: {
     width: 140,
@@ -93,32 +97,59 @@ function MediaGallery() {
     <VisibilitySensor onChange={onChange} resizeThrottle={1} partialVisibility>
       <section id="section-gallery" className={classes.container}>
         <animated.section className={classes.title} style={animation}>
-          <span>{`EverETH around the world`}</span>
+          <span>{`EveETH\n Global Initiative`}</span>
+          <span>
+            {`Evereth is your global community.\n From being represented at the world's largest crypto summits,
+             to marketing your token on a global scale. We drive initiatives
+              to empower the community to be the change you wish to see\n in the world.`}
+          </span>
         </animated.section>
 
         <animated.section style={animation} className={classes.gallery}>
           <div className={classes.gallerySection}>
-            <img
-              src={gal1}
-              alt="1"
-              className={classes.size}
-              style={{ marginRight: 10 }}
-            />
-            <video autoPlay loop muted height={250} style={{ marginRight: 10 }}>
-              <source src={gal4} type="video/mp4" />
-            </video>
-            <video autoPlay loop muted height={250} style={{ marginRight: 10 }}>
-              <source src={gal5} type="video/mp4" />
-            </video>
-            <img
-              src={gal2}
-              alt="2"
-              className={classes.size}
-              style={{ marginRight: 10 }}
-            />
-            <video autoPlay loop muted height={250} style={{ marginRight: 10 }}>
-              <source src={gal3} type="video/mp4" />
-            </video>
+            <div className={classes.galleryRow}>
+              <img
+                src={gal1}
+                alt="1"
+                className={classes.size}
+                style={{ marginRight: 10 }}
+              />
+              <video
+                autoPlay
+                loop
+                muted
+                height={250}
+                style={{ marginRight: 10 }}
+              >
+                <source src={gal4} type="video/mp4" />
+              </video>
+              <video
+                autoPlay
+                loop
+                muted
+                height={250}
+                style={{ marginRight: 10 }}
+              >
+                <source src={gal5} type="video/mp4" />
+              </video>
+            </div>
+            <div className={classes.galleryRow}>
+              <img
+                src={gal2}
+                alt="2"
+                className={classes.size}
+                style={{ marginRight: 10 }}
+              />
+              <video
+                autoPlay
+                loop
+                muted
+                height={250}
+                style={{ marginRight: 10 }}
+              >
+                <source src={gal3} type="video/mp4" />
+              </video>
+            </div>
           </div>
         </animated.section>
       </section>

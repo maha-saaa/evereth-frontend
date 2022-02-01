@@ -135,7 +135,7 @@ const data = [
   {
     key: 3,
     name: "Trusted Security",
-    desc: `The smart contract was being\n audited by TechRate,\n and is currently onboarding for\n Certik Audit with 12 months of\n Sky Net.`,
+    desc: `Fully transparent smart contract,\n audited by multiple firms with 24/7 live monitoring\n provided by CertiK Skynet.`,
     iconName: lock,
   },
 ];
