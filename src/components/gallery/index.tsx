@@ -97,7 +97,7 @@ function MediaGallery() {
     <VisibilitySensor onChange={onChange} resizeThrottle={1} partialVisibility>
       <section id="section-gallery" className={classes.container}>
         <animated.section className={classes.title} style={animation}>
-          <span>{`EveETH\n Global Initiative`}</span>
+          <span>{`EverETH\n Global Initiative`}</span>
           <span>
             {`Evereth is your global community.\n From being represented at the world's largest crypto summits,
              to marketing your token on a global scale. We drive initiatives
