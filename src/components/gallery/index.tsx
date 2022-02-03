@@ -99,9 +99,10 @@ function MediaGallery() {
         <animated.section className={classes.title} style={animation}>
           <span>{`EverETH\n Global Initiative`}</span>
           <span>
-            {`Evereth is your global community.\n From being represented at the world's largest crypto summits,
-             to marketing your token on a global scale. We drive initiatives
-              to empower the community to be the change you wish to see\n in the world.`}
+            Evereth is your global community. From being represented at the
+            world's largest crypto summits, to marketing your token on a global
+            scale. We drive initiatives to empower the community to be the
+            change you wish to see in the world.
           </span>
         </animated.section>
 

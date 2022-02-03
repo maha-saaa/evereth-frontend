@@ -223,7 +223,9 @@ function Calc({ ethPrice, ethPriceIsLoading }) {
   );
 
   useEffect(() => {
-    setSelectedEverETH(((defaultSliderValue / 1000) * 0.07 * ethPrice).toFixed(2));
+    setSelectedEverETH(
+      ((defaultSliderValue / 1000) * 0.07 * ethPrice).toFixed(2)
+    );
   }, [ethPrice]);
 
   const onChange = (isVisible: boolean) => {
@@ -314,12 +316,12 @@ function Calc({ ethPrice, ethPriceIsLoading }) {
           <span>Why EverETH?</span>
           <span>{`Planet.People.\nProfit.`}</span>
           <span>
-            {`Unlike mining, EverETH is programmed to strive\n on providing investors
-            the ability to earn\n ethereum, without damaging the enviroment or
-            their wallets.`}
+            Unlike mining, EverETH is programmed to strive on providing
+            investors the ability to earn ethereum, without damaging the
+            enviroment or their wallets.
           </span>
           <span>
-            {`Become a part of the EverETH family today, and\n earn Ethereum passively for the rest of your life.`}
+            {`Become a part of the EverETH family today, and earn Ethereum passively for the rest of your life.`}
           </span>
         </animated.section>
 

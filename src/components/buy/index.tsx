@@ -26,7 +26,6 @@ const useStyles = createUseStyles({
   },
   header: {
     fontSize: 49,
-    marginBottom: 10,
     whiteSpace: "pre-line",
     color: colors.white,
     textAlign: "center",
@@ -40,9 +39,10 @@ const useStyles = createUseStyles({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    marginTop: 42,
+    marginTop: 52,
     "@media screen and (max-width: 1000px)": {
       flexDirection: "column",
+      marginTop: 2,
       padding: {
         right: 16,
         left: 16,
@@ -195,10 +195,9 @@ function Buy() {
             <span
               className={classes.desc}
             >{`If you prefer the PancakeSwap option, click "select a currency", and enter the $EverETH contract address:`}</span>
-            <span
-              className={classes.desc}
-            >{`0x16dCc0eC78E91e868DCa64bE86aeC62bf7C61037
-            (We recommend you use slippage 12 to 15% or 0.1% with ".000" trick).`}</span>
+            <span className={classes.desc}>{`0x16dCc0eC78E91e868DCa64b
+               E86aeC62bf7C61037
+               (We recommend you use slippage 12 to 15% or 0.1% with ".000" trick).`}</span>
           </animated.section>
         </div>
       </section>

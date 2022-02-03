@@ -85,10 +85,10 @@ const useStyles = createUseStyles({
     },
     textAlign: "center",
     padding: {
-      left: 25,
-      right: 25,
-      top: 40,
-      bottom: 16,
+      left: 24,
+      right: 24,
+      top: 30,
+      bottom: 24,
     },
     boxSizing: "border-box",
     "&:hover": {
@@ -129,13 +129,13 @@ const data = [
   {
     key: 2,
     name: "10% Dividends",
-    desc: `10% of every transaction value is\n taken and redistributed to all\n holders\n Hold EverETH tokens and earn\n Ethereum.`,
+    desc: `10% of every transaction value is taken and redistributed to all holders Hold EverETH tokens and earn Ethereum.`,
     iconName: star,
   },
   {
     key: 3,
     name: "Trusted Security",
-    desc: `Fully transparent smart contract,\n audited by multiple firms with 24/7 live monitoring\n provided by CertiK Skynet.`,
+    desc: `Fully transparent smart contract, audited by multiple firms with 24/7 live monitoring\n provided by CertiK Skynet.`,
     iconName: lock,
   },
 ];
