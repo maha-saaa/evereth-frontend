@@ -71,11 +71,11 @@ function Landing() {
       <Navbar />
       <Intro {...{ everETHDetails, everETHDetailsIsLoading }} />
       <About />
-      <MediaGallery />
       <Features />
       <Calc {...{ ethPrice, ethPriceIsLoading }} />
       <Buy />
       <Roadmap />
+      <MediaGallery />
       <Faq />
       <Disclaimer />
       {/* <Testimonial /> */}
