@@ -178,6 +178,9 @@ const useStyles = createUseStyles({
       fontWeight: 500,
       marginLeft: 8,
     },
+    "@media screen and (max-width: 1000px)": {
+      alignItems: "center",
+    },
   },
   firstTitle: {
     fontSize: 14,
@@ -199,6 +202,7 @@ const useStyles = createUseStyles({
     color: colors.white,
     "@media screen and (max-width: 1000px)": {
       width: 100,
+      marginTop: 8,
     },
     "& span": {
       fontSize: 18,
@@ -389,7 +393,7 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
                     </div>
                   ) : (
                     <span id="n1">{`$${Number(
-                      everETHDetails?.price.toFixed(20)
+                      everETHDetails?.price?.toFixed(20)
                     )?.toFixed(11)}`}</span>
                   )}
                   {everETHDetailsIsLoading ? (
@@ -402,7 +406,7 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
                       style={{
                         color: negativeDiff ? "red" : colors.lightergreen,
                       }}
-                    >{`${(everETHDetails?.diff24H).toFixed(2)}%`}</span>
+                    >{`${(everETHDetails?.diff24H)?.toFixed(2)}%`}</span>
                   )}
                 </div>
               </div>
@@ -426,7 +430,7 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
                     <Spinner />
                   </div>
                 ) : (
-                  <span>{`$${(everETHDetails?.marketCap * 0.000001).toFixed(
+                  <span>{`$${(everETHDetails?.marketCap * 0.000001)?.toFixed(
                     2
                   )}M`}</span>
                 )}
@@ -438,7 +442,7 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
                     <Spinner />
                   </div>
                 ) : (
-                  <span>{`$${(everETHDetails?.volume24H * 0.000001).toFixed(
+                  <span>{`$${(everETHDetails?.volume24H * 0.000001)?.toFixed(
                     2
                   )}M`}</span>
                 )}
