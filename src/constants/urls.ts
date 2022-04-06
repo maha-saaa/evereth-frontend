@@ -1,4 +1,4 @@
-export const BASEURL = "https://evereth.info";
+export const BASEURL = "https://evereth.net";
 export const FACEBOOK = "https://www.facebook.com/EverETHofficial";
 export const TELEGRAM = "https://t.me/EverETHOfficial";
 export const DISCORD = "https://discord.gg/7fTrE99ebk";
