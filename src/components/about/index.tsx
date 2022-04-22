@@ -19,6 +19,7 @@ const useStyles = createUseStyles({
       left: 183,
     },
     "@media screen and (max-width: 1000px)": {
+      flexDirection: "column",
       justifyContent: "center",
       marginTop: 111,
       padding: {
@@ -92,8 +93,8 @@ const useStyles = createUseStyles({
     },
   },
   mobileImage: {
-    "@media screen and (max-width: 1000px)": {
-      backgroundImage: `url(${world})`,
+    "@media screen and (min-width: 1000px)": {
+      display: "none",
     },
   },
 });
@@ -122,15 +123,16 @@ function About() {
   return (
     <VisibilitySensor onChange={onChange} partialVisibility resizeThrottle={1}>
       <section id="section-about" className={classes.container}>
+        <animated.section className={classes.mobileImage} style={animation}>
+          <img src={world} alt="world" style={{ width: "100%", height: 239 }} />
+        </animated.section>
         <animated.section className={classes.info} style={animation}>
-          <div className={[classes.info, classes.mobileImage].join(" ")}>
-            <span className={classes.title}>Worldwide dividend </span>
-            <span className={classes.title}>payments in Ethereum</span>
-            <span className={classes.desc}>
-              The safest and easiest way to passively earn ETHER on the BEP-20
-              Network in a fully decentralized ecosystem!
-            </span>
-          </div>
+          <span className={classes.title}>Worldwide dividend </span>
+          <span className={classes.title}>payments in Ethereum</span>
+          <span className={classes.desc}>
+            The safest and easiest way to passively earn ETHER on the BEP-20
+            Network in a fully decentralized ecosystem!
+          </span>
 
           <div className={classes.count}>
             {data.map((temp) => (

@@ -406,7 +406,7 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
                       style={{
                         color: negativeDiff ? "red" : colors.lightergreen,
                       }}
-                    >{`${(everETHDetails?.diff24H)?.toFixed(2)}%`}</span>
+                    >{`${everETHDetails?.diff24H?.toFixed(2)}%`}</span>
                   )}
                 </div>
               </div>
@@ -442,9 +442,7 @@ function Intro({ everETHDetails, everETHDetailsIsLoading }) {
                     <Spinner />
                   </div>
                 ) : (
-                  <span>{`$${(everETHDetails?.volume24H * 0.000001)?.toFixed(
-                    2
-                  )}M`}</span>
+                  <span>{`$${everETHDetails?.volume24H?.toFixed(2)}M`}</span>
                 )}
                 <span>24H VOLUME</span>
               </div>
