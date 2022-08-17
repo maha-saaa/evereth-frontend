@@ -1,8 +1,8 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
+import { Link } from "react-scroll";
 import colors from "../../assets/colors";
 import logo from "../../assets/images/logo.png";
-import Scrollspy from "react-scrollspy";
 import { EVERETHAPP } from "../../constants/urls";
 
 const useStyles = createUseStyles({
@@ -51,20 +51,18 @@ const useStyles = createUseStyles({
     flexDirection: "row",
     justifyContent: "center",
     flex: 1,
-    "& ul": {
-      display: "flex",
-      flexDirection: "row",
-      listStyle: "none",
-      "& li": {
-        margin: 24,
-        listStyleType: "none",
-        display: "list-item",
-        "& a": {
-          textDecoration: "none",
-          color: colors.text,
-          "&:hover": {
-            color: colors.white,
-          },
+    listStyle: "none",
+    padding: 16,
+    "& li": {
+      margin: 24,
+      listStyleType: "none",
+      display: "list-item",
+      "& a": {
+        textDecoration: "none",
+        color: colors.text,
+        cursor: "pointer",
+        "&:hover": {
+          color: colors.white,
         },
       },
     },
@@ -95,19 +93,19 @@ const useStyles = createUseStyles({
 
 const navbarMenu = [
   {
-    key: "#section-about",
+    key: "About",
     title: "About",
   },
   {
-    key: "#section-features",
+    key: "Features",
     title: "Features",
   },
   {
-    key: "#section-roadmap",
+    key: "Roadmap",
     title: "Roadmap",
   },
   {
-    key: "#section-faq",
+    key: "FAQ",
     title: "FAQ",
   },
   {
@@ -128,22 +126,24 @@ function Navbar() {
       </section>
 
       <section className={classes.menu}>
-        <Scrollspy
-          items={[
-            "section-about",
-            "section-features",
-            "section-roadmap",
-            "section-faq",
-            // "section-testimonial",
-          ]}
-          currentClassName="is-current"
-        >
-          {navbarMenu?.map((temp) => (
-            <li key={temp.key}>
+        {navbarMenu?.map((temp) => (
+          <li key={temp.key}>
+            {temp.title === "Whitepaper" ? (
               <a href={temp.key}>{temp.title}</a>
-            </li>
-          ))}
-        </Scrollspy>
+            ) : (
+              <Link
+                activeClass="active"
+                to={temp.key}
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={500}
+              >
+                {temp.title}
+              </Link>
+            )}
+          </li>
+        ))}
       </section>
 
       <section className={classes.button}>

@@ -122,7 +122,7 @@ function About() {
 
   return (
     <VisibilitySensor onChange={onChange} partialVisibility resizeThrottle={1}>
-      <section id="section-about" className={classes.container}>
+      <section id="About" className={classes.container}>
         <animated.section className={classes.mobileImage} style={animation}>
           <img src={world} alt="world" style={{ width: "100%", height: 239 }} />
         </animated.section>

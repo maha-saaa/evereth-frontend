@@ -247,7 +247,7 @@ function Roadmap() {
 
   return (
     <VisibilitySensor onChange={onChange} resizeThrottle={1} partialVisibility>
-      <section id="section-roadmap" className={classes.container}>
+      <section id="Roadmap" className={classes.container}>
         <animated.section className={classes.title} style={animation}>
           <span>Roadmap</span>
         </animated.section>

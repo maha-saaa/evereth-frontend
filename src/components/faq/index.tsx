@@ -172,7 +172,7 @@ function Faq() {
 
   return (
     <VisibilitySensor onChange={onChange} resizeThrottle={1} partialVisibility>
-      <section id="section-faq" className={classes.container}>
+      <section id="FAQ" className={classes.container}>
         <animated.section className={classes.title} style={animation}>
           <span>FAQ</span>
         </animated.section>

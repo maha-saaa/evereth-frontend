@@ -157,7 +157,7 @@ function Features() {
 
   return (
     <VisibilitySensor onChange={onChange} resizeThrottle={1} partialVisibility>
-      <section id="section-features" className={classes.container}>
+      <section id="Features" className={classes.container}>
         <animated.section className={classes.title} style={animation}>
           <span>{`FULLY DECENTRALIZED\n ECOSYSTEM`}</span>
           <span>{`No smart contract ownership.`}</span>
