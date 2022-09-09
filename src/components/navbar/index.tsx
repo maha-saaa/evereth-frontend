@@ -3,7 +3,7 @@ import { createUseStyles } from "react-jss";
 import { Link } from "react-scroll";
 import colors from "../../assets/colors";
 import logo from "../../assets/images/logo.png";
-import { EVERETHAPP } from "../../constants/urls";
+import { EVERETHWALLET } from "../../constants/urls";
 
 const useStyles = createUseStyles({
   container: {
@@ -147,8 +147,8 @@ function Navbar() {
       </section>
 
       <section className={classes.button}>
-        <a href={EVERETHAPP} target="_blank" rel="noreferrer noopener">
-          <span>EverETH.app</span>
+        <a href={EVERETHWALLET} target="_blank" rel="noreferrer noopener">
+          <span>EverETH Wallet</span>
         </a>
       </section>
     </section>

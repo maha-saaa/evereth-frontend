@@ -4,6 +4,8 @@ export const TELEGRAM = "https://t.me/EverETHOfficial";
 export const DISCORD = "https://discord.gg/7fTrE99ebk";
 export const TWITTER = "https://www.twitter.com/everethofficial";
 export const EVERETHAPP = "https://evereth.app/";
+export const EVERETHWALLET =
+  "https://play.google.com/store/apps/details?id=com.ever_eth";
 export const EVERETHSWAP = "https://swap.evereth.app/";
 export const BINANCE =
   "https://bscscan.com/token/0x16dcc0ec78e91e868dca64be86aec62bf7c61037";
