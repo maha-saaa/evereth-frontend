@@ -8,7 +8,13 @@ import discord from "../../assets/images/discord.svg";
 import twitter from "../../assets/images/twitter.svg";
 import appStore from "../../assets/images/app-store.svg";
 import googlePlay from "../../assets/images/google-play.svg";
-import { DISCORD, FACEBOOK, TELEGRAM, TWITTER } from "../../constants/urls";
+import {
+  DISCORD,
+  FACEBOOK,
+  TELEGRAM,
+  TWITTER,
+  EVERETHWALLET,
+} from "../../constants/urls";
 
 const useStyles = createUseStyles({
   container: {
@@ -87,6 +93,8 @@ const useStyles = createUseStyles({
     height: 65,
     marginBottom: 24,
     cursor: "pointer",
+    textDecoration: "none",
+    color: colors.white,
     "& div": {
       display: "flex",
       flexDirection: "column",
@@ -170,21 +178,18 @@ function Footer() {
       <section
         className={[classes.col, classes.mobileCol, classes.mainCol].join(" ")}
       >
-        <span style={{ marginBottom: 24 }}>Coming soon...</span>
-        <div className={classes.downloadBtn}>
-          <img src={appStore} alt="appStore" />
-          <div>
-            <span>Download on the</span>
-            <span>App Store</span>
-          </div>
-        </div>
-        <div className={classes.downloadBtn}>
+        <a
+          href={EVERETHWALLET}
+          target="_blank"
+          rel="noreferrer noopener"
+          className={classes.downloadBtn}
+        >
           <img src={googlePlay} alt="googlePlay" />
           <div>
             <span>Get it on</span>
             <span>Google Play</span>
           </div>
-        </div>
+        </a>
       </section>
     </section>
   );
